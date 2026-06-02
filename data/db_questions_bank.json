@@ -8,7 +8,7 @@
     "answer_format": "single_choice",
     "answer_format_note": "Поле correct_answers — массив; пусто, если верный вариант не помечен в источнике.",
     "generated_on": "2026-06-02",
-    "total_questions": 133,
+    "total_questions": 129,
     "source_files": [
       "Тест_трехуровневая_архитектура",
       "БД(2)",
@@ -19,7 +19,7 @@
       "Тест(png)",
       "Тест(jpg)"
     ],
-    "answered_questions": 69,
+    "answered_questions": 65,
     "scoring": "partial_2_1_0",
     "note": "Вопросы с диаграммами/скриншотами (плохой OCR) оставлены без ответа и не попадают в тест."
   },
@@ -1009,134 +1009,6 @@
       ],
       "explanation": "Ускорить медленные многотабличные соединения помогают денормализация и материализованные представления.",
       "topic_id": 15
-    },
-    {
-      "id": "DB-021",
-      "question": "Iрiктеу операциясының синтаксисi:",
-      "options": [
-        {
-          "letter": "A",
-          "text": "A[X,Y,...,Z]"
-        },
-        {
-          "letter": "B",
-          "text": "A WHERE Z"
-        }
-      ],
-      "correct_answers": [
-        "B"
-      ],
-      "answer_type": "single",
-      "language": "ru",
-      "has_code": true,
-      "topic": "",
-      "verification": "verified",
-      "verification_note": "",
-      "has_figure": false,
-      "source_files": [
-        "БД(2)#17"
-      ],
-      "explanation": "Синтаксис операции выборки (selection): A WHERE Z.",
-      "topic_id": 4
-    },
-    {
-      "id": "DB-022",
-      "question": "Жолдар санын есептейтін оператор",
-      "options": [
-        {
-          "letter": "A",
-          "text": "AVG"
-        },
-        {
-          "letter": "D",
-          "text": "COUNT"
-        },
-        {
-          "letter": "E",
-          "text": "MAX"
-        }
-      ],
-      "correct_answers": [
-        "D"
-      ],
-      "answer_type": "single",
-      "language": "ru",
-      "has_code": false,
-      "topic": "",
-      "verification": "verified",
-      "verification_note": "",
-      "has_figure": false,
-      "source_files": [
-        "БД(2)#20"
-      ],
-      "explanation": "Количество строк считает COUNT.",
-      "topic_id": 8
-    },
-    {
-      "id": "DB-023",
-      "question": "Select Аты From Мектеп Where Жасы Like ‘25’",
-      "options": [
-        {
-          "letter": "A",
-          "text": "Аты(Айшат)"
-        },
-        {
-          "letter": "B",
-          "text": "Аты(Нұрайна)"
-        },
-        {
-          "letter": "C",
-          "text": "Аты(Нурбек)"
-        }
-      ],
-      "correct_answers": [
-        "C"
-      ],
-      "answer_type": "single",
-      "language": "ru",
-      "has_code": true,
-      "topic": "",
-      "verification": "verified",
-      "verification_note": "",
-      "has_figure": false,
-      "source_files": [
-        "БД(2)#8"
-      ],
-      "explanation": "WHERE Жасы LIKE «25» вернёт строку с возрастом 25 — Нурбек.",
-      "topic_id": 9
-    },
-    {
-      "id": "DB-024",
-      "question": "Деректер базасынан Клиенттер кестесін жою",
-      "options": [
-        {
-          "letter": "A",
-          "text": "INSERT INTO Клиенттер"
-        },
-        {
-          "letter": "B",
-          "text": "ALTER TABLE Клиенттер"
-        },
-        {
-          "letter": "C",
-          "text": "DROP TABLE Клиенттер"
-        }
-      ],
-      "correct_answers": [
-        "C"
-      ],
-      "answer_type": "single",
-      "language": "ru",
-      "has_code": true,
-      "topic": "",
-      "verification": "verified",
-      "verification_note": "",
-      "has_figure": false,
-      "source_files": [
-        "БД(2)#17"
-      ],
-      "explanation": "Удалить таблицу: DROP TABLE Клиенттер.",
-      "topic_id": 12
     },
     {
       "id": "DB-025",
