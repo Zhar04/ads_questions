@@ -74,22 +74,56 @@ export function isCorrect(question, selectedLetters) {
   return true;
 }
 
+/** Число ошибок: (недобранные верные) + (выбранные лишние неверные). */
+export function countMistakes(question, selectedLetters) {
+  const correct = new Set(question.correct_answers || []);
+  const sel = new Set(selectedLetters || []);
+  let missing = 0;
+  for (const c of correct) if (!sel.has(c)) missing++;
+  let extra = 0;
+  for (const s of sel) if (!correct.has(s)) extra++;
+  return missing + extra;
+}
+
+/**
+ * Баллы за вопрос с множественным выбором (правила КТ, 2-й профильный предмет):
+ *   0 ошибок → 2 балла, 1 ошибка → 1 балл, ≥2 ошибок → 0 баллов.
+ */
+export function questionPoints(question, selectedLetters, maxPoints = 2) {
+  const m = countMistakes(question, selectedLetters);
+  return Math.max(0, maxPoints - m);
+}
+
 /**
  * Подсчёт результата.
  * @param {Array} questions
  * @param {Object} answers — { [questionId]: ['B', ...] }
- * @returns { correct, total, pct01, details: [{question, selected, correct(bool)}] }
+ * @param {Object} [opts] — { partial: bool } — частичное начисление баллов (2/1/0) для БД.
+ * @returns { correct, total, pct01, points, maxPoints, details: [{question, selected, correct, points, status}] }
  */
-export function scoreQuiz(questions, answers) {
+export function scoreQuiz(questions, answers, opts = {}) {
+  const partial = !!opts.partial;
+  const MAX = 2;
   let correct = 0;
+  let points = 0;
   const details = questions.map((q) => {
     const sel = answers[q.id] || [];
     const ok = sel.length > 0 && isCorrect(q, sel);
     if (ok) correct++;
-    return { question: q, selected: sel, correct: ok };
+    let pts = ok ? MAX : 0;
+    if (partial) {
+      pts = questionPoints(q, sel, MAX);
+      points += pts;
+    }
+    const status = pts === MAX ? 'full' : pts > 0 ? 'partial' : 'zero';
+    return { question: q, selected: sel, correct: ok, points: pts, status };
   });
   const total = questions.length;
-  return { correct, total, pct01: total ? correct / total : 0, details };
+  const maxPoints = total * MAX;
+  const pct01 = partial
+    ? (maxPoints ? points / maxPoints : 0)
+    : (total ? correct / total : 0);
+  return { correct, total, pct01, points, maxPoints, details };
 }
 
 /** Простой таймер обратного отсчёта. onTick(secondsLeft), onEnd(). */

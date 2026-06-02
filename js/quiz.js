@@ -1,6 +1,7 @@
 // quiz.js — контроллер страницы теста (quiz.html). Режимы: blitz | full | topic | block.
+// Поддержка двух предметов: ads (одиночный выбор) и db (множественный выбор, баллы 2/1/0).
 
-import { loadQuestions, normalizeLang } from './data-loader.js';
+import { loadQuestions, normalizeLang, normalizeSubject, SUBJECTS } from './data-loader.js';
 import { recordTopicQuiz, recordFullTest } from './progress.js';
 import { esc, qs, el, showError } from './app.js';
 import {
@@ -8,7 +9,6 @@ import {
   topicSample,
   blockSet,
   scoreQuiz,
-  isCorrect,
   createTimer,
   fmtTime,
   FULL_TEST_MINUTES,
@@ -23,9 +23,11 @@ const MODE_TITLES = {
 
 const state = {
   mode: 'blitz',
+  subject: 'ads',
+  multi: false,       // множественный выбор (предмет db)
   questions: [],
   index: 0,
-  answers: {},        // { qid: ['B'] }
+  answers: {},        // { qid: ['B', ...] }
   revealed: {},       // { qid: true } — показан ли ответ на этом вопросе
   topicId: null,
   lang: 'ru',
@@ -42,11 +44,18 @@ export async function initQuiz(container, titlebar) {
   const count = parseInt(qs('count', '15'), 10) || 15;
   const topicId = qs('topic') ? Number(qs('topic')) : null;
   const blockId = qs('block');
+  const subject = normalizeSubject(qs('subject', 'ads'));
   // Язык банка вопросов поддерживается в блице и полном тесте; темы/блоки — только рус.
-  const lang = (mode === 'blitz' || mode === 'full') ? normalizeLang(qs('lang', 'ru')) : 'ru';
+  const lang = (mode === 'blitz' || mode === 'full') ? normalizeLang(qs('lang', 'ru'), subject) : 'ru';
   state.mode = mode;
+  state.subject = subject;
+  state.multi = !!SUBJECTS[subject].multiAnswer;
   state.topicId = topicId;
   state.lang = lang;
+
+  // Навигация: кнопка «назад» ведёт на домашнюю страницу предмета.
+  const backEl = document.querySelector('.topbar .back');
+  if (backEl) backEl.href = './' + SUBJECTS[subject].home;
 
   if (titleEl) {
     const langTag = lang === 'kk' ? ' · Қаз' : '';
@@ -54,7 +63,7 @@ export async function initQuiz(container, titlebar) {
   }
 
   try {
-    const all = await loadQuestions(lang);
+    const all = await loadQuestions(subject, lang);
     let selected = [];
     if (mode === 'full') selected = stratifiedSample(all, count || 30);
     else if (mode === 'blitz') selected = stratifiedSample(all, count || 15);
@@ -97,8 +106,9 @@ function renderQuestion() {
   const n = state.questions.length;
   const k = state.index + 1;
   const pct = Math.round((k / n) * 100);
-  // в blitz открываем сразу после выбора; в full — по умолчанию скрыто (КТ)
+  // в blitz/block открываем разбор; в full — скрыто (формат КТ)
   const isBlitz = state.mode === 'blitz' || state.mode === 'block';
+  const isMulti = state.multi;
   const revealed = !!state.revealed[q.id];
   const selected = state.answers[q.id] || [];
 
@@ -126,7 +136,11 @@ function renderQuestion() {
     ? `<div class="code-block">${esc(q.code)}</div>`
     : '';
 
-  card.innerHTML = `${figNote}<div class="q-text">${esc(q.question)}</div>${codeHtml}<div class="options"></div>`;
+  const multiHint = isMulti
+    ? '<div class="q-multi-hint">Множественный выбор: отметьте все верные варианты (1–3). Баллы: 2 / 1 / 0.</div>'
+    : '';
+
+  card.innerHTML = `${figNote}<div class="q-text">${esc(q.question)}</div>${codeHtml}${multiHint}<div class="options"></div>`;
   const optsEl = card.querySelector('.options');
 
   const correct = new Set(q.correct_answers || []);
@@ -142,9 +156,15 @@ function renderQuestion() {
       else if (isSel) btn.classList.add('wrong');
     } else {
       btn.addEventListener('click', () => {
-        state.answers[q.id] = [opt.letter]; // single-choice
-        if (isBlitz) {
-          state.revealed[q.id] = true; // обучающий режим: сразу показать
+        if (isMulti) {
+          // переключаем выбор варианта
+          const cur = state.answers[q.id] || [];
+          state.answers[q.id] = cur.includes(opt.letter)
+            ? cur.filter((l) => l !== opt.letter)
+            : [...cur, opt.letter];
+        } else {
+          state.answers[q.id] = [opt.letter]; // одиночный выбор
+          if (isBlitz) state.revealed[q.id] = true; // обучающий режим: сразу показать
         }
         renderQuestion();
       });
@@ -162,7 +182,7 @@ function renderQuestion() {
 
   root.appendChild(card);
 
-  // кнопка «Показать ответ»
+  // кнопка «Показать ответ» (для множественного выбора — после отметки вариантов)
   if (!revealed) {
     const showBtn = el('button', { class: 'btn btn-ghost btn-block', type: 'button', style: 'margin-top:12px' }, '👁 Показать ответ');
     showBtn.addEventListener('click', () => {
@@ -198,24 +218,30 @@ function finishQuiz(byTimeout) {
   state.finished = true;
   if (state.timer) state.timer.stop();
 
-  const result = scoreQuiz(state.questions, state.answers);
+  const partial = state.multi;
+  const result = scoreQuiz(state.questions, state.answers, { partial });
   const pct = Math.round(result.pct01 * 100);
 
   // сохранение прогресса
-  if (state.mode === 'topic' && state.topicId) recordTopicQuiz(state.topicId, result.pct01);
-  if (state.mode === 'full') recordFullTest(result.pct01);
+  if (state.mode === 'topic' && state.topicId) recordTopicQuiz(state.topicId, result.pct01, state.subject);
+  if (state.mode === 'full') recordFullTest(result.pct01, state.subject);
 
   if (titleEl) titleEl.textContent = 'Результат';
   root.innerHTML = '';
+
+  const home = './' + SUBJECTS[state.subject].home;
+  const subLine = partial
+    ? `${result.points} из ${result.maxPoints} баллов · полностью верно: ${result.correct} из ${result.total}`
+    : `${result.correct} из ${result.total} верно`;
 
   const summary = el('div', { class: 'card center' });
   summary.innerHTML = `
     ${byTimeout ? '<div class="notice">⏱ Время вышло — тест завершён автоматически.</div>' : ''}
     <div class="result-score">${pct}%</div>
-    <div class="result-sub">${result.correct} из ${result.total} верно</div>
+    <div class="result-sub">${subLine}</div>
     <div class="btn-row" style="justify-content:center">
       <button class="btn btn-primary" type="button" id="retry">Пройти заново</button>
-      <a class="btn" href="./index.html">На главную</a>
+      <a class="btn" href="${home}">На главную</a>
     </div>`;
   root.appendChild(summary);
 
@@ -224,10 +250,17 @@ function finishQuiz(byTimeout) {
 
   result.details.forEach((d, idx) => {
     const q = d.question;
-    const item = el('div', { class: `review-item ${d.correct ? 'ok' : 'no'}` });
+    const cls = d.status === 'full' ? 'ok' : d.status === 'partial' ? 'partial' : 'no';
+    const item = el('div', { class: `review-item ${cls}` });
     const selLetters = (d.selected || []).join(', ') || '—';
     const correctLetters = (q.correct_answers || []).join(', ');
-    const tag = d.correct ? '<span class="ri-tag ok">верно</span>' : '<span class="ri-tag no">неверно</span>';
+    let tag;
+    if (partial) {
+      const word = d.points === 2 ? 'ok' : d.points === 1 ? 'partial' : 'no';
+      tag = `<span class="ri-tag ${word}">${d.points} балл${d.points === 1 ? '' : d.points === 0 ? 'ов' : 'а'}</span>`;
+    } else {
+      tag = d.correct ? '<span class="ri-tag ok">верно</span>' : '<span class="ri-tag no">неверно</span>';
+    }
     const codeHtml = q.code ? `<div class="code-block">${esc(q.code)}</div>` : '';
     item.innerHTML = `
       <div class="ri-q">${idx + 1}. ${esc(q.question)} ${tag}</div>

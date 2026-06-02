@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>КТ • Базы данных</title>
+  <meta name="description" content="Подготовка к КТ в магистратуру РК, М094 — Базы данных." />
+
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#7c3aed" />
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Unbounded:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <div class="topbar">
+    <a class="back" href="index.html" aria-label="На главную">←</a>
+    <div class="title">Базы данных</div>
+  </div>
+
+  <main class="container">
+    <header>
+      <span class="badge">КТ • Магистратура • М094</span>
+      <h1 style="margin-top:12px">Базы данных</h1>
+      <p class="subtitle">2-й профильный предмет · множественный выбор (1–3 из 8) · баллы 2 / 1 / 0</p>
+    </header>
+
+    <nav class="menu-grid">
+      <a class="menu-card full" href="topics.html?subject=db">
+        <span class="mc-icon">📚</span>
+        <div class="mc-title">Темы</div>
+        <div class="mc-desc">16 тем с конспектом по реляционной модели, SQL и нормализации</div>
+      </a>
+      <a class="menu-card" href="quiz.html?mode=blitz&count=15&subject=db">
+        <span class="mc-icon">⚡</span>
+        <div class="mc-title">Блиц-тест</div>
+        <div class="mc-desc">15 вопросов · обучающий режим с разбором</div>
+      </a>
+      <a class="menu-card" href="quiz.html?mode=full&count=30&subject=db">
+        <span class="mc-icon">🎓</span>
+        <div class="mc-title">Полный тест</div>
+        <div class="mc-desc">30 вопросов · формат КТ · с таймером и баллами</div>
+      </a>
+    </nav>
+
+    <section class="card" style="margin-top:24px">
+      <div class="progress-label"><span>Общий прогресс</span><span id="overall-pct">—</span></div>
+      <div class="progress"><span id="overall-bar" style="width:0%"></span></div>
+      <div class="stats">
+        <div class="stat"><div class="num" id="stat-topics">—</div><div class="lbl">тем пройдено</div></div>
+        <div class="stat"><div class="num" id="stat-questions">—</div><div class="lbl">вопросов в банке</div></div>
+        <div class="stat"><div class="num" id="stat-best">—</div><div class="lbl">лучший полный тест</div></div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div>КТ Базы данных · офлайн-тренажёр (PWA) · данные хранятся только на вашем устройстве</div>
+      <button class="btn btn-ghost" type="button" id="reset-btn">Сбросить прогресс по БД</button>
+    </footer>
+  </main>
+
+  <script type="module">
+    import { loadTopicsWithCounts, loadQuestions } from './js/data-loader.js';
+    import { computeOverallPercent, countCompletedTopics, getFullTestBest, resetAllProgress } from './js/progress.js';
+    import './js/app.js'; // регистрирует service worker
+
+    const SUBJECT = 'db';
+
+    async function render() {
+      try {
+        const [topics, questions] = await Promise.all([loadTopicsWithCounts(SUBJECT), loadQuestions(SUBJECT)]);
+        const overall = computeOverallPercent(topics, SUBJECT);
+        document.getElementById('overall-pct').textContent = overall + '%';
+        document.getElementById('overall-bar').style.width = overall + '%';
+        document.getElementById('stat-topics').textContent = countCompletedTopics(topics, SUBJECT) + '/' + topics.length;
+        document.getElementById('stat-questions').textContent = questions.filter(q => (q.correct_answers || []).length).length;
+        document.getElementById('stat-best').textContent = Math.round(getFullTestBest(SUBJECT) * 100) + '%';
+      } catch (e) {
+        document.getElementById('overall-pct').textContent = 'ошибка';
+        console.error(e);
+      }
+    }
+
+    document.getElementById('reset-btn').addEventListener('click', () => {
+      if (confirm('Сбросить прогресс по разделу «Базы данных»?')) {
+        resetAllProgress(SUBJECT);
+        render();
+      }
+    });
+
+    render();
+  </script>
+</body>
+</html>

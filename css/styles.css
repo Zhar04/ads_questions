@@ -466,11 +466,27 @@ a { color: var(--accent2); }
 }
 .review-item.ok { border-left: 3px solid var(--green); }
 .review-item.no { border-left: 3px solid var(--red); }
+.review-item.partial { border-left: 3px solid var(--yellow); }
 .review-item .ri-q { font-weight: 600; margin-bottom: 8px; }
-.review-item .ri-tag { font-size: 11px; padding: 2px 7px; border-radius: var(--radius); margin-left: 6px; }
+.review-item .ri-tag { font-size: 11px; padding: 2px 7px; border-radius: var(--radius); margin-left: 6px; white-space: nowrap; }
 .ri-tag.ok { color: var(--green); border: 1px solid var(--green); }
 .ri-tag.no { color: var(--red); border: 1px solid var(--red); }
+.ri-tag.partial { color: var(--yellow); border: 1px solid var(--yellow); }
 .ri-ans { font-size: 13px; margin: 3px 0; }
+
+/* подсказка для вопросов с множественным выбором (БД) */
+.q-multi-hint {
+  font-size: 12px;
+  color: var(--accent2);
+  border: 1px dashed var(--accent2);
+  border-radius: var(--radius);
+  padding: 6px 10px;
+  margin-bottom: 12px;
+}
+
+/* карточка перехода в другой раздел (предмет) */
+.subject-link { margin-top: 18px; }
+.subject-link .mc-title { color: #c4b5fd; }
 
 /* ---------- Footer / settings ---------- */
 .footer { margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--border); text-align: center; font-size: 12px; color: var(--muted); }

@@ -1,0 +1,6075 @@
+{
+  "meta": {
+    "schema_version": "1.0",
+    "title": "Банк вопросов КТ (магистратура) — Базы данных",
+    "exam": "Комплексное тестирование (КТ) для поступления в магистратуру, Республика Казахстан",
+    "discipline": "Базы данных / Деректер қоры",
+    "language": "ru",
+    "answer_format": "single_choice",
+    "answer_format_note": "Поле correct_answers — массив; пусто, если верный вариант не помечен в источнике.",
+    "generated_on": "2026-06-02",
+    "total_questions": 133,
+    "source_files": [
+      "Тест_трехуровневая_архитектура",
+      "БД(2)",
+      "Основная_подборка",
+      "Database/",
+      "БД_скриншоты",
+      "PDF (clean)",
+      "Тест(png)",
+      "Тест(jpg)"
+    ],
+    "answered_questions": 69,
+    "scoring": "partial_2_1_0",
+    "note": "Вопросы с диаграммами/скриншотами (плохой OCR) оставлены без ответа и не попадают в тест."
+  },
+  "questions": [
+    {
+      "id": "DB-001",
+      "question": "Oбозначение трехуревневой архитектуры",
+      "options": [
+        {
+          "letter": "A",
+          "text": "уровень пользовательского интерфейса"
+        },
+        {
+          "letter": "B",
+          "text": "уровень маcштабируемости"
+        },
+        {
+          "letter": "C",
+          "text": "уровень реализации прикладных алгоритмов и средств обработки данных"
+        },
+        {
+          "letter": "D",
+          "text": "уровень соединения"
+        },
+        {
+          "letter": "E",
+          "text": "уровень получения данных"
+        },
+        {
+          "letter": "F",
+          "text": "СУБД, в которой хранятся данные"
+        },
+        {
+          "letter": "G",
+          "text": "уровень присваивания"
+        },
+        {
+          "letter": "H",
+          "text": "уровень отправки"
+        }
+      ],
+      "correct_answers": [
+        "A",
+        "C",
+        "F"
+      ],
+      "answer_type": "multi",
+      "language": "ru",
+      "has_code": false,
+      "topic": "",
+      "verification": "verified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "Тест_трехуровневая_архитектура#1"
+      ],
+      "explanation": "Трёхуровневая архитектура: уровень интерфейса (клиент), уровень прикладной логики (сервер приложений) и уровень данных (СУБД).",
+      "topic_id": 3
+    },
+    {
+      "id": "DB-002",
+      "question": "Oперации соединения в реляционной алгебре",
+      "options": [
+        {
+          "letter": "A",
+          "text": "естественное соединение"
+        },
+        {
+          "letter": "B",
+          "text": "тета соединение"
+        },
+        {
+          "letter": "C",
+          "text": "условное соединение"
+        },
+        {
+          "letter": "D",
+          "text": "результативное соединение"
+        },
+        {
+          "letter": "E",
+          "text": "внешнее соединение"
+        },
+        {
+          "letter": "F",
+          "text": "альфа соединение"
+        }
+      ],
+      "correct_answers": [
+        "A",
+        "B",
+        "E"
+      ],
+      "answer_type": "multi",
+      "language": "ru",
+      "has_code": false,
+      "topic": "",
+      "verification": "verified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "Тест_трехуровневая_архитектура#2"
+      ],
+      "explanation": "Виды соединений: естественное (natural), тета (theta) и внешнее (outer) соединение.",
+      "topic_id": 4
+    },
+    {
+      "id": "DB-003",
+      "question": "Oперация над множествами: Set{1,2,3,4,5} union Set{1,3,4,8,9}",
+      "options": [
+        {
+          "letter": "A",
+          "text": "{8,9}"
+        },
+        {
+          "letter": "B",
+          "text": "{1,2,3,4,5,8,9}"
+        },
+        {
+          "letter": "C",
+          "text": "{2,8,9}"
+        },
+        {
+          "letter": "D",
+          "text": "{8,9,5,4,1,2,3}"
+        },
+        {
+          "letter": "E",
+          "text": "{1,2,3,4,5,1,3,4,8,9}"
+        },
+        {
+          "letter": "F",
+          "text": "{2,5}"
+        },
+        {
+          "letter": "G",
+          "text": "{1,3,4}"
+        }
+      ],
+      "correct_answers": [
+        "B"
+      ],
+      "answer_type": "single",
+      "language": "ru",
+      "has_code": false,
+      "topic": "",
+      "verification": "verified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "Тест_трехуровневая_архитектура#3"
+      ],
+      "explanation": "Объединение множеств даёт все уникальные элементы: {1,2,3,4,5,8,9}.",
+      "topic_id": 4
+    },
+    {
+      "id": "DB-004",
+      "question": "Oсновные объекты модели данных RDF",
+      "options": [
+        {
+          "letter": "A",
+          "text": "запрос"
+        },
+        {
+          "letter": "B",
+          "text": "параметры"
+        },
+        {
+          "letter": "C",
+          "text": "свойство"
+        },
+        {
+          "letter": "D",
+          "text": "ресурс"
+        },
+        {
+          "letter": "E",
+          "text": "таблица"
+        },
+        {
+          "letter": "F",
+          "text": "ячейка"
+        },
+        {
+          "letter": "G",
+          "text": "связь"
+        },
+        {
+          "letter": "H",
+          "text": "типы данных"
+        }
+      ],
+      "correct_answers": [
+        "C",
+        "D"
+      ],
+      "answer_type": "multi",
+      "language": "ru",
+      "has_code": false,
+      "topic": "",
+      "verification": "verified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "Тест_трехуровневая_архитектура#4"
+      ],
+      "explanation": "Основа RDF — триплет «ресурс — свойство — значение»: ключевые объекты это ресурс и свойство.",
+      "topic_id": 1
+    },
+    {
+      "id": "DB-005",
+      "question": "Kлюч, который используется для создания уникальных идентификаторов строк и содержит смысл сам по себе",
+      "options": [
+        {
+          "letter": "A",
+          "text": "уникальный"
+        },
+        {
+          "letter": "B",
+          "text": "составной"
+        },
+        {
+          "letter": "C",
+          "text": "естественный"
+        },
+        {
+          "letter": "D",
+          "text": "простой"
+        },
+        {
+          "letter": "E",
+          "text": "суррогатный"
+        },
+        {
+          "letter": "F",
+          "text": "искусственный"
+        },
+        {
+          "letter": "G",
+          "text": "вторичный"
+        },
+        {
+          "letter": "H",
+          "text": "внешний"
+        }
+      ],
+      "correct_answers": [
+        "C"
+      ],
+      "answer_type": "single",
+      "language": "ru",
+      "has_code": false,
+      "topic": "",
+      "verification": "verified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "Тест_трехуровневая_архитектура#5"
+      ],
+      "explanation": "Естественный ключ несёт смысл сам по себе (в отличие от суррогатного).",
+      "topic_id": 6
+    },
+    {
+      "id": "DB-006",
+      "question": "Aгрегирующая функция AVG",
+      "options": [
+        {
+          "letter": "A",
+          "text": "позволяет упорядочить выбранные записи только в порядке убывания (DESC)"
+        },
+        {
+          "letter": "B",
+          "text": "возвращает усредненное значение в указанном столбце"
+        },
+        {
+          "letter": "C",
+          "text": "возвращает количество значений в указанном столбце"
+        },
+        {
+          "letter": "D",
+          "text": "позволяет упорядочить выбранные записи только в порядке возрастания (ASC)"
+        },
+        {
+          "letter": "E",
+          "text": "возвращает сумму значений в указанном столбце"
+        },
+        {
+          "letter": "F",
+          "text": "возвращает максимальное значение в указанном столбце"
+        }
+      ],
+      "correct_answers": [
+        "B"
+      ],
+      "answer_type": "single",
+      "language": "ru",
+      "has_code": false,
+      "topic": "",
+      "verification": "verified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "Тест_трехуровневая_архитектура#6"
+      ],
+      "explanation": "AVG возвращает среднее значение по столбцу.",
+      "topic_id": 8
+    },
+    {
+      "id": "DB-007",
+      "question": "K операциям управления данных относится",
+      "options": [
+        {
+          "letter": "A",
+          "text": "описание атрибутов приложения"
+        },
+        {
+          "letter": "B",
+          "text": "интеграция мета данных"
+        },
+        {
+          "letter": "C",
+          "text": "указание ограничения целостности и защиты"
+        },
+        {
+          "letter": "D",
+          "text": "вставка в базу данных новых записей"
+        },
+        {
+          "letter": "E",
+          "text": "модификация сведений, хранимых в базе данных"
+        },
+        {
+          "letter": "F",
+          "text": "обозначение системного каталога"
+        }
+      ],
+      "correct_answers": [
+        "D",
+        "E"
+      ],
+      "answer_type": "multi",
+      "language": "ru",
+      "has_code": false,
+      "topic": "",
+      "verification": "verified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "Тест_трехуровневая_архитектура#7"
+      ],
+      "explanation": "К операциям манипулирования данными (DML) относятся вставка новых записей и модификация данных.",
+      "topic_id": 12
+    },
+    {
+      "id": "DB-008",
+      "question": "Запрос, который выбирает поля, где column1 не содержит значения от 1 до 3 включительно",
+      "options": [
+        {
+          "letter": "A",
+          "text": "select * from table where column1 =1 and 3"
+        },
+        {
+          "letter": "B",
+          "text": "select * from table where column1< =1 or column1 > 3"
+        },
+        {
+          "letter": "C",
+          "text": "select * from table where column1 not in (1,2,3)"
+        },
+        {
+          "letter": "D",
+          "text": "select * from table where column1 not between 1 and 3"
+        },
+        {
+          "letter": "E",
+          "text": "select * from table where column1<1 and column1>3"
+        },
+        {
+          "letter": "F",
+          "text": "select * from table where column1!=1 and column1!=2 and column1!=3"
+        },
+        {
+          "letter": "G",
+          "text": "select * from table where column1=1 and column1=2 and column1=3"
+        },
+        {
+          "letter": "H",
+          "text": "select * from table where column1=1 or column1=2 or column1=3"
+        }
+      ],
+      "correct_answers": [
+        "C",
+        "D",
+        "F"
+      ],
+      "answer_type": "multi",
+      "language": "ru",
+      "has_code": true,
+      "topic": "",
+      "verification": "verified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "Тест_трехуровневая_архитектура#8"
+      ],
+      "explanation": "Исключить значения 1–3: NOT IN (1,2,3), NOT BETWEEN 1 AND 3, либо !=1 AND !=2 AND !=3.",
+      "topic_id": 9
+    },
+    {
+      "id": "DB-009",
+      "question": "Запрос, сортирующий сотрудников по длине их имени и фамилии вместе взятых в порядке возрастания (last_name-фамилия, first_name –имя, – атрибуты таблицы table)",
+      "options": [
+        {
+          "letter": "A",
+          "text": "select last_name, first_name from table order by length(last_name) + length(first_name) desc"
+        },
+        {
+          "letter": "B",
+          "text": "select last_name, first_name from table order by length(concat(last_name, first_name))"
+        },
+        {
+          "letter": "C",
+          "text": "select last_name, first_name from table order by last_name +first_name"
+        },
+        {
+          "letter": "D",
+          "text": "select last_name, first_name from table order by length(last_name) + length(first_name)"
+        },
+        {
+          "letter": "E",
+          "text": "select last_name, first_name from table order by last_name ,first_name"
+        },
+        {
+          "letter": "F",
+          "text": "select last_name, first_name from table order by last_name ,length(first_name)"
+        }
+      ],
+      "correct_answers": [
+        "B",
+        "D"
+      ],
+      "answer_type": "multi",
+      "language": "ru",
+      "has_code": true,
+      "topic": "",
+      "verification": "verified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "Тест_трехуровневая_архитектура#9"
+      ],
+      "explanation": "Сортировка по сумме длин: order by length(last)+length(first) или length(concat(...)) — по возрастанию (без DESC).",
+      "topic_id": 10
+    },
+    {
+      "id": "DB-010",
+      "question": "Запрос, сортирующий сотрудников по последней букве фамилии в порядке (z to a)",
+      "options": [
+        {
+          "letter": "A",
+          "text": "select last_name from table order by substr(last_name,1,-1) asc"
+        },
+        {
+          "letter": "B",
+          "text": "select last_name from table order by instr(last_name,-1,1) desc"
+        },
+        {
+          "letter": "C",
+          "text": "select last_name from table order by last_name[-1]"
+        },
+        {
+          "letter": "D",
+          "text": "select last_name from table sort by substr(last_name,-1,-1)"
+        },
+        {
+          "letter": "E",
+          "text": "select last_name from table order by substr(last_name,-1,1) desc"
+        },
+        {
+          "letter": "F",
+          "text": "select last_name from table order by last_name desc"
+        },
+        {
+          "letter": "G",
+          "text": "select last_name from table sort by instr(last_name,-1,1) desc"
+        }
+      ],
+      "correct_answers": [
+        "E"
+      ],
+      "answer_type": "single",
+      "language": "ru",
+      "has_code": true,
+      "topic": "",
+      "verification": "verified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "Тест_трехуровневая_архитектура#10"
+      ],
+      "explanation": "Последняя буква фамилии: substr(last_name,-1,1), порядок z в a — DESC.",
+      "topic_id": 10
+    },
+    {
+      "id": "DB-011",
+      "question": "Oператор SELECT",
+      "options": [
+        {
+          "letter": "A",
+          "text": "выполняет выборки и отображении данных одной или более таблиц базы данных"
+        },
+        {
+          "letter": "B",
+          "text": "определение имен используемой таблицы или нескольких таблиц"
+        },
+        {
+          "letter": "C",
+          "text": "предназначен для добавления данных в таблицу"
+        },
+        {
+          "letter": "D",
+          "text": "предназначен для модификации уже помещенных в таблицу данных"
+        },
+        {
+          "letter": "E",
+          "text": "упорядочить выбранные записи в порядке возрастания (ASC) или убывания (DESC) значений любого столбца или комбинации столбцов"
+        },
+        {
+          "letter": "F",
+          "text": "возвращает сумму значений в указанном столбце"
+        }
+      ],
+      "correct_answers": [
+        "A"
+      ],
+      "answer_type": "single",
+      "language": "ru",
+      "has_code": true,
+      "topic": "",
+      "verification": "verified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "Тест_трехуровневая_архитектура#11"
+      ],
+      "explanation": "SELECT выполняет выборку и отображение данных из одной или нескольких таблиц.",
+      "topic_id": 9
+    },
+    {
+      "id": "DB-012",
+      "question": "DDL команда создания индекса",
+      "options": [
+        {
+          "letter": "A",
+          "text": "create or replace index idx on table1;"
+        },
+        {
+          "letter": "B",
+          "text": "create index idx on table1(column1);"
+        },
+        {
+          "letter": "C",
+          "text": "create or replace index idx on column1 of table1;"
+        },
+        {
+          "letter": "D",
+          "text": "create or replace index idx on table1(column1);"
+        },
+        {
+          "letter": "E",
+          "text": "create index idx for table1(column1);"
+        },
+        {
+          "letter": "F",
+          "text": "alter index idx on column1 of table1;"
+        },
+        {
+          "letter": "G",
+          "text": "create or replace index idx on table1(column1,column2,column3);"
+        },
+        {
+          "letter": "H",
+          "text": "create index idx on table1(column1,column2);"
+        }
+      ],
+      "correct_answers": [
+        "B"
+      ],
+      "answer_type": "single",
+      "language": "ru",
+      "has_code": false,
+      "topic": "",
+      "verification": "verified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "Тест_трехуровневая_архитектура#12"
+      ],
+      "explanation": "Создание индекса: CREATE INDEX idx ON table1(column1);",
+      "topic_id": 12
+    },
+    {
+      "id": "DB-013",
+      "question": "Aвтоматическая фиксация данных происходит при обстоятельствах",
+      "options": [
+        {
+          "letter": "A",
+          "text": "один sql запрос"
+        },
+        {
+          "letter": "B",
+          "text": "происходит одно заявление DCL"
+        },
+        {
+          "letter": "C",
+          "text": "происходит несколько последовательных заявлений DML"
+        },
+        {
+          "letter": "D",
+          "text": "происходит два последовательных запроса sql"
+        },
+        {
+          "letter": "E",
+          "text": "происходит одно заявление DML"
+        },
+        {
+          "letter": "F",
+          "text": "происходит одно заявление DDL"
+        }
+      ],
+      "correct_answers": [
+        "F"
+      ],
+      "answer_type": "single",
+      "language": "ru",
+      "has_code": false,
+      "topic": "",
+      "verification": "verified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "Тест_трехуровневая_архитектура#13"
+      ],
+      "explanation": "DDL-операторы вызывают автоматическую фиксацию (auto-commit).",
+      "topic_id": 12
+    },
+    {
+      "id": "DB-014",
+      "question": "Tранзакция базы данных состоит из",
+      "options": [
+        {
+          "letter": "A",
+          "text": "два последовательных заявления DCL"
+        },
+        {
+          "letter": "B",
+          "text": "один оператор DDL"
+        },
+        {
+          "letter": "C",
+          "text": "одно заявление DCL"
+        },
+        {
+          "letter": "D",
+          "text": "операторы DML, которые составляют одно последовательное изменение данных"
+        },
+        {
+          "letter": "E",
+          "text": "операторы DML, которые не составляют одно последовательное изменение данных"
+        },
+        {
+          "letter": "F",
+          "text": "sql запрос"
+        }
+      ],
+      "correct_answers": [
+        "D"
+      ],
+      "answer_type": "single",
+      "language": "ru",
+      "has_code": false,
+      "topic": "",
+      "verification": "verified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "Тест_трехуровневая_архитектура#14"
+      ],
+      "explanation": "Транзакция — набор операторов DML, образующих одно логически целостное изменение данных.",
+      "topic_id": 12
+    },
+    {
+      "id": "DB-015",
+      "question": "SQL является",
+      "options": [
+        {
+          "letter": "A",
+          "text": "объектно-ориентированным языком программирования"
+        },
+        {
+          "letter": "B",
+          "text": "инструмент обработки медиафайлов"
+        },
+        {
+          "letter": "C",
+          "text": "процедурным языком"
+        },
+        {
+          "letter": "D",
+          "text": "стандартным языком определения и манипулирования реляционными базами данных"
+        },
+        {
+          "letter": "E",
+          "text": "непроцедурным языком, построенным на использовании обычных английских слов (таких как SELECT, INSERT, DELETE)"
+        },
+        {
+          "letter": "F",
+          "text": "процедурным языком, который непредназначен для работы с базами данных"
+        },
+        {
+          "letter": "G",
+          "text": "инструмент 3D моделирования"
+        }
+      ],
+      "correct_answers": [
+        "D",
+        "E"
+      ],
+      "answer_type": "multi",
+      "language": "ru",
+      "has_code": true,
+      "topic": "",
+      "verification": "verified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "Тест_трехуровневая_архитектура#15"
+      ],
+      "explanation": "SQL — стандартный непроцедурный язык определения и манипулирования реляционными БД на основе английских слов.",
+      "topic_id": 9
+    },
+    {
+      "id": "DB-016",
+      "question": "B таблице products есть только 3 продукта. Цена первого продукта 15000, цена второго продукта 30000, третьего 2000. Результат запроса select price from products where price>all (select 1000 from dual UNION select 10000 from dual UNION select 12000 from dual);",
+      "options": [
+        {
+          "letter": "A",
+          "text": "15000, 30000"
+        },
+        {
+          "letter": "B",
+          "text": "10000,15000"
+        },
+        {
+          "letter": "C",
+          "text": "2000"
+        },
+        {
+          "letter": "D",
+          "text": "30000,15000"
+        },
+        {
+          "letter": "E",
+          "text": "30000"
+        },
+        {
+          "letter": "F",
+          "text": "15000, 2000"
+        }
+      ],
+      "correct_answers": [
+        "A"
+      ],
+      "answer_type": "single",
+      "language": "ru",
+      "has_code": true,
+      "topic": "",
+      "verification": "verified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "Тест_трехуровневая_архитектура#16"
+      ],
+      "explanation": "price > ALL(1000,10000,12000) => price > 12000 => {15000, 30000}.",
+      "topic_id": 13
+    },
+    {
+      "id": "DB-017",
+      "question": "B таблице products есть только 3 продукта. Цена первого продукта 15000, цена второго продукта 20000, третьего 2000. Результат запроса select price from products where price>any (select 1000 from dual UNION select 30000 from dual UNION select 12000 from dual);",
+      "options": [
+        {
+          "letter": "A",
+          "text": "15000, 20000"
+        },
+        {
+          "letter": "B",
+          "text": "20000,15000,2000"
+        },
+        {
+          "letter": "C",
+          "text": "2000,20000,15000"
+        },
+        {
+          "letter": "D",
+          "text": "10000,15000"
+        },
+        {
+          "letter": "E",
+          "text": "20000"
+        },
+        {
+          "letter": "F",
+          "text": "15000, 2000"
+        },
+        {
+          "letter": "G",
+          "text": "2000,15000,20000"
+        },
+        {
+          "letter": "H",
+          "text": "2000,20000"
+        }
+      ],
+      "correct_answers": [],
+      "answer_type": "single",
+      "language": "ru",
+      "has_code": true,
+      "topic": "",
+      "verification": "unverified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "Тест_трехуровневая_архитектура#17"
+      ],
+      "explanation": ""
+    },
+    {
+      "id": "DB-018",
+      "question": "Проблемы, которые предотвращают уровень изоляции транзакций READ COMMITTED",
+      "options": [
+        {
+          "letter": "A",
+          "text": "грязное чтение"
+        },
+        {
+          "letter": "B",
+          "text": "ложное добавление"
+        },
+        {
+          "letter": "C",
+          "text": "потерянное обновление"
+        },
+        {
+          "letter": "D",
+          "text": "фантомное удаление"
+        },
+        {
+          "letter": "E",
+          "text": "дублирующее чтение"
+        },
+        {
+          "letter": "F",
+          "text": "фантомное чтение"
+        },
+        {
+          "letter": "G",
+          "text": "повторяющееся чтение"
+        },
+        {
+          "letter": "H",
+          "text": "фантомное обновление"
+        }
+      ],
+      "correct_answers": [
+        "A"
+      ],
+      "answer_type": "single",
+      "language": "ru",
+      "has_code": false,
+      "topic": "",
+      "verification": "verified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "Тест_трехуровневая_архитектура#18"
+      ],
+      "explanation": "Уровень изоляции READ COMMITTED предотвращает «грязное чтение».",
+      "topic_id": 12
+    },
+    {
+      "id": "DB-019",
+      "question": "Проблемы при параллельном выполнении транзакций",
+      "options": [
+        {
+          "letter": "A",
+          "text": "грязное чтение"
+        },
+        {
+          "letter": "B",
+          "text": "потерянное обновление"
+        },
+        {
+          "letter": "C",
+          "text": "дублирующее чтение"
+        },
+        {
+          "letter": "D",
+          "text": "фантомное удаление"
+        },
+        {
+          "letter": "E",
+          "text": "повторяющееся чтение"
+        },
+        {
+          "letter": "F",
+          "text": "фантомное чтение"
+        },
+        {
+          "letter": "G",
+          "text": "ложное добавление"
+        },
+        {
+          "letter": "H",
+          "text": "фантомное обновление"
+        }
+      ],
+      "correct_answers": [
+        "A",
+        "B",
+        "F"
+      ],
+      "answer_type": "multi",
+      "language": "ru",
+      "has_code": false,
+      "topic": "",
+      "verification": "verified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "Тест_трехуровневая_архитектура#19"
+      ],
+      "explanation": "Аномалии параллелизма: грязное чтение, потерянное обновление и фантомное чтение.",
+      "topic_id": 12
+    },
+    {
+      "id": "DB-020",
+      "question": "Cоединение многих отношений в запросе может повлиять на чтение и сделать его чрезмерно медленным. Решение данной проблемы",
+      "options": [
+        {
+          "letter": "A",
+          "text": "удаление ненужных данных"
+        },
+        {
+          "letter": "B",
+          "text": "создание материализованного представления"
+        },
+        {
+          "letter": "C",
+          "text": "привести данные в 3 нормальную форму"
+        },
+        {
+          "letter": "D",
+          "text": "создание представления"
+        },
+        {
+          "letter": "E",
+          "text": "привести данные в 4 нормальную форму"
+        },
+        {
+          "letter": "F",
+          "text": "денормализация"
+        }
+      ],
+      "correct_answers": [
+        "B",
+        "F"
+      ],
+      "answer_type": "multi",
+      "language": "ru",
+      "has_code": false,
+      "topic": "",
+      "verification": "verified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "Тест_трехуровневая_архитектура#20"
+      ],
+      "explanation": "Ускорить медленные многотабличные соединения помогают денормализация и материализованные представления.",
+      "topic_id": 15
+    },
+    {
+      "id": "DB-021",
+      "question": "Iрiктеу операциясының синтаксисi:",
+      "options": [
+        {
+          "letter": "A",
+          "text": "A[X,Y,...,Z]"
+        },
+        {
+          "letter": "B",
+          "text": "A WHERE Z"
+        }
+      ],
+      "correct_answers": [
+        "B"
+      ],
+      "answer_type": "single",
+      "language": "ru",
+      "has_code": true,
+      "topic": "",
+      "verification": "verified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "БД(2)#17"
+      ],
+      "explanation": "Синтаксис операции выборки (selection): A WHERE Z.",
+      "topic_id": 4
+    },
+    {
+      "id": "DB-022",
+      "question": "Жолдар санын есептейтін оператор",
+      "options": [
+        {
+          "letter": "A",
+          "text": "AVG"
+        },
+        {
+          "letter": "D",
+          "text": "COUNT"
+        },
+        {
+          "letter": "E",
+          "text": "MAX"
+        }
+      ],
+      "correct_answers": [
+        "D"
+      ],
+      "answer_type": "single",
+      "language": "ru",
+      "has_code": false,
+      "topic": "",
+      "verification": "verified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "БД(2)#20"
+      ],
+      "explanation": "Количество строк считает COUNT.",
+      "topic_id": 8
+    },
+    {
+      "id": "DB-023",
+      "question": "Select Аты From Мектеп Where Жасы Like ‘25’",
+      "options": [
+        {
+          "letter": "A",
+          "text": "Аты(Айшат)"
+        },
+        {
+          "letter": "B",
+          "text": "Аты(Нұрайна)"
+        },
+        {
+          "letter": "C",
+          "text": "Аты(Нурбек)"
+        }
+      ],
+      "correct_answers": [
+        "C"
+      ],
+      "answer_type": "single",
+      "language": "ru",
+      "has_code": true,
+      "topic": "",
+      "verification": "verified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "БД(2)#8"
+      ],
+      "explanation": "WHERE Жасы LIKE «25» вернёт строку с возрастом 25 — Нурбек.",
+      "topic_id": 9
+    },
+    {
+      "id": "DB-024",
+      "question": "Деректер базасынан Клиенттер кестесін жою",
+      "options": [
+        {
+          "letter": "A",
+          "text": "INSERT INTO Клиенттер"
+        },
+        {
+          "letter": "B",
+          "text": "ALTER TABLE Клиенттер"
+        },
+        {
+          "letter": "C",
+          "text": "DROP TABLE Клиенттер"
+        }
+      ],
+      "correct_answers": [
+        "C"
+      ],
+      "answer_type": "single",
+      "language": "ru",
+      "has_code": true,
+      "topic": "",
+      "verification": "verified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "БД(2)#17"
+      ],
+      "explanation": "Удалить таблицу: DROP TABLE Клиенттер.",
+      "topic_id": 12
+    },
+    {
+      "id": "DB-025",
+      "question": "Команда добавления данных в таблицу",
+      "options": [
+        {
+          "letter": "A",
+          "text": "UPDATE"
+        },
+        {
+          "letter": "B",
+          "text": "GET"
+        },
+        {
+          "letter": "C",
+          "text": "DELETE"
+        },
+        {
+          "letter": "D",
+          "text": "POST"
+        },
+        {
+          "letter": "E",
+          "text": "PUT"
+        },
+        {
+          "letter": "F",
+          "text": "INSERT"
+        }
+      ],
+      "correct_answers": [
+        "F"
+      ],
+      "answer_type": "single",
+      "language": "ru",
+      "has_code": true,
+      "topic": "",
+      "verification": "verified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "Основная_подборка#DB1"
+      ],
+      "explanation": "Данные добавляет команда INSERT.",
+      "topic_id": 12
+    },
+    {
+      "id": "DB-026",
+      "question": "Агрегатная функция",
+      "options": [
+        {
+          "letter": "A",
+          "text": "AVG"
+        },
+        {
+          "letter": "B",
+          "text": "DELETE"
+        },
+        {
+          "letter": "C",
+          "text": "SELECT"
+        },
+        {
+          "letter": "D",
+          "text": "WHERE"
+        },
+        {
+          "letter": "E",
+          "text": "MIN"
+        },
+        {
+          "letter": "F",
+          "text": "FROM"
+        }
+      ],
+      "correct_answers": [
+        "A",
+        "E"
+      ],
+      "answer_type": "multi",
+      "language": "ru",
+      "has_code": true,
+      "topic": "",
+      "verification": "verified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "Основная_подборка#DB2"
+      ],
+      "explanation": "Агрегатные функции: AVG и MIN.",
+      "topic_id": 8
+    },
+    {
+      "id": "DB-027",
+      "question": "В подзапросах оператор IN",
+      "options": [
+        {
+          "letter": "A",
+          "text": "может использоваться с подзапросами"
+        },
+        {
+          "letter": "B",
+          "text": "предназначено для нахождения минимального значения"
+        },
+        {
+          "letter": "C",
+          "text": "предназначено для нахождения среднего значения"
+        },
+        {
+          "letter": "D",
+          "text": "определяет набор значений предиката, одно из которых не должно совпадать с другим по порядку"
+        },
+        {
+          "letter": "E",
+          "text": "не может использоваться с подзапросами"
+        },
+        {
+          "letter": "F",
+          "text": "предназначено для нахождения максимального значения"
+        },
+        {
+          "letter": "G",
+          "text": "определяет набор значений предиката, одно из которых должно совпадать с другим по порядку"
+        }
+      ],
+      "correct_answers": [
+        "A",
+        "G"
+      ],
+      "answer_type": "multi",
+      "language": "ru",
+      "has_code": false,
+      "topic": "",
+      "verification": "verified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "Основная_подборка#DB3"
+      ],
+      "explanation": "IN может использоваться с подзапросами и истинен, если значение совпадает с одним из набора.",
+      "topic_id": 13
+    },
+    {
+      "id": "DB-028",
+      "question": "Дана следующая таблица Students: Названия столбцов: ID, Name, Surname, GPA, COURSE. Ниже строки этой таблицы относительно столбцов выше: 1, Yerbol, Kazhigerey, 2.5, 3; 2, Aidana, Khassenova, 3, 2; 3, Marat, Aidosov, 4, 1; 4, Aidos, Kurmanov, 1.4, 4; 5, Elena, Fedorova, 2, 1; 6, Aidar, Elmanov, 3.1, 3; 7, Anna, Karenina, 2.1, 2. Выберите все результаты следующего SQL запроса SELECT ID FROM Students WHERE Name='Aidar';",
+      "options": [
+        {
+          "letter": "A",
+          "text": "1"
+        },
+        {
+          "letter": "B",
+          "text": "5"
+        },
+        {
+          "letter": "C",
+          "text": "2"
+        },
+        {
+          "letter": "D",
+          "text": "3"
+        },
+        {
+          "letter": "E",
+          "text": "Kurmanov"
+        },
+        {
+          "letter": "F",
+          "text": "6"
+        }
+      ],
+      "correct_answers": [
+        "F"
+      ],
+      "answer_type": "single",
+      "language": "ru",
+      "has_code": true,
+      "topic": "",
+      "verification": "verified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "Основная_подборка#DB4"
+      ],
+      "explanation": "WHERE Name=«Aidar» — это запись с ID=6.",
+      "topic_id": 9
+    },
+    {
+      "id": "DB-029",
+      "question": "Дана следующая таблица STUDENTS: Названия столбцов: ID, Name, Surname, GPA, COURSE. Ниже строки этой таблицы относительно столбцов выше: 1, Yerbol, Urmanov, 4, 3; 2, Aidana, Ashirbekova, 4, 3; 3, Marat, Aidosov, 4, 1; 4, Aidos, Kurmanov, 1.4, 4; 5, Elena, Fedorova, 2, 1; 6, Aidar, Elmanov, 3.1, 3; 7, Gaukhar, Khassenova, 2.9, 4. Выберите правильный SQL запрос, который для каждого курса (COURSE) определяет наименьший GPA",
+      "options": [
+        {
+          "letter": "A",
+          "text": "SELECT COURSE, MAX(COURSE) FROM STUDENTS GROUP BY COURSE;"
+        },
+        {
+          "letter": "B",
+          "text": "SELECT COURSE, MIN(COURSE) FROM STUDENTS GROUP BY COURSE;"
+        },
+        {
+          "letter": "C",
+          "text": "SELECT * FROM STUDENTS GROUP BY COURSE;"
+        },
+        {
+          "letter": "D",
+          "text": "SELECT COURSE, MAX(GPA) FROM STUDENTS GROUP BY COURSE;"
+        },
+        {
+          "letter": "E",
+          "text": "SELECT * FROM STUDENTS;"
+        },
+        {
+          "letter": "F",
+          "text": "SELECT COURSE, MIN(GPA) FROM STUDENTS GROUP BY COURSE;"
+        }
+      ],
+      "correct_answers": [
+        "F"
+      ],
+      "answer_type": "single",
+      "language": "ru",
+      "has_code": true,
+      "topic": "",
+      "verification": "verified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "Основная_подборка#DB5"
+      ],
+      "explanation": "Наименьший GPA по курсам: SELECT COURSE, MIN(GPA) ... GROUP BY COURSE.",
+      "topic_id": 10
+    },
+    {
+      "id": "DB-030",
+      "question": "Операция сокращения в реляционной базе данных",
+      "options": [
+        {
+          "letter": "A",
+          "text": "извлекает определенные столбцы из таблицы"
+        },
+        {
+          "letter": "B",
+          "text": "удаляет столбцы"
+        },
+        {
+          "letter": "C",
+          "text": "удаляет строки"
+        },
+        {
+          "letter": "D",
+          "text": "извлекает указанные строки из таблицы"
+        },
+        {
+          "letter": "E",
+          "text": "делает выборку строк"
+        },
+        {
+          "letter": "F",
+          "text": "осуществляет выборку столбцов из таблицы"
+        },
+        {
+          "letter": "G",
+          "text": "осуществляют комбинацию двух таблиц"
+        }
+      ],
+      "correct_answers": [
+        "D",
+        "E"
+      ],
+      "answer_type": "multi",
+      "language": "ru",
+      "has_code": false,
+      "topic": "",
+      "verification": "verified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "Основная_подборка#DB6"
+      ],
+      "explanation": "Операция сокращения (ограничение, selection) извлекает/выбирает строки таблицы.",
+      "topic_id": 4
+    },
+    {
+      "id": "DB-031",
+      "question": "Правильные утверждения касательно предикатов включающие подзапросы",
+      "options": [
+        {
+          "letter": "A",
+          "text": "предикаты не связаны с подзапросами"
+        },
+        {
+          "letter": "B",
+          "text": "предикаты включающие подзапросы используют конструкцию <выражение> <оператор> <подзапрос>"
+        },
+        {
+          "letter": "C",
+          "text": "в этом контексте отсутствуют правила"
+        },
+        {
+          "letter": "D",
+          "text": "предикаты с подзапросами являются необратимыми"
+        },
+        {
+          "letter": "E",
+          "text": "предикаты с подзапросами не являются необратимыми"
+        },
+        {
+          "letter": "F",
+          "text": "предикаты включающие подзапросы используют конструкцию <подзапрос> <оператор> <выражение>"
+        },
+        {
+          "letter": "G",
+          "text": "предикаты включающие подзапросы используют конструкцию <подзапрос> <оператор> <подзапрос>"
+        }
+      ],
+      "correct_answers": [
+        "B"
+      ],
+      "answer_type": "single",
+      "language": "ru",
+      "has_code": false,
+      "topic": "",
+      "verification": "verified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "Основная_подборка#DB7"
+      ],
+      "explanation": "Предикат с подзапросом: <выражение> <оператор> <подзапрос>.",
+      "topic_id": 13
+    },
+    {
+      "id": "DB-032",
+      "question": "Денормализация предполагает",
+      "options": [
+        {
+          "letter": "A",
+          "text": "наличие повышенной избыточности данных"
+        },
+        {
+          "letter": "B",
+          "text": "повышенное количество запросов фильтрации"
+        },
+        {
+          "letter": "C",
+          "text": "повышенное количество запросов поиска"
+        },
+        {
+          "letter": "D",
+          "text": "пониженное количество данных"
+        },
+        {
+          "letter": "E",
+          "text": "пониженное количество запросов фильтрации"
+        },
+        {
+          "letter": "F",
+          "text": "пониженное количество запросов поиска"
+        }
+      ],
+      "correct_answers": [
+        "A"
+      ],
+      "answer_type": "single",
+      "language": "ru",
+      "has_code": false,
+      "topic": "",
+      "verification": "verified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "Основная_подборка#DB8"
+      ],
+      "explanation": "Денормализация повышает избыточность данных (ради скорости чтения).",
+      "topic_id": 15
+    },
+    {
+      "id": "DB-033",
+      "question": "Предикат это",
+      "options": [
+        {
+          "letter": "A",
+          "text": "операнд"
+        },
+        {
+          "letter": "B",
+          "text": "информация"
+        },
+        {
+          "letter": "C",
+          "text": "дерево"
+        },
+        {
+          "letter": "D",
+          "text": "функция с истинностными значениями, которая, как и все функции, имеет ряд формальных параметров"
+        },
+        {
+          "letter": "E",
+          "text": "параметр"
+        },
+        {
+          "letter": "F",
+          "text": "оператор"
+        }
+      ],
+      "correct_answers": [
+        "D"
+      ],
+      "answer_type": "single",
+      "language": "ru",
+      "has_code": false,
+      "topic": "",
+      "verification": "verified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "Основная_подборка#DB9"
+      ],
+      "explanation": "Предикат — функция с истинностными значениями и набором формальных параметров.",
+      "topic_id": 9
+    },
+    {
+      "id": "DB-034",
+      "question": "Операторы, которых можно использовать в подзапросах",
+      "options": [
+        {
+          "letter": "A",
+          "text": "having"
+        },
+        {
+          "letter": "B",
+          "text": "BETWEEN"
+        },
+        {
+          "letter": "C",
+          "text": "LIKE"
+        },
+        {
+          "letter": "D",
+          "text": "group by"
+        },
+        {
+          "letter": "E",
+          "text": "ANY"
+        },
+        {
+          "letter": "F",
+          "text": "IS NULL"
+        },
+        {
+          "letter": "G",
+          "text": "IN"
+        }
+      ],
+      "correct_answers": [
+        "E",
+        "G"
+      ],
+      "answer_type": "multi",
+      "language": "ru",
+      "has_code": false,
+      "topic": "",
+      "verification": "verified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "Основная_подборка#DB10"
+      ],
+      "explanation": "С подзапросами используются операторы ANY и IN.",
+      "topic_id": 13
+    },
+    {
+      "id": "DB-035",
+      "question": "Дана следующая таблица: Названия столбцов: ID, Name, Surname, GPA, COURSE. Ниже строки этой таблицы относительно столбцов выше: 1, Yerbol, Kazhigerey, 2.5, 3; 2, Aidana, Khassenova, 3, 2; 3, Marat, Aidosov, 4, 1; 4, Aidos, Kurmanov, 1.4, 4; 5, Elena, Fedorova, 2, 1; 6, Aidar, Elmanov, 3.1, 3; 7, Anna, Karenina, 2.1, 2. Выберите правильно написанные SQL запросы использующие group by",
+      "options": [
+        {
+          "letter": "A",
+          "text": "SELECT COURSE, MIN(GPA) FROM STUDENTS GROUP BY COURSE;"
+        },
+        {
+          "letter": "B",
+          "text": "SELECT COURSE, WHICH(GPA) FROM STUDENTS GROUP BY COURSE;"
+        },
+        {
+          "letter": "C",
+          "text": "SELECT COURSE, MIN(GPA) FROM STUDENTS GROUPING BY COURSE;"
+        },
+        {
+          "letter": "D",
+          "text": "SELECT COURSE, MAX(GPA) FROM STUDENTS GROUPING BY COURSE;"
+        },
+        {
+          "letter": "E",
+          "text": "SELECT COURSE, AVG(GPA) FROM STUDENTS GROUP BY COURSE;"
+        },
+        {
+          "letter": "F",
+          "text": "SELECT WHO(COURSE), MAX(GPA) FROM STUDENTS GROUP BY COURSE;"
+        },
+        {
+          "letter": "G",
+          "text": "SELECT WHICH(COURSE), MAX(GPA) FROM STUDENTS GROUP BY COURSE;"
+        },
+        {
+          "letter": "H",
+          "text": "SELECT COURSE, MAX(GPA) FROM STUDENTS GROUP BY COURSE;"
+        }
+      ],
+      "correct_answers": [
+        "A",
+        "E",
+        "H"
+      ],
+      "answer_type": "multi",
+      "language": "ru",
+      "has_code": true,
+      "topic": "",
+      "verification": "verified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "Основная_подборка#DB11"
+      ],
+      "explanation": "Корректны запросы с MIN/AVG/MAX и правильным GROUP BY (не GROUPING BY).",
+      "topic_id": 10
+    },
+    {
+      "id": "DB-036",
+      "question": "Нормальная форма, где первичный ключ (целиком) должен описывать каждый неключевой атрибут, какая то часть первичного ключа отдельно не должна описывать каждый неключевой атрибут, но где возможны зависимости одних неключевых атрибутов от других.",
+      "options": [
+        {
+          "letter": "A",
+          "text": "4NF"
+        },
+        {
+          "letter": "B",
+          "text": "5NF"
+        },
+        {
+          "letter": "C",
+          "text": "6NF"
+        },
+        {
+          "letter": "D",
+          "text": "2NF"
+        },
+        {
+          "letter": "E",
+          "text": "3NF"
+        },
+        {
+          "letter": "F",
+          "text": "1NF"
+        }
+      ],
+      "correct_answers": [
+        "D"
+      ],
+      "answer_type": "single",
+      "language": "ru",
+      "has_code": false,
+      "topic": "",
+      "verification": "verified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "Основная_подборка#DB12"
+      ],
+      "explanation": "Это 2NF: ключ целиком определяет неключевые атрибуты, частичных зависимостей нет.",
+      "topic_id": 15
+    },
+    {
+      "id": "DB-037",
+      "question": "Абстрактная машина доступа к данным, с которой взаимодействует пользователь",
+      "options": [
+        {
+          "letter": "A",
+          "text": "строки"
+        },
+        {
+          "letter": "B",
+          "text": "запросы"
+        },
+        {
+          "letter": "C",
+          "text": "деревья"
+        },
+        {
+          "letter": "D",
+          "text": "столбцы"
+        },
+        {
+          "letter": "E",
+          "text": "модель данных"
+        },
+        {
+          "letter": "F",
+          "text": "группа данных"
+        }
+      ],
+      "correct_answers": [
+        "E"
+      ],
+      "answer_type": "single",
+      "language": "ru",
+      "has_code": false,
+      "topic": "",
+      "verification": "verified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "Основная_подборка#DB13"
+      ],
+      "explanation": "Абстрактная машина доступа к данным — это модель данных.",
+      "topic_id": 1
+    },
+    {
+      "id": "DB-038",
+      "question": "Правильно написанные SQL команды для изменения данных в таблице",
+      "options": [
+        {
+          "letter": "A",
+          "text": "CHANGE Students SET COURSE = 4 WHERE ID = 1;"
+        },
+        {
+          "letter": "B",
+          "text": "UPDATE Students ASSIGN COURSE = 4 WHERE ID = 1;"
+        },
+        {
+          "letter": "C",
+          "text": "UPDATE Students SET COURSE = 2 WHERE ID = 1;"
+        },
+        {
+          "letter": "D",
+          "text": "UPDATE Students SET COURSE = 4 WHERE ID = 1;"
+        },
+        {
+          "letter": "E",
+          "text": "CHANGE Students SET COURSE = 4 WHERE ID = 5;"
+        },
+        {
+          "letter": "F",
+          "text": "UPDATE Students ATTACH COURSE = 4 WHERE ID = 1;"
+        },
+        {
+          "letter": "G",
+          "text": "UPDATE Students SET COURSE = 4 WHICH ID = 1;"
+        }
+      ],
+      "correct_answers": [
+        "C",
+        "D"
+      ],
+      "answer_type": "multi",
+      "language": "ru",
+      "has_code": true,
+      "topic": "",
+      "verification": "verified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "Основная_подборка#DB14"
+      ],
+      "explanation": "Изменение данных: UPDATE ... SET ... WHERE ... (CHANGE/ASSIGN/ATTACH — неверны).",
+      "topic_id": 12
+    },
+    {
+      "id": "DB-039",
+      "question": "Оно используется для объединения таблиц",
+      "options": [
+        {
+          "letter": "A",
+          "text": "WHICH"
+        },
+        {
+          "letter": "B",
+          "text": "ALTER"
+        },
+        {
+          "letter": "C",
+          "text": "WHY"
+        },
+        {
+          "letter": "D",
+          "text": "CONNECT"
+        },
+        {
+          "letter": "E",
+          "text": "CREATE"
+        },
+        {
+          "letter": "F",
+          "text": "JOIN"
+        }
+      ],
+      "correct_answers": [
+        "F"
+      ],
+      "answer_type": "single",
+      "language": "ru",
+      "has_code": true,
+      "topic": "",
+      "verification": "verified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "Основная_подборка#DB15"
+      ],
+      "explanation": "Объединение таблиц выполняет JOIN.",
+      "topic_id": 11
+    },
+    {
+      "id": "DB-040",
+      "question": "Переменная отношения R находится в третьей нормальной форме тогда и только тогда, когда для каждой функциональной зависимости X → A в переменной отношения R верно по крайней мере одно из следующих утверждений",
+      "options": [
+        {
+          "letter": "A",
+          "text": "X входит в состав некоторого потенциального ключа переменной отношения R"
+        },
+        {
+          "letter": "B",
+          "text": "X не входит в состав некоторого потенциального ключа переменной отношения R"
+        },
+        {
+          "letter": "C",
+          "text": "Подмножество X является суперключом переменной отношения R"
+        },
+        {
+          "letter": "D",
+          "text": "Атрибут A входит в состав некоторого потенциального ключа переменной отношения R"
+        },
+        {
+          "letter": "E",
+          "text": "Атрибут A не входит в состав некоторого потенциального ключа переменной отношения R"
+        },
+        {
+          "letter": "F",
+          "text": "Подмножество X не включает атрибут A (т.е. данная ФЗ тривиальна)"
+        },
+        {
+          "letter": "G",
+          "text": "Подмножество X не является суперключом переменной отношения R"
+        },
+        {
+          "letter": "H",
+          "text": "Подмножество X включает атрибут A (т.е. данная ФЗ тривиальна)"
+        }
+      ],
+      "correct_answers": [
+        "C",
+        "D"
+      ],
+      "answer_type": "multi",
+      "language": "ru",
+      "has_code": false,
+      "topic": "",
+      "verification": "verified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "Основная_подборка#DB16"
+      ],
+      "explanation": "3НФ: для каждой ФЗ X в A либо X — суперключ, либо A входит в потенциальный ключ.",
+      "topic_id": 15
+    },
+    {
+      "id": "DB-041",
+      "question": "Аксиомы Армстронга в контексте функциональных зависимостей",
+      "options": [
+        {
+          "letter": "A",
+          "text": "образность"
+        },
+        {
+          "letter": "B",
+          "text": "серийность"
+        },
+        {
+          "letter": "C",
+          "text": "параллельность"
+        },
+        {
+          "letter": "D",
+          "text": "рефлексивность"
+        },
+        {
+          "letter": "E",
+          "text": "балансированность"
+        },
+        {
+          "letter": "F",
+          "text": "дополнение"
+        },
+        {
+          "letter": "G",
+          "text": "транзитивность"
+        },
+        {
+          "letter": "H",
+          "text": "интеграция"
+        }
+      ],
+      "correct_answers": [
+        "D",
+        "F",
+        "G"
+      ],
+      "answer_type": "multi",
+      "language": "ru",
+      "has_code": false,
+      "topic": "",
+      "verification": "verified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "Основная_подборка#DB17"
+      ],
+      "explanation": "Аксиомы Армстронга: рефлексивность, дополнение (augmentation), транзитивность.",
+      "topic_id": 6
+    },
+    {
+      "id": "DB-042",
+      "question": "Метод сущность-связь называют также методом",
+      "options": [
+        {
+          "letter": "A",
+          "text": "EA-диаграмм"
+        },
+        {
+          "letter": "B",
+          "text": "AE-диаграмм"
+        },
+        {
+          "letter": "C",
+          "text": "EE-диаграмм"
+        },
+        {
+          "letter": "D",
+          "text": "RR-диаграмм"
+        },
+        {
+          "letter": "E",
+          "text": "EZ-диаграмм"
+        },
+        {
+          "letter": "F",
+          "text": "ER-диаграмм"
+        }
+      ],
+      "correct_answers": [
+        "F"
+      ],
+      "answer_type": "single",
+      "language": "ru",
+      "has_code": false,
+      "topic": "",
+      "verification": "verified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "Основная_подборка#DB18"
+      ],
+      "explanation": "Метод «сущность-связь» — это метод ER-диаграмм.",
+      "topic_id": 5
+    },
+    {
+      "id": "DB-043",
+      "question": "Дана таблица Students (ID, Name, Surname, GPA, COURSE) со строками: 1, Yerbol, Kazhigerey, 2.5, 3; 2, Aidana, Khassenova, 3, 2; 3, Marat, Aidosov, 4, 1; 4, Aidos, Kurmanov, 1.4, 4; 5, Elena, Fedorova, 2, 1; 6, Aidar, Elmanov, 3.1, 3; 7, Anna, Karenina, 2.1, 2. Выберите все результаты следующего SQL запроса SELECT Name FROM Students WHERE ID=1 OR ID=2;",
+      "options": [
+        {
+          "letter": "A",
+          "text": "Yerbol"
+        },
+        {
+          "letter": "B",
+          "text": "3"
+        },
+        {
+          "letter": "C",
+          "text": "Karenina"
+        },
+        {
+          "letter": "D",
+          "text": "Aidar"
+        },
+        {
+          "letter": "E",
+          "text": "5"
+        },
+        {
+          "letter": "F",
+          "text": "4"
+        },
+        {
+          "letter": "G",
+          "text": "Aidana"
+        }
+      ],
+      "correct_answers": [
+        "A",
+        "G"
+      ],
+      "answer_type": "multi",
+      "language": "ru",
+      "has_code": true,
+      "topic": "",
+      "verification": "verified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "Основная_подборка#DB19"
+      ],
+      "explanation": "WHERE ID=1 OR ID=2 => имена Yerbol и Aidana.",
+      "topic_id": 9
+    },
+    {
+      "id": "DB-044",
+      "question": "3 таблице _лнных сгдентов уобавь-е ₽ ячейку € номером гять 25 баллов на языке SQL",
+      "options": [
+        {
+          "letter": "A",
+          "text": "Вотрос Ng 1"
+        },
+        {
+          "letter": "B",
+          "text": "create student insent 25 where number = 5 :"
+        },
+        {
+          "letter": "C",
+          "text": "enter 25 10 grade ihere number = 5:"
+        },
+        {
+          "letter": "D",
+          "text": "insert 25 to mumber=l5;"
+        },
+        {
+          "letter": "E",
+          "text": "insert student set grade = grade + 25 where number = 5 ;"
+        },
+        {
+          "letter": "F",
+          "text": "update student set grade= grade + 25 ihere mumber = 5 :"
+        }
+      ],
+      "correct_answers": [],
+      "answer_type": "single",
+      "language": "ru",
+      "has_code": true,
+      "topic": "",
+      "verification": "ocr_clean_pdf",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "Database/#Database (1).png",
+        "База данных с ответами 2. docx(1).pdf(clean)"
+      ],
+      "explanation": ""
+    },
+    {
+      "id": "DB-045",
+      "question": "Ha SQL вывёсти номера: нчена н номёра отделов работников: сттжаших ₽ отделax 15:17 19",
+      "options": [
+        {
+          "letter": "A",
+          "text": "Вотрос Ng 2"
+        },
+        {
+          "letter": "B",
+          "text": "select number name: dept_number from emp uhere dept_number in (15: 17: 19)"
+        },
+        {
+          "letter": "C",
+          "text": "select from emp uhere dept_number in (15: 17: 19)"
+        },
+        {
+          "letter": "D",
+          "text": "select number name: dept_uumber from emp where dept_number order in (15: 17. 19)"
+        },
+        {
+          "letter": "E",
+          "text": "select number: name: dept_uumber fromn emp uhere dept number on (15. 17.19)"
+        },
+        {
+          "letter": "F",
+          "text": "select number: name: dept_mumber from emp uhere dept_number betveen (15: 17: 19)"
+        },
+        {
+          "letter": "G",
+          "text": "select number name: dept_number from emp uhere dept_mumber =15 or dept_number =17 or dept_number 19)"
+        }
+      ],
+      "correct_answers": [],
+      "answer_type": "single",
+      "language": "ru",
+      "has_code": true,
+      "topic": "",
+      "verification": "ocr_clean_pdf",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "Database/#Database (2).png",
+        "База данных с ответами 2. docx(1).pdf(clean)"
+      ],
+      "explanation": ""
+    },
+    {
+      "id": "DB-046",
+      "question": "А) 1",
+      "options": [
+        {
+          "letter": "A",
+          "text": "5.45"
+        },
+        {
+          "letter": "B",
+          "text": "50"
+        },
+        {
+          "letter": "C",
+          "text": "55"
+        },
+        {
+          "letter": "D",
+          "text": "5"
+        },
+        {
+          "letter": "E",
+          "text": "5.45.50"
+        }
+      ],
+      "correct_answers": [],
+      "answer_type": "single",
+      "language": "ru",
+      "has_code": false,
+      "topic": "",
+      "verification": "unverified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "Database/#Database (3).png"
+      ],
+      "explanation": ""
+    },
+    {
+      "id": "DB-047",
+      "question": "РезульIа- выпОлнених слеrюшейхомакзы на SQL Create table stud (xir: ! int): insert into siud alues (00545): insert into siud ralues {006:70): insert into siud ralues (00795): inze t into suc -alues (00S:100); order b  :",
+      "options": [
+        {
+          "letter": "A",
+          "text": "Зогрсс NE 6"
+        },
+        {
+          "letter": "B",
+          "text": "4) - 5"
+        },
+        {
+          "letter": "C",
+          "text": "-5:70.95.100"
+        },
+        {
+          "letter": "D",
+          "text": "310"
+        },
+        {
+          "letter": "E",
+          "text": "F} 100. 95: 70.45"
+        }
+      ],
+      "correct_answers": [],
+      "answer_type": "single",
+      "language": "ru",
+      "has_code": true,
+      "topic": "",
+      "verification": "ocr_clean_pdf",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "Database/#Database (6).png",
+        "База данных с ответами 2. docx(1).pdf(clean)"
+      ],
+      "explanation": ""
+    },
+    {
+      "id": "DB-048",
+      "question": "Возможные варианты ответов следуюшего кола SQL select name troll stud where name like А о",
+      "options": [
+        {
+          "letter": "A",
+          "text": "Serzhan"
+        },
+        {
+          "letter": "B",
+          "text": "Alibek"
+        },
+        {
+          "letter": "C",
+          "text": "Samal"
+        },
+        {
+          "letter": "D",
+          "text": "Serik"
+        },
+        {
+          "letter": "E",
+          "text": "Saken"
+        },
+        {
+          "letter": "F",
+          "text": "Aigul"
+        },
+        {
+          "letter": "G",
+          "text": "Aisulu"
+        },
+        {
+          "letter": "H",
+          "text": "Raimbek"
+        }
+      ],
+      "correct_answers": [],
+      "answer_type": "single",
+      "language": "ru",
+      "has_code": true,
+      "topic": "",
+      "verification": "unverified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "Database/#Database (7).png"
+      ],
+      "explanation": ""
+    },
+    {
+      "id": "DB-049",
+      "question": "Для упорядочивания по алфавиту используется следуюшая команда",
+      "options": [
+        {
+          "letter": "A",
+          "text": "list"
+        },
+        {
+          "letter": "B",
+          "text": "join"
+        },
+        {
+          "letter": "C",
+          "text": "change fromA to Z"
+        },
+        {
+          "letter": "D",
+          "text": "order by"
+        },
+        {
+          "letter": "E",
+          "text": "between Ato Z"
+        },
+        {
+          "letter": "F",
+          "text": "from Ato Z"
+        },
+        {
+          "letter": "G",
+          "text": "filter by"
+        },
+        {
+          "letter": "H",
+          "text": "filter on"
+        }
+      ],
+      "correct_answers": [
+        "D"
+      ],
+      "answer_type": "single",
+      "language": "ru",
+      "has_code": true,
+      "topic": "",
+      "verification": "verified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "Database/#Database (8).png"
+      ],
+      "explanation": "Упорядочивание по алфавиту — ORDER BY.",
+      "topic_id": 10
+    },
+    {
+      "id": "DB-050",
+      "question": "Резулвтат выпОлненкя Слеттших сператоров SQL SELECINAME DICSIPLINE FROM STUD WHERE GPADE = 0: F) Nzzgul Geogrzphy; GRADE=_0",
+      "options": [
+        {
+          "letter": "A",
+          "text": "Вогрсс NE 9"
+        },
+        {
+          "letter": "B",
+          "text": "4) #botz Ma-h"
+        },
+        {
+          "letter": "C",
+          "text": "40 Akbota Mzth"
+        },
+        {
+          "letter": "D",
+          "text": "#lbota Math 47"
+        },
+        {
+          "letter": "E",
+          "text": "Nizgul Geography: -0"
+        },
+        {
+          "letter": "F",
+          "text": "Nazgul Geography"
+        },
+        {
+          "letter": "G",
+          "text": "F} Batz Biolcg:"
+        },
+        {
+          "letter": "H",
+          "text": "Batz; Biolog: -0"
+        }
+      ],
+      "correct_answers": [],
+      "answer_type": "single",
+      "language": "ru",
+      "has_code": true,
+      "topic": "",
+      "verification": "ocr_clean_pdf",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "Database/#Database (9).png",
+        "База данных с ответами 2. docx(1).pdf(clean)"
+      ],
+      "explanation": ""
+    },
+    {
+      "id": "DB-051",
+      "question": "Названые таблишы в слелующем коде: Insert into data (id; name: table table2",
+      "options": [
+        {
+          "letter": "A",
+          "text": "insert"
+        },
+        {
+          "letter": "B",
+          "text": "нет названия таблшы"
+        },
+        {
+          "letter": "C",
+          "text": "name"
+        },
+        {
+          "letter": "D",
+          "text": "table?"
+        },
+        {
+          "letter": "E",
+          "text": "into"
+        },
+        {
+          "letter": "F",
+          "text": "table"
+        },
+        {
+          "letter": "G",
+          "text": "data"
+        }
+      ],
+      "correct_answers": [],
+      "answer_type": "single",
+      "language": "ru",
+      "has_code": true,
+      "topic": "",
+      "verification": "unverified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "Database/#Database (10).png"
+      ],
+      "explanation": ""
+    },
+    {
+      "id": "DB-052",
+      "question": "Шспользованне команды SELECT",
+      "options": [
+        {
+          "letter": "A",
+          "text": "набор"
+        },
+        {
+          "letter": "B",
+          "text": "начало"
+        },
+        {
+          "letter": "C",
+          "text": "использованне"
+        },
+        {
+          "letter": "D",
+          "text": "флльтрашя"
+        },
+        {
+          "letter": "E",
+          "text": "созданне"
+        },
+        {
+          "letter": "F",
+          "text": "отбор"
+        },
+        {
+          "letter": "G",
+          "text": "корреляшя"
+        },
+        {
+          "letter": "H",
+          "text": "выбор"
+        }
+      ],
+      "correct_answers": [],
+      "answer_type": "single",
+      "language": "ru",
+      "has_code": true,
+      "topic": "",
+      "verification": "unverified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "Database/#Database (11).png"
+      ],
+      "explanation": ""
+    },
+    {
+      "id": "DB-053",
+      "question": "Правильный синтаксис напсания кода на SQL",
+      "options": [
+        {
+          "letter": "A",
+          "text": "select from students"
+        },
+        {
+          "letter": "B",
+          "text": "select *from data"
+        },
+        {
+          "letter": "C",
+          "text": "select from data"
+        },
+        {
+          "letter": "D",
+          "text": "select *data from students"
+        },
+        {
+          "letter": "E",
+          "text": "select data *students from"
+        },
+        {
+          "letter": "F",
+          "text": "select *stud from data"
+        },
+        {
+          "letter": "G",
+          "text": "select from *data"
+        },
+        {
+          "letter": "H",
+          "text": "select data from students"
+        }
+      ],
+      "correct_answers": [],
+      "answer_type": "single",
+      "language": "ru",
+      "has_code": true,
+      "topic": "",
+      "verification": "unverified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "Database/#Database (12).png"
+      ],
+      "explanation": ""
+    },
+    {
+      "id": "DB-054",
+      "question": "Команда SQL",
+      "options": [
+        {
+          "letter": "A",
+          "text": "realter"
+        },
+        {
+          "letter": "B",
+          "text": "alter"
+        },
+        {
+          "letter": "C",
+          "text": "print"
+        },
+        {
+          "letter": "D",
+          "text": "coult"
+        },
+        {
+          "letter": "E",
+          "text": "select"
+        },
+        {
+          "letter": "F",
+          "text": "rechange"
+        },
+        {
+          "letter": "G",
+          "text": "change"
+        },
+        {
+          "letter": "H",
+          "text": "scaler"
+        }
+      ],
+      "correct_answers": [],
+      "answer_type": "single",
+      "language": "ru",
+      "has_code": true,
+      "topic": "",
+      "verification": "unverified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "Database/#Database (13).png"
+      ],
+      "explanation": ""
+    },
+    {
+      "id": "DB-055",
+      "question": "Впды операшш можно применять к базам данных",
+      "options": [
+        {
+          "letter": "A",
+          "text": "созланне"
+        },
+        {
+          "letter": "B",
+          "text": "удалене"
+        },
+        {
+          "letter": "C",
+          "text": "спстемапзашя"
+        },
+        {
+          "letter": "D",
+          "text": "форматрованне"
+        },
+        {
+          "letter": "E",
+          "text": "опт заця"
+        },
+        {
+          "letter": "F",
+          "text": "сжатне"
+        },
+        {
+          "letter": "G",
+          "text": "корреляшя"
+        },
+        {
+          "letter": "H",
+          "text": "обновленне"
+        }
+      ],
+      "correct_answers": [],
+      "answer_type": "single",
+      "language": "ru",
+      "has_code": false,
+      "topic": "",
+      "verification": "unverified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "Database/#Database (14).png"
+      ],
+      "explanation": ""
+    },
+    {
+      "id": "DB-056",
+      "question": "Внлы стрзчных -анных = работё 57",
+      "options": [
+        {
+          "letter": "A",
+          "text": "Бстрос Ng 15"
+        },
+        {
+          "letter": "B",
+          "text": "ulrown"
+        },
+        {
+          "letter": "C",
+          "text": "{4.6,3.6.0.10}"
+        },
+        {
+          "letter": "D",
+          "text": "Iue: fal:e"
+        },
+        {
+          "letter": "E",
+          "text": "0} 1 2.6 :stud:"
+        },
+        {
+          "letter": "F",
+          "text": "suud . #string:"
+        },
+        {
+          "letter": "G",
+          "text": "1- $"
+        },
+        {
+          "letter": "H",
+          "text": "null"
+        }
+      ],
+      "correct_answers": [],
+      "answer_type": "single",
+      "language": "ru",
+      "has_code": false,
+      "topic": "",
+      "verification": "ocr_clean_pdf",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "Database/#Database (15).png",
+        "База данных с ответами 2. docx(1).pdf(clean)"
+      ],
+      "explanation": ""
+    },
+    {
+      "id": "DB-057",
+      "question": "Операшш которые нельзя прпменять к базам данных",
+      "options": [
+        {
+          "letter": "A",
+          "text": "сжатне"
+        },
+        {
+          "letter": "B",
+          "text": "удаленне данных"
+        },
+        {
+          "letter": "C",
+          "text": "обновленне"
+        },
+        {
+          "letter": "D",
+          "text": "оптпшзаця"
+        },
+        {
+          "letter": "E",
+          "text": "удаление файлов"
+        },
+        {
+          "letter": "F",
+          "text": "созданне"
+        },
+        {
+          "letter": "G",
+          "text": "вставлять данные"
+        },
+        {
+          "letter": "H",
+          "text": "форматпрованне"
+        }
+      ],
+      "correct_answers": [],
+      "answer_type": "single",
+      "language": "ru",
+      "has_code": false,
+      "topic": "",
+      "verification": "unverified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "Database/#Database (16).png"
+      ],
+      "explanation": ""
+    },
+    {
+      "id": "DB-058",
+      "question": "Команды которые не существуют в языке SQL",
+      "options": [
+        {
+          "letter": "A",
+          "text": "insert"
+        },
+        {
+          "letter": "B",
+          "text": "select"
+        },
+        {
+          "letter": "C",
+          "text": "delete"
+        },
+        {
+          "letter": "D",
+          "text": "enter"
+        },
+        {
+          "letter": "E",
+          "text": "input"
+        },
+        {
+          "letter": "F",
+          "text": "update"
+        },
+        {
+          "letter": "G",
+          "text": "create"
+        },
+        {
+          "letter": "H",
+          "text": "stalt"
+        }
+      ],
+      "correct_answers": [],
+      "answer_type": "single",
+      "language": "ru",
+      "has_code": true,
+      "topic": "",
+      "verification": "unverified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "Database/#Database (17).png"
+      ],
+      "explanation": ""
+    },
+    {
+      "id": "DB-059",
+      "question": "Названия столбцов следуюшем коде: Inselt into data (id; name table)",
+      "options": [
+        {
+          "letter": "A",
+          "text": "into"
+        },
+        {
+          "letter": "B",
+          "text": "table"
+        },
+        {
+          "letter": "C",
+          "text": "name"
+        },
+        {
+          "letter": "D",
+          "text": "insert"
+        },
+        {
+          "letter": "E",
+          "text": "нет названогя столбцов"
+        },
+        {
+          "letter": "F",
+          "text": "data"
+        },
+        {
+          "letter": "G",
+          "text": "insert into. data id. name table"
+        }
+      ],
+      "correct_answers": [],
+      "answer_type": "single",
+      "language": "ru",
+      "has_code": true,
+      "topic": "",
+      "verification": "unverified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "Database/#Database (18).png"
+      ],
+      "explanation": ""
+    },
+    {
+      "id": "DB-060",
+      "question": "Резулыат выполнення следуюших операторов SQL: SELECTID; NAME CITY, GROUP FROM STUDENT WHERE GROUP=I;",
+      "options": [
+        {
+          "letter": "A",
+          "text": "Erbol; Atyrau, 2"
+        },
+        {
+          "letter": "B",
+          "text": "Zhamna; Karaganda; 2"
+        },
+        {
+          "letter": "C",
+          "text": "5. Almas Aktau"
+        },
+        {
+          "letter": "D",
+          "text": "2. Zhangir; Kostanay"
+        },
+        {
+          "letter": "E",
+          "text": "2; Edige; Shimkent;"
+        },
+        {
+          "letter": "F",
+          "text": "Aiguil Kostanay; 1, 2"
+        },
+        {
+          "letter": "G",
+          "text": "1. Alma; Almaty:"
+        },
+        {
+          "letter": "H",
+          "text": "1, Altyn Oral; 2"
+        }
+      ],
+      "correct_answers": [],
+      "answer_type": "single",
+      "language": "ru",
+      "has_code": true,
+      "topic": "",
+      "verification": "unverified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "Database/#Database (19).png"
+      ],
+      "explanation": ""
+    },
+    {
+      "id": "DB-061",
+      "question": "Правшльный варнант написання запроса на SQL",
+      "options": [
+        {
+          "letter": "A",
+          "text": "select *univer; *faculty: group from students where name= Alma\""
+        },
+        {
+          "letter": "B",
+          "text": "select *univer; faculty; group from students where name Alma\""
+        },
+        {
+          "letter": "C",
+          "text": "select * univer' , \"faculty\" 'group\" from \"students \" where   name Alma"
+        },
+        {
+          "letter": "D",
+          "text": "select *from students where name= Alma\""
+        },
+        {
+          "letter": "E",
+          "text": "select univer; faculty group from students where \"name\" = \"Alma\""
+        },
+        {
+          "letter": "F",
+          "text": "select univer; faculty group from students where name= Alna"
+        },
+        {
+          "letter": "G",
+          "text": "select univer; faculty group from students where name= Alma"
+        },
+        {
+          "letter": "H",
+          "text": "select * univer' , 'faculty\"   \"group\" from students where \"name\"  = Alma"
+        }
+      ],
+      "correct_answers": [],
+      "answer_type": "single",
+      "language": "ru",
+      "has_code": true,
+      "topic": "",
+      "verification": "unverified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "Database/#Database (20).png"
+      ],
+      "explanation": ""
+    },
+    {
+      "id": "DB-062",
+      "question": "С:а (.1, -",
+      "options": [
+        {
+          "letter": "A",
+          "text": "Вид отношения базе ланных нежлу Пользонаелен"
+        },
+        {
+          "letter": "B",
+          "text": "его ID картой (или удостовереннем личности)"
+        },
+        {
+          "letter": "C",
+          "text": "3:1"
+        },
+        {
+          "letter": "D",
+          "text": "21"
+        },
+        {
+          "letter": "E",
+          "text": "I:M"
+        },
+        {
+          "letter": "F",
+          "text": "1:1"
+        },
+        {
+          "letter": "G",
+          "text": "1:3"
+        }
+      ],
+      "correct_answers": [],
+      "answer_type": "single",
+      "language": "ru",
+      "has_code": false,
+      "topic": "",
+      "verification": "unverified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "Database/#Database (61).png"
+      ],
+      "explanation": ""
+    },
+    {
+      "id": "DB-063",
+      "question": "Кза (., -",
+      "options": [
+        {
+          "letter": "A",
+          "text": "dept_number"
+        },
+        {
+          "letter": "B",
+          "text": "emp"
+        },
+        {
+          "letter": "C",
+          "text": "name"
+        },
+        {
+          "letter": "D",
+          "text": "number"
+        },
+        {
+          "letter": "E",
+          "text": "select"
+        },
+        {
+          "letter": "F",
+          "text": "where"
+        }
+      ],
+      "correct_answers": [],
+      "answer_type": "single",
+      "language": "ru",
+      "has_code": true,
+      "topic": "",
+      "verification": "unverified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "Database/#Database (62).png"
+      ],
+      "explanation": ""
+    },
+    {
+      "id": "DB-064",
+      "question": "U  DD аj .41:],",
+      "options": [
+        {
+          "letter": "A",
+          "text": "НФ Бойс Колда"
+        },
+        {
+          "letter": "B",
+          "text": "4 НФ"
+        },
+        {
+          "letter": "C",
+          "text": "? НФ"
+        },
+        {
+          "letter": "D",
+          "text": "какой из перечисленных"
+        },
+        {
+          "letter": "E",
+          "text": "1 НФ"
+        },
+        {
+          "letter": "F",
+          "text": "6 НФ"
+        },
+        {
+          "letter": "G",
+          "text": "5 НФ"
+        }
+      ],
+      "correct_answers": [],
+      "answer_type": "single",
+      "language": "ru",
+      "has_code": false,
+      "topic": "",
+      "verification": "unverified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "Database/#Database (76).png"
+      ],
+      "explanation": ""
+    },
+    {
+      "id": "DB-065",
+      "question": "(wul +; .",
+      "options": [
+        {
+          "letter": "A",
+          "text": "Нормальная форма; котороп 'FkФ]н Сепуюшая таблица Телефон_ Апгуль 87012223334 870122-3335 Самат 87012223336 Сауле 87012223337"
+        },
+        {
+          "letter": "B",
+          "text": "Бойс Колда"
+        },
+        {
+          "letter": "C",
+          "text": "какой из перечнсленных"
+        }
+      ],
+      "correct_answers": [],
+      "answer_type": "single",
+      "language": "ru",
+      "has_code": false,
+      "topic": "",
+      "verification": "unverified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "Database/#Database (78).png"
+      ],
+      "explanation": ""
+    },
+    {
+      "id": "DB-066",
+      "question": "(511 4' .",
+      "options": [
+        {
+          "letter": "A",
+          "text": "Набор операцин котарые формирулот опну логнческую шнниш пяпать"
+        },
+        {
+          "letter": "B",
+          "text": "НЯСЛелОваНИЕ"
+        },
+        {
+          "letter": "C",
+          "text": "HI]ншНН"
+        },
+        {
+          "letter": "D",
+          "text": "дупликацня"
+        },
+        {
+          "letter": "E",
+          "text": "обновленне"
+        },
+        {
+          "letter": "F",
+          "text": "команла"
+        },
+        {
+          "letter": "G",
+          "text": "шПеншин"
+        },
+        {
+          "letter": "H",
+          "text": "транзакция"
+        }
+      ],
+      "correct_answers": [],
+      "answer_type": "single",
+      "language": "ru",
+      "has_code": false,
+      "topic": "",
+      "verification": "unverified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "Database/#Database (80).png"
+      ],
+      "explanation": ""
+    },
+    {
+      "id": "DB-067",
+      "question": "ALGUP БаванННХ Кар Рпаепэв",
+      "options": [
+        {
+          "letter": "A",
+          "text": "ПРОБНОЕ ОНЛАЙН ТЕСТИРОВАНИЕ"
+        },
+        {
+          "letter": "B",
+          "text": "КАЛЬКУЛЯТОР"
+        },
+        {
+          "letter": "C",
+          "text": "Тукашова Акнур Сагынгазыкызы"
+        },
+        {
+          "letter": "D",
+          "text": "Завершить тест"
+        },
+        {
+          "letter": "E",
+          "text": "Результаг выполнения следуюшей команды лля данной таблиы select salaly from table where city Almaty ilaille salaiy Aigerim Almaty Bauyrzhan Almnaty Gulzhan Arkalyk Samat Moscow"
+        },
+        {
+          "letter": "F",
+          "text": "П Ц ))"
+        },
+        {
+          "letter": "G",
+          "text": "26*С Пер: облачно  .."
+        },
+        {
+          "letter": "H",
+          "text": "КАЗ 28.07.2021"
+        }
+      ],
+      "correct_answers": [],
+      "answer_type": "single",
+      "language": "ru",
+      "has_code": true,
+      "topic": "",
+      "verification": "unverified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "Database/#Database (84).png"
+      ],
+      "explanation": ""
+    },
+    {
+      "id": "DB-068",
+      "question": "Игwою Ввана ]тП Ou:ач:",
+      "options": [
+        {
+          "letter": "A",
+          "text": "ПРОБНОЕ ОНЛАЙН ТЕСТИРОВАНИЕ"
+        },
+        {
+          "letter": "B",
+          "text": "КАЛЬКУЛЯТОР"
+        },
+        {
+          "letter": "C",
+          "text": "Тукашова Акнур Сагынгазыкызы"
+        },
+        {
+          "letter": "D",
+          "text": "Завершить тест"
+        },
+        {
+          "letter": "E",
+          "text": "stud: stud?"
+        },
+        {
+          "letter": "F",
+          "text": "22.08 КАЗ 28.07.2021"
+        },
+        {
+          "letter": "G",
+          "text": "4:))"
+        },
+        {
+          "letter": "H",
+          "text": "26*С Пер: облачно  ."
+        }
+      ],
+      "correct_answers": [],
+      "answer_type": "single",
+      "language": "ru",
+      "has_code": false,
+      "topic": "",
+      "verification": "unverified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "Database/#Database (94).png"
+      ],
+      "explanation": ""
+    },
+    {
+      "id": "DB-069",
+      "question": "Балерьан тарв Оп: аms",
+      "options": [
+        {
+          "letter": "A",
+          "text": "Результат выполнения следуюшей команды create table calc (x int; У int): insert into calc values (5. 45 ); select *from calc x У; х+у;"
+        },
+        {
+          "letter": "B",
+          "text": "5.45"
+        },
+        {
+          "letter": "C",
+          "text": "50"
+        },
+        {
+          "letter": "D",
+          "text": "55"
+        },
+        {
+          "letter": "E",
+          "text": "17.54 яа ie tэ) РУС 28.07.2021"
+        },
+        {
+          "letter": "F",
+          "text": "Введите здесь текст для поиска"
+        },
+        {
+          "letter": "G",
+          "text": "31*С"
+        }
+      ],
+      "correct_answers": [],
+      "answer_type": "single",
+      "language": "ru",
+      "has_code": true,
+      "topic": "",
+      "verification": "unverified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "Database/#Database (103).png"
+      ],
+      "explanation": ""
+    },
+    {
+      "id": "DB-070",
+      "question": "Бвуерьан данных \"]m лые",
+      "options": [
+        {
+          "letter": "A",
+          "text": "Результат выполнения данной команды на SQL create table department (id int; salaly int): insert into department values ( 102, 45000); insert into department values (103, 15000); insert into department values (104, 90000); insert into department values (105, 100О0); Select round"
+        },
+        {
+          "letter": "B",
+          "text": "17.55 яа ie tэ) РУС 28.07.2021"
+        },
+        {
+          "letter": "C",
+          "text": "Введите здесь текст для поиска"
+        },
+        {
+          "letter": "D",
+          "text": "31*С"
+        }
+      ],
+      "correct_answers": [],
+      "answer_type": "single",
+      "language": "ru",
+      "has_code": true,
+      "topic": "",
+      "verification": "unverified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "Database/#Database (105).png"
+      ],
+      "explanation": ""
+    },
+    {
+      "id": "DB-071",
+      "question": "адиsek \"Пк кашта OuderoD",
+      "options": [
+        {
+          "letter": "A",
+          "text": "В таблнце данных студентов добавьте ячейку номером пять 25 баллов на языке SQL"
+        },
+        {
+          "letter": "B",
+          "text": "create student insert 25 where number"
+        },
+        {
+          "letter": "C",
+          "text": "enter 25 to grade where number"
+        },
+        {
+          "letter": "D",
+          "text": "insent 25 to number 25;"
+        },
+        {
+          "letter": "E",
+          "text": "insert student set grade = grade 25 where number = 5"
+        },
+        {
+          "letter": "F",
+          "text": "update student set grade= grade 25 where number = 5 ;"
+        }
+      ],
+      "correct_answers": [],
+      "answer_type": "single",
+      "language": "ru",
+      "has_code": true,
+      "topic": "",
+      "verification": "unverified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "Database/#Database (125).png"
+      ],
+      "explanation": ""
+    },
+    {
+      "id": "DB-072",
+      "question": "адиsek",
+      "options": [
+        {
+          "letter": "A",
+          "text": "\"Пк"
+        },
+        {
+          "letter": "B",
+          "text": "кашта OuderoD"
+        },
+        {
+          "letter": "C",
+          "text": "Результат выполнения данной команды на SQL create table department (id int; salary int); insert into department values ( 102, 45000); insert into department values ( 103, 15000); insert into department values ( ]04, 90O00); insert into department values ( 105, ]0O00); Select round"
+        }
+      ],
+      "correct_answers": [],
+      "answer_type": "single",
+      "language": "ru",
+      "has_code": true,
+      "topic": "",
+      "verification": "unverified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "Database/#Database (128).png"
+      ],
+      "explanation": ""
+    },
+    {
+      "id": "DB-073",
+      "question": "Амантай Базы данных Карта Ответов",
+      "options": [
+        {
+          "letter": "A",
+          "text": "В таблице данных студентов добавьте в ячейку c номером пять 25 баллов на языке SQL"
+        },
+        {
+          "letter": "B",
+          "text": "create student insert 25 where number = 5 ;"
+        },
+        {
+          "letter": "C",
+          "text": "4 | 5 | 6"
+        },
+        {
+          "letter": "D",
+          "text": "enter 25 to grade where number  5;"
+        },
+        {
+          "letter": "E",
+          "text": "insert 25 to number 25;"
+        },
+        {
+          "letter": "F",
+          "text": "insert student set grade= grade +25 where number = 5 ;"
+        },
+        {
+          "letter": "G",
+          "text": "update student set grade= grade + 25 where number  5 ;"
+        }
+      ],
+      "correct_answers": [],
+      "answer_type": "single",
+      "language": "ru",
+      "has_code": true,
+      "topic": "",
+      "verification": "unverified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "Database/#Database (145).png"
+      ],
+      "explanation": ""
+    },
+    {
+      "id": "DB-074",
+      "question": "Амантай Базы данных Карта Ответов https: /lprob-pvo.testcenter kz/test/quest/4/2",
+      "options": [
+        {
+          "letter": "A",
+          "text": "Ha SQL вывести номера; имена и номера отделов работников; служащих в отделах 15, 17, 19"
+        },
+        {
+          "letter": "B",
+          "text": "select number; name; dept_number from emp where dept_number in (15, 17, 19)"
+        },
+        {
+          "letter": "C",
+          "text": "4 | 5 | 6"
+        },
+        {
+          "letter": "D",
+          "text": "select * from emp where dept_number in (15, 17, 19)"
+        },
+        {
+          "letter": "E",
+          "text": "select number; name; dept_number from emp where dept_number order in (15, 17, 19)"
+        },
+        {
+          "letter": "F",
+          "text": "select number; name; dept_number from emp where dept_number on (15, 17, 19)"
+        },
+        {
+          "letter": "G",
+          "text": "select number; name; dept_number from emp where dept_number between (15, 17, 19)"
+        },
+        {
+          "letter": "H",
+          "text": "select number; name; dept_number from emp where dept_number =15 or dept_number =17 or dept_number = 19)"
+        }
+      ],
+      "correct_answers": [],
+      "answer_type": "single",
+      "language": "ru",
+      "has_code": true,
+      "topic": "",
+      "verification": "unverified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "Database/#Database (146).png"
+      ],
+      "explanation": ""
+    },
+    {
+      "id": "DB-075",
+      "question": "Амантай",
+      "options": [
+        {
+          "letter": "A",
+          "text": "4 | 5 | 6"
+        },
+        {
+          "letter": "B",
+          "text": "0 F)"
+        }
+      ],
+      "correct_answers": [],
+      "answer_type": "single",
+      "language": "ru",
+      "has_code": false,
+      "topic": "",
+      "verification": "unverified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "Database/#Database (151).png"
+      ],
+      "explanation": ""
+    },
+    {
+      "id": "DB-076",
+      "question": "Амантай Базы данных Карта Ответов https: /lprob-pvo.testcenter kz/test/quest/4/10",
+      "options": [
+        {
+          "letter": "A",
+          "text": "insert"
+        },
+        {
+          "letter": "B",
+          "text": "нет названия таблицы"
+        },
+        {
+          "letter": "C",
+          "text": "id"
+        },
+        {
+          "letter": "D",
+          "text": "name"
+        },
+        {
+          "letter": "E",
+          "text": "table2"
+        },
+        {
+          "letter": "F",
+          "text": "into"
+        },
+        {
+          "letter": "G",
+          "text": "table"
+        },
+        {
+          "letter": "H",
+          "text": "data"
+        }
+      ],
+      "correct_answers": [],
+      "answer_type": "single",
+      "language": "ru",
+      "has_code": true,
+      "topic": "",
+      "verification": "unverified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "Database/#Database (155).png"
+      ],
+      "explanation": ""
+    },
+    {
+      "id": "DB-077",
+      "question": "Амантай Базы данных Карта Ответов https: /lprob-pvo.testcenter kz/test/quest/4/15",
+      "options": [
+        {
+          "letter": "A",
+          "text": "Виды строчных данных в работе БД"
+        },
+        {
+          "letter": "B",
+          "text": "unknown"
+        },
+        {
+          "letter": "C",
+          "text": "{4,6,8,6,0,10}"
+        },
+        {
+          "letter": "D",
+          "text": "С) true; false"
+        },
+        {
+          "letter": "E",
+          "text": "1, 2.6, %stud'"
+        },
+        {
+          "letter": "F",
+          "text": "%stud' , 'string'"
+        },
+        {
+          "letter": "G",
+          "text": "2, 4, 8"
+        },
+        {
+          "letter": "H",
+          "text": "null"
+        }
+      ],
+      "correct_answers": [],
+      "answer_type": "single",
+      "language": "ru",
+      "has_code": false,
+      "topic": "",
+      "verification": "unverified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "Database/#Database (160).png"
+      ],
+      "explanation": ""
+    },
+    {
+      "id": "DB-078",
+      "question": "Амантай Базы данных Карта Ответов https: /lprob-pvo.testcenter kz/test/quest/4/18",
+      "options": [
+        {
+          "letter": "A",
+          "text": "into"
+        },
+        {
+          "letter": "B",
+          "text": "table"
+        },
+        {
+          "letter": "C",
+          "text": "name"
+        },
+        {
+          "letter": "D",
+          "text": "insert"
+        },
+        {
+          "letter": "E",
+          "text": "id"
+        },
+        {
+          "letter": "F",
+          "text": "нет названия столбцов"
+        },
+        {
+          "letter": "G",
+          "text": "data"
+        },
+        {
+          "letter": "H",
+          "text": "insert, into, data, id; name, table"
+        }
+      ],
+      "correct_answers": [],
+      "answer_type": "single",
+      "language": "ru",
+      "has_code": true,
+      "topic": "",
+      "verification": "unverified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "Database/#Database (163).png"
+      ],
+      "explanation": ""
+    },
+    {
+      "id": "DB-079",
+      "question": "Алиби Базы данных Карта Ответов",
+      "options": [
+        {
+          "letter": "A",
+          "text": "RUv"
+        },
+        {
+          "letter": "B",
+          "text": "dept_number"
+        },
+        {
+          "letter": "C",
+          "text": "emp"
+        },
+        {
+          "letter": "D",
+          "text": "name"
+        },
+        {
+          "letter": "E",
+          "text": "number"
+        },
+        {
+          "letter": "F",
+          "text": "in"
+        },
+        {
+          "letter": "G",
+          "text": "select"
+        },
+        {
+          "letter": "H",
+          "text": "where"
+        }
+      ],
+      "correct_answers": [],
+      "answer_type": "single",
+      "language": "ru",
+      "has_code": true,
+      "topic": "",
+      "verification": "unverified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "Database/#Database (167).png"
+      ],
+      "explanation": ""
+    },
+    {
+      "id": "DB-080",
+      "question": "Блокировка фрагмента данных имеет аспекты",
+      "options": [
+        {
+          "letter": "A",
+          "text": "транзакции"
+        },
+        {
+          "letter": "B",
+          "text": "планировщик"
+        },
+        {
+          "letter": "C",
+          "text": "буфер"
+        },
+        {
+          "letter": "D",
+          "text": "режим"
+        },
+        {
+          "letter": "E",
+          "text": "длительность"
+        },
+        {
+          "letter": "F",
+          "text": "гранулярность"
+        }
+      ],
+      "correct_answers": [
+        "D",
+        "E",
+        "F"
+      ],
+      "answer_type": "multi",
+      "language": "ru",
+      "has_code": false,
+      "topic": "",
+      "verification": "verified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "БД_скриншоты#Screenshot_6"
+      ],
+      "explanation": "Аспекты блокировки фрагмента данных: режим, длительность и гранулярность.",
+      "topic_id": 12
+    },
+    {
+      "id": "DB-081",
+      "question": "Недостатки иерархической модели",
+      "options": [
+        {
+          "letter": "A",
+          "text": "безопасность данных"
+        },
+        {
+          "letter": "B",
+          "text": "структурная зависимость"
+        },
+        {
+          "letter": "C",
+          "text": "простота понимания структуры данных"
+        },
+        {
+          "letter": "D",
+          "text": "каждый узел имеет свое имя (идентификатор)"
+        },
+        {
+          "letter": "E",
+          "text": "ограничения в организации отношений между сущностями"
+        },
+        {
+          "letter": "F",
+          "text": "независимость данных"
+        },
+        {
+          "letter": "G",
+          "text": "целостность данных"
+        }
+      ],
+      "correct_answers": [
+        "B",
+        "E"
+      ],
+      "answer_type": "multi",
+      "language": "ru",
+      "has_code": false,
+      "topic": "",
+      "verification": "verified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "БД_скриншоты#Screenshot_7"
+      ],
+      "explanation": "Недостатки иерархической модели: структурная зависимость и ограничения связей между сущностями.",
+      "topic_id": 1
+    },
+    {
+      "id": "DB-082",
+      "question": "Отсортировать документы по типу и дате создания",
+      "options": [
+        {
+          "letter": "A",
+          "text": "ORDER BY Type Documents, CreationDate DESCENDING"
+        },
+        {
+          "letter": "B",
+          "text": "ARRANGE BY Documents Type, CreationDate DESC"
+        },
+        {
+          "letter": "C",
+          "text": "ORDER BY DocumentsType, CreationDate DESC"
+        },
+        {
+          "letter": "D",
+          "text": "ORDER BY DocumentsType, CreationDate"
+        },
+        {
+          "letter": "E",
+          "text": "ORDER BY DocumentsType, CreationDate ASC"
+        },
+        {
+          "letter": "F",
+          "text": "SORT Documents BY Type, CreationDate DESC"
+        }
+      ],
+      "correct_answers": [
+        "C"
+      ],
+      "answer_type": "single",
+      "language": "ru",
+      "has_code": false,
+      "topic": "",
+      "verification": "verified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "БД_скриншоты#Screenshot_8"
+      ],
+      "explanation": "Сортировка по типу и дате (по убыванию): ORDER BY DocumentsType, CreationDate DESC.",
+      "topic_id": 10
+    },
+    {
+      "id": "DB-083",
+      "question": "Поле представления может содержать агрегированную информацию",
+      "options": [
+        {
+          "letter": "A",
+          "text": "group"
+        },
+        {
+          "letter": "B",
+          "text": "acs"
+        },
+        {
+          "letter": "C",
+          "text": "max"
+        },
+        {
+          "letter": "D",
+          "text": "sum"
+        },
+        {
+          "letter": "E",
+          "text": "min"
+        },
+        {
+          "letter": "F",
+          "text": "decs"
+        }
+      ],
+      "correct_answers": [
+        "C",
+        "D",
+        "E"
+      ],
+      "answer_type": "multi",
+      "language": "ru",
+      "has_code": false,
+      "topic": "",
+      "verification": "verified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "БД_скриншоты#Screenshot_11"
+      ],
+      "explanation": "Агрегаты в представлении: MAX, SUM, MIN.",
+      "topic_id": 8
+    },
+    {
+      "id": "DB-084",
+      "question": "Реляционная модель определяется понятиями",
+      "options": [
+        {
+          "letter": "A",
+          "text": "указатели"
+        },
+        {
+          "letter": "B",
+          "text": "кардинальность"
+        },
+        {
+          "letter": "C",
+          "text": "древовидный граф"
+        },
+        {
+          "letter": "D",
+          "text": "атрибут"
+        },
+        {
+          "letter": "E",
+          "text": "ссылочный аппарат"
+        },
+        {
+          "letter": "F",
+          "text": "коллекция записей"
+        },
+        {
+          "letter": "G",
+          "text": "навигационный подход"
+        }
+      ],
+      "correct_answers": [
+        "B",
+        "D"
+      ],
+      "answer_type": "multi",
+      "language": "ru",
+      "has_code": false,
+      "topic": "",
+      "verification": "verified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "БД_скриншоты#Screenshot_12"
+      ],
+      "explanation": "Реляционная модель оперирует понятиями «атрибут» и «кардинальность».",
+      "topic_id": 1
+    },
+    {
+      "id": "DB-085",
+      "question": "Основные уровни-компоненты SQL Server",
+      "options": [
+        {
+          "letter": "A",
+          "text": "Server Profiler"
+        },
+        {
+          "letter": "B",
+          "text": "Integration Services"
+        },
+        {
+          "letter": "C",
+          "text": "ODBCAPI"
+        },
+        {
+          "letter": "D",
+          "text": "In-Memory OLTP Engine"
+        },
+        {
+          "letter": "E",
+          "text": "Sockets Layer"
+        },
+        {
+          "letter": "F",
+          "text": "Query Processor"
+        },
+        {
+          "letter": "G",
+          "text": "Storage Engine"
+        },
+        {
+          "letter": "H",
+          "text": "Reporting Services"
+        }
+      ],
+      "correct_answers": [
+        "F",
+        "G"
+      ],
+      "answer_type": "multi",
+      "language": "ru",
+      "has_code": false,
+      "topic": "",
+      "verification": "verified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "БД_скриншоты#Screenshot_13"
+      ],
+      "explanation": "Ядро SQL Server — Query Processor (реляционный движок) и Storage Engine.",
+      "topic_id": 16
+    },
+    {
+      "id": "DB-086",
+      "question": "Рекомендуемые параметры оценки системы управления базами данных с точки зрения определение данных",
+      "options": [
+        {
+          "letter": "A",
+          "text": "простота реорганизации"
+        },
+        {
+          "letter": "B",
+          "text": "поддержка контрольных точек"
+        },
+        {
+          "letter": "C",
+          "text": "предусмотренные файловые структуры"
+        },
+        {
+          "letter": "D",
+          "text": "расширенная поддержка первичных ключей"
+        },
+        {
+          "letter": "E",
+          "text": "определение внешних ключей"
+        },
+        {
+          "letter": "F",
+          "text": "поддержка определения файловых структур"
+        },
+        {
+          "letter": "G",
+          "text": "предусмотренные типы данных"
+        }
+      ],
+      "correct_answers": [],
+      "answer_type": "single",
+      "language": "ru",
+      "has_code": false,
+      "topic": "",
+      "verification": "unverified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "БД_скриншоты#Screenshot_15"
+      ],
+      "explanation": ""
+    },
+    {
+      "id": "DB-087",
+      "question": "Количество полей (столбцов) в реляционной модели",
+      "options": [
+        {
+          "letter": "A",
+          "text": "атрибут"
+        },
+        {
+          "letter": "B",
+          "text": "отношение"
+        },
+        {
+          "letter": "C",
+          "text": "кардинальность"
+        },
+        {
+          "letter": "D",
+          "text": "ссылки"
+        },
+        {
+          "letter": "E",
+          "text": "домен"
+        },
+        {
+          "letter": "F",
+          "text": "степень отношения"
+        },
+        {
+          "letter": "G",
+          "text": "первичный ключ"
+        },
+        {
+          "letter": "H",
+          "text": "кортеж"
+        }
+      ],
+      "correct_answers": [
+        "F"
+      ],
+      "answer_type": "single",
+      "language": "ru",
+      "has_code": false,
+      "topic": "",
+      "verification": "verified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "БД_скриншоты#Screenshot_18"
+      ],
+      "explanation": "Число столбцов отношения — это степень отношения.",
+      "topic_id": 1
+    },
+    {
+      "id": "DB-088",
+      "question": "Резульат выполнения след юшёй команлы create table calc (x int - int): insert into calc values (5: 45): select *from calc х  : x- :",
+      "options": [
+        {
+          "letter": "A",
+          "text": "Зопрос Ne 3"
+        },
+        {
+          "letter": "B",
+          "text": "1"
+        },
+        {
+          "letter": "C",
+          "text": "5: 45"
+        },
+        {
+          "letter": "D",
+          "text": "45"
+        },
+        {
+          "letter": "E",
+          "text": "50"
+        },
+        {
+          "letter": "F",
+          "text": "55"
+        }
+      ],
+      "correct_answers": [],
+      "answer_type": "single",
+      "language": "ru",
+      "has_code": true,
+      "topic": "",
+      "verification": "unverified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "База данных с ответами 2. docx(1).pdf#?"
+      ],
+      "explanation": ""
+    },
+    {
+      "id": "DB-089",
+      "question": "F) 225",
+      "options": [
+        {
+          "letter": "A",
+          "text": "5"
+        },
+        {
+          "letter": "B",
+          "text": "5: 45:50"
+        }
+      ],
+      "correct_answers": [],
+      "answer_type": "single",
+      "language": "ru",
+      "has_code": false,
+      "topic": "",
+      "verification": "unverified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "База данных с ответами 2. docx(1).pdf#?"
+      ],
+      "explanation": ""
+    },
+    {
+      "id": "DB-090",
+      "question": "РеЗуьIа- гыпСЛнених _аннСй хОманiк: на SQL create table department (id int; salar in-): insert into depantment -zlues (102 45000): insert into depatment zlues (103; 15000); insert into department zlues (104, 90000); insert into department :zlues (105. 10000); Selec: rourd (3 )",
+      "options": [
+        {
+          "letter": "A",
+          "text": "Вогрос NE 4"
+        },
+        {
+          "letter": "B",
+          "text": "4) 40000"
+        },
+        {
+          "letter": "C",
+          "text": "900QO"
+        }
+      ],
+      "correct_answers": [],
+      "answer_type": "single",
+      "language": "ru",
+      "has_code": true,
+      "topic": "",
+      "verification": "unverified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "База данных с ответами 2. docx(1).pdf#?"
+      ],
+      "explanation": ""
+    },
+    {
+      "id": "DB-091",
+      "question": "Iaе CeF\" teztlar нва PhF: BE-оNZ Bзлла Nal Iтaru ?A Culzha: Рзcf: Стa Or: JE Sama Р  Ertolaz  3 Ра_Iза: ЗЫЛQвгх Ствддй mшлы Ilx ~AEE0i тбтияны Евегатане ЁОт =sыCc: TZeге dent = 'PLsie: o-ter 0 Lane;",
+      "options": [
+        {
+          "letter": "A",
+          "text": "Вогaос NP 5"
+        },
+        {
+          "letter": "B",
+          "text": "4 Зiiоzii Ertolaiz  5 IizLOr 2 1 , Oтactz PE"
+        },
+        {
+          "letter": "C",
+          "text": "Mzil:"
+        },
+        {
+          "letter": "D",
+          "text": "#sem ЗzлIzhar"
+        },
+        {
+          "letter": "E",
+          "text": "9) Bакощ: NZ Ertoiaiz  5 Orlpiz JE"
+        },
+        {
+          "letter": "F",
+          "text": "2 #епm ЗзлIzh:ь ; Culznn; Szlx"
+        },
+        {
+          "letter": "G",
+          "text": "4zem Culzлu Sara:"
+        }
+      ],
+      "correct_answers": [],
+      "answer_type": "single",
+      "language": "ru",
+      "has_code": false,
+      "topic": "",
+      "verification": "unverified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "База данных с ответами 2. docx(1).pdf#?"
+      ],
+      "explanation": ""
+    },
+    {
+      "id": "DB-092",
+      "question": "Возможные Бариант: CIEeICE СЛе_Юшего :QIz SQL Eelect name fiom s ud There name like : _ :: : G) Lisulu H) Raimbel",
+      "options": [
+        {
+          "letter": "A",
+          "text": "Зогрос NE 7"
+        },
+        {
+          "letter": "B",
+          "text": "4) Serzlan"
+        },
+        {
+          "letter": "C",
+          "text": "#libek"
+        },
+        {
+          "letter": "D",
+          "text": "Samal"
+        },
+        {
+          "letter": "E",
+          "text": "Seril:"
+        },
+        {
+          "letter": "F",
+          "text": "Sak-er"
+        },
+        {
+          "letter": "G",
+          "text": "Kigul"
+        }
+      ],
+      "correct_answers": [],
+      "answer_type": "single",
+      "language": "ru",
+      "has_code": false,
+      "topic": "",
+      "verification": "unverified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "База данных с ответами 2. docx(1).pdf#?"
+      ],
+      "explanation": ""
+    },
+    {
+      "id": "DB-093",
+      "question": "Названне табтицы Е СледуюшемкoIe: Inзеn into dziz (id: Izme table tablel)",
+      "options": [
+        {
+          "letter": "A",
+          "text": "Вопрсс NE 10"
+        },
+        {
+          "letter": "B",
+          "text": "4) isert"
+        },
+        {
+          "letter": "C",
+          "text": "В} =е- названил -аблнцы"
+        },
+        {
+          "letter": "D",
+          "text": "rame"
+        },
+        {
+          "letter": "E",
+          "text": "tablel"
+        },
+        {
+          "letter": "F",
+          "text": "Inio"
+        },
+        {
+          "letter": "G",
+          "text": "table"
+        },
+        {
+          "letter": "H",
+          "text": "data"
+        }
+      ],
+      "correct_answers": [],
+      "answer_type": "single",
+      "language": "ru",
+      "has_code": false,
+      "topic": "",
+      "verification": "unverified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "База данных с ответами 2. docx(1).pdf#?"
+      ],
+      "explanation": ""
+    },
+    {
+      "id": "DB-094",
+      "question": "Дано ответов: Сумма баллов По гредмету: Номер тЕСсвОГо зедани= Ваш ответ Результат -естурсва-и=",
+      "options": [
+        {
+          "letter": "A",
+          "text": "Базы данных"
+        },
+        {
+          "letter": "B",
+          "text": "Данные"
+        },
+        {
+          "letter": "C",
+          "text": "BFG DF AEF"
+        },
+        {
+          "letter": "D",
+          "text": "вн EG АвН AE ADH"
+        },
+        {
+          "letter": "E",
+          "text": "DEH BCE CDG"
+        }
+      ],
+      "correct_answers": [],
+      "answer_type": "single",
+      "language": "ru",
+      "has_code": false,
+      "topic": "",
+      "verification": "unverified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "База данных с ответами 2. docx(1).pdf#?"
+      ],
+      "explanation": ""
+    },
+    {
+      "id": "DB-095",
+      "question": "сжяIне",
+      "options": [
+        {
+          "letter": "A",
+          "text": "обновленне"
+        },
+        {
+          "letter": "B",
+          "text": "уаление"
+        },
+        {
+          "letter": "C",
+          "text": "корреляция"
+        },
+        {
+          "letter": "D",
+          "text": "систечатизация"
+        },
+        {
+          "letter": "E",
+          "text": "созданне"
+        },
+        {
+          "letter": "F",
+          "text": "ОПТИ Шзашия"
+        }
+      ],
+      "correct_answers": [],
+      "answer_type": "single",
+      "language": "ru",
+      "has_code": false,
+      "topic": "",
+      "verification": "unverified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "Тест(png)#Тест (25).png"
+      ],
+      "explanation": ""
+    },
+    {
+      "id": "DB-096",
+      "question": "внешннй: концепгуальный: внутренний",
+      "options": [
+        {
+          "letter": "A",
+          "text": "внешннй: концепгуальный"
+        },
+        {
+          "letter": "B",
+          "text": "концепгуальный: внутренннй"
+        },
+        {
+          "letter": "C",
+          "text": "внешний: срёдний: внутренний"
+        },
+        {
+          "letter": "D",
+          "text": "внешннй: внуТренний"
+        },
+        {
+          "letter": "E",
+          "text": "внешний промежуточный: внутренний"
+        },
+        {
+          "letter": "F",
+          "text": "внешннй: промежуточный: концептуальный: внутренний"
+        }
+      ],
+      "correct_answers": [],
+      "answer_type": "single",
+      "language": "ru",
+      "has_code": false,
+      "topic": "",
+      "verification": "unverified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "Тест(png)#Тест (26).png"
+      ],
+      "explanation": ""
+    },
+    {
+      "id": "DB-097",
+      "question": "пониенне производнтельностн",
+      "options": [
+        {
+          "letter": "A",
+          "text": "фильрацню данных"
+        },
+        {
+          "letter": "B",
+          "text": "уталенне всех данных"
+        },
+        {
+          "letter": "C",
+          "text": "группировку данных"
+        },
+        {
+          "letter": "D",
+          "text": "норчалнзацию данных"
+        },
+        {
+          "letter": "E",
+          "text": "повышение производительности"
+        },
+        {
+          "letter": "F",
+          "text": "выполнение запросов"
+        }
+      ],
+      "correct_answers": [],
+      "answer_type": "single",
+      "language": "ru",
+      "has_code": false,
+      "topic": "",
+      "verification": "unverified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "Тест(png)#Тест (27).png"
+      ],
+      "explanation": ""
+    },
+    {
+      "id": "DB-098",
+      "question": "ifi-Ъ or а-с: then a-bс",
+      "options": [
+        {
+          "letter": "A",
+          "text": "ifa-b and з_с: then а-с: a-Ъ"
+        },
+        {
+          "letter": "B",
+          "text": "ifa_b orb_C: then а_с"
+        },
+        {
+          "letter": "C",
+          "text": "ifз-by then a-Ъ and а_У"
+        },
+        {
+          "letter": "D",
+          "text": "ifa_b and b_с: then а_с"
+        }
+      ],
+      "correct_answers": [],
+      "answer_type": "single",
+      "language": "ru",
+      "has_code": false,
+      "topic": "",
+      "verification": "unverified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "Тест(png)#Тест (28).png"
+      ],
+      "explanation": ""
+    },
+    {
+      "id": "DB-099",
+      "question": "А) серверный",
+      "options": [
+        {
+          "letter": "A",
+          "text": "внуТрённнй"
+        },
+        {
+          "letter": "B",
+          "text": "логический"
+        },
+        {
+          "letter": "C",
+          "text": "внешннй"
+        },
+        {
+          "letter": "D",
+          "text": "срелний"
+        },
+        {
+          "letter": "E",
+          "text": "концептуальный"
+        },
+        {
+          "letter": "F",
+          "text": "промежуточный"
+        },
+        {
+          "letter": "G",
+          "text": "клнёнтский"
+        }
+      ],
+      "correct_answers": [],
+      "answer_type": "single",
+      "language": "ru",
+      "has_code": false,
+      "topic": "",
+      "verification": "unverified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "Тест(png)#Тест (29).png"
+      ],
+      "explanation": ""
+    },
+    {
+      "id": "DB-100",
+      "question": "from Ato Z",
+      "options": [
+        {
+          "letter": "A",
+          "text": "filter o1"
+        },
+        {
+          "letter": "B",
+          "text": "betzeenl Ato Z"
+        },
+        {
+          "letter": "C",
+          "text": "list"
+        },
+        {
+          "letter": "D",
+          "text": "change from 4 to Z"
+        },
+        {
+          "letter": "E",
+          "text": "jOin"
+        },
+        {
+          "letter": "F",
+          "text": "order by"
+        }
+      ],
+      "correct_answers": [],
+      "answer_type": "single",
+      "language": "ru",
+      "has_code": true,
+      "topic": "",
+      "verification": "unverified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "Тест(png)#Тест (30).png"
+      ],
+      "explanation": ""
+    },
+    {
+      "id": "DB-101",
+      "question": "логический",
+      "options": [
+        {
+          "letter": "A",
+          "text": "прочежуточный"
+        },
+        {
+          "letter": "B",
+          "text": "внуТренннй"
+        },
+        {
+          "letter": "C",
+          "text": "концептуальный"
+        },
+        {
+          "letter": "D",
+          "text": "серверный"
+        },
+        {
+          "letter": "E",
+          "text": "клнентский"
+        },
+        {
+          "letter": "F",
+          "text": "средннй"
+        },
+        {
+          "letter": "G",
+          "text": "внешннй"
+        }
+      ],
+      "correct_answers": [],
+      "answer_type": "single",
+      "language": "ru",
+      "has_code": false,
+      "topic": "",
+      "verification": "unverified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "Тест(png)#Тест (31).png"
+      ],
+      "explanation": ""
+    },
+    {
+      "id": "DB-102",
+      "question": "10 45 10 4+50",
+      "options": [
+        {
+          "letter": "A",
+          "text": "stuc: stud?"
+        },
+        {
+          "letter": "B",
+          "text": "45 70 90 450 900"
+        }
+      ],
+      "correct_answers": [],
+      "answer_type": "single",
+      "language": "ru",
+      "has_code": false,
+      "topic": "",
+      "verification": "unverified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "Тест(png)#Тест (32).png"
+      ],
+      "explanation": ""
+    },
+    {
+      "id": "DB-103",
+      "question": "where",
+      "options": [
+        {
+          "letter": "A",
+          "text": "ilseit"
+        },
+        {
+          "letter": "B",
+          "text": "delete"
+        },
+        {
+          "letter": "C",
+          "text": "т1eт7-"
+        },
+        {
+          "letter": "D",
+          "text": "upcate"
+        },
+        {
+          "letter": "E",
+          "text": "select"
+        },
+        {
+          "letter": "F",
+          "text": "betтeen"
+        }
+      ],
+      "correct_answers": [],
+      "answer_type": "single",
+      "language": "ru",
+      "has_code": true,
+      "topic": "",
+      "verification": "unverified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "Тест(png)#Тест (33).png"
+      ],
+      "explanation": ""
+    },
+    {
+      "id": "DB-104",
+      "question": "select fromn table emnp",
+      "options": [
+        {
+          "letter": "A",
+          "text": "select id: namne: сit: salar fromn table emnp"
+        },
+        {
+          "letter": "B",
+          "text": "select fromn table etnp"
+        },
+        {
+          "letter": "C",
+          "text": "select fromn table ernp where mamne= Arnan"
+        },
+        {
+          "letter": "D",
+          "text": "select fromn table ernp where salar 1500"
+        },
+        {
+          "letter": "E",
+          "text": "select frcmn table emnp"
+        },
+        {
+          "letter": "F",
+          "text": "select fromn* table emnp"
+        }
+      ],
+      "correct_answers": [],
+      "answer_type": "single",
+      "language": "ru",
+      "has_code": true,
+      "topic": "",
+      "verification": "unverified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "Тест(png)#Тест (34).png"
+      ],
+      "explanation": ""
+    },
+    {
+      "id": "DB-105",
+      "question": "А) {4.6.3.6.0.10}",
+      "options": [
+        {
+          "letter": "A",
+          "text": "stud: : string"
+        },
+        {
+          "letter": "B",
+          "text": "null"
+        },
+        {
+          "letter": "C",
+          "text": "tne: false"
+        },
+        {
+          "letter": "D",
+          "text": "1: 2 6: :stud:"
+        },
+        {
+          "letter": "E",
+          "text": "2 + 8"
+        },
+        {
+          "letter": "F",
+          "text": "llnknorzil"
+        }
+      ],
+      "correct_answers": [],
+      "answer_type": "single",
+      "language": "ru",
+      "has_code": false,
+      "topic": "",
+      "verification": "unverified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "Тест(png)#Тест (35).png"
+      ],
+      "explanation": ""
+    },
+    {
+      "id": "DB-106",
+      "question": "set employers update salan = salary 1.2",
+      "options": [
+        {
+          "letter": "A",
+          "text": "update emnployers inseit salar: salar 17"
+        },
+        {
+          "letter": "B",
+          "text": "ilseit salar salary 12"
+        },
+        {
+          "letter": "C",
+          "text": "update emnployers and inseit salar salar"
+        },
+        {
+          "letter": "D",
+          "text": "update employers set salary = salary 1.2"
+        }
+      ],
+      "correct_answers": [],
+      "answer_type": "single",
+      "language": "ru",
+      "has_code": true,
+      "topic": "",
+      "verification": "unverified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "Тест(png)#Тест (36).png"
+      ],
+      "explanation": ""
+    },
+    {
+      "id": "DB-107",
+      "question": "se1 emnployers update salary salar 1.2 uhere salary 8OOOO",
+      "options": [
+        {
+          "letter": "A",
+          "text": "inlseit salar salary 1.2 uhere salary 8O0OO"
+        },
+        {
+          "letter": "B",
+          "text": "update employers set salary salar 1.2 uhere salary 8O0OO"
+        },
+        {
+          "letter": "C",
+          "text": "select frcmn emnloyers mhere salar 8OOOO inseit salar salar 12"
+        },
+        {
+          "letter": "D",
+          "text": "ilseit salar salary 1.2 where salary ЗOOO0: update"
+        }
+      ],
+      "correct_answers": [],
+      "answer_type": "single",
+      "language": "ru",
+      "has_code": true,
+      "topic": "",
+      "verification": "unverified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "Тест(png)#Тест (37).png"
+      ],
+      "explanation": ""
+    },
+    {
+      "id": "DB-108",
+      "question": "Tourism arld course",
+      "options": [
+        {
+          "letter": "A",
+          "text": "select name froin stud -here speciality"
+        },
+        {
+          "letter": "B",
+          "text": "select name froin stud -here speciality Tourism O1 Colrse"
+        },
+        {
+          "letter": "C",
+          "text": "0) select namne fromn stud -here specialit Tourism select name fromn stud uhere course"
+        },
+        {
+          "letter": "D",
+          "text": "select name fromn stud uhere specialit Tourisin atic course"
+        },
+        {
+          "letter": "E",
+          "text": "select name fromn stud uhere specialit Tourism O1 COlrse"
+        }
+      ],
+      "correct_answers": [],
+      "answer_type": "single",
+      "language": "ru",
+      "has_code": true,
+      "topic": "",
+      "verification": "unverified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "Тест(png)#Тест (38).png"
+      ],
+      "explanation": ""
+    },
+    {
+      "id": "DB-109",
+      "question": "1:1",
+      "options": [
+        {
+          "letter": "A",
+          "text": "NIM"
+        },
+        {
+          "letter": "B",
+          "text": "н) 3:1"
+        }
+      ],
+      "correct_answers": [],
+      "answer_type": "single",
+      "language": "ru",
+      "has_code": false,
+      "topic": "",
+      "verification": "unverified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "Тест(png)#Тест (39).png"
+      ],
+      "explanation": ""
+    },
+    {
+      "id": "DB-110",
+      "question": "ralues",
+      "options": [
+        {
+          "letter": "A",
+          "text": "ilt"
+        },
+        {
+          "letter": "B",
+          "text": "calc"
+        },
+        {
+          "letter": "C",
+          "text": "table"
+        }
+      ],
+      "correct_answers": [],
+      "answer_type": "single",
+      "language": "ru",
+      "has_code": false,
+      "topic": "",
+      "verification": "unverified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "Тест(png)#Тест (40).png"
+      ],
+      "explanation": ""
+    },
+    {
+      "id": "DB-111",
+      "question": "вывод среднего значення столбца sales",
+      "options": [
+        {
+          "letter": "A",
+          "text": "ВЫВод среднего значення строкн sales"
+        },
+        {
+          "letter": "B",
+          "text": "вывод сумчы столбца sales"
+        },
+        {
+          "letter": "C",
+          "text": "вывОд среднего знзчення переменной sales"
+        },
+        {
+          "letter": "D",
+          "text": "вывод среднего значення таблицы sales"
+        }
+      ],
+      "correct_answers": [],
+      "answer_type": "single",
+      "language": "ru",
+      "has_code": false,
+      "topic": "",
+      "verification": "unverified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "Тест(png)#Тест (41).png"
+      ],
+      "explanation": ""
+    },
+    {
+      "id": "DB-112",
+      "question": "50: 60: 70. 80",
+      "options": [
+        {
+          "letter": "A",
+          "text": "60: 70: 80"
+        },
+        {
+          "letter": "B",
+          "text": "50: 60"
+        }
+      ],
+      "correct_answers": [],
+      "answer_type": "single",
+      "language": "ru",
+      "has_code": false,
+      "topic": "",
+      "verification": "unverified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "Тест(png)#Тест (42).png"
+      ],
+      "explanation": ""
+    },
+    {
+      "id": "DB-113",
+      "question": "select fromn ^data",
+      "options": [
+        {
+          "letter": "A",
+          "text": "select data from stuicents"
+        },
+        {
+          "letter": "B",
+          "text": "select *data fromn studenlts"
+        },
+        {
+          "letter": "C",
+          "text": "select fromn data"
+        },
+        {
+          "letter": "D",
+          "text": "select *from data"
+        },
+        {
+          "letter": "E",
+          "text": "select fromn students"
+        },
+        {
+          "letter": "F",
+          "text": "select *stud fromn data"
+        },
+        {
+          "letter": "G",
+          "text": "select data\"stucents fromn"
+        }
+      ],
+      "correct_answers": [],
+      "answer_type": "single",
+      "language": "ru",
+      "has_code": true,
+      "topic": "",
+      "verification": "unverified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "Тест(png)#Тест (43).png"
+      ],
+      "explanation": ""
+    },
+    {
+      "id": "DB-114",
+      "question": "Среда СУБД состоит",
+      "options": [
+        {
+          "letter": "A",
+          "text": "только из аппаратного обеспечения (компьютеров) и пользователей"
+        },
+        {
+          "letter": "B",
+          "text": "только из аппаратного обеспечения (компьютеров)"
+        },
+        {
+          "letter": "C",
+          "text": "только из программного обеспечения"
+        },
+        {
+          "letter": "D",
+          "text": "только из пользователей данных"
+        },
+        {
+          "letter": "E",
+          "text": "из аппаратного обеспечения (компьютеров), данных, процедур пользователей"
+        },
+        {
+          "letter": "F",
+          "text": "пользователей и администратора"
+        },
+        {
+          "letter": "G",
+          "text": "только из моделей мета данных"
+        },
+        {
+          "letter": "H",
+          "text": "только из моделей и данных"
+        }
+      ],
+      "correct_answers": [
+        "E"
+      ],
+      "answer_type": "single",
+      "language": "ru",
+      "has_code": false,
+      "topic": "",
+      "verification": "verified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "Тест(jpg)#Тест(1)"
+      ],
+      "explanation": "Среда СУБД включает аппаратное обеспечение, данные и процедуры пользователей.",
+      "topic_id": 1
+    },
+    {
+      "id": "DB-115",
+      "question": "Реляционные операции сравнения",
+      "options": [
+        {
+          "letter": "A",
+          "text": "⊆"
+        },
+        {
+          "letter": "B",
+          "text": "<="
+        },
+        {
+          "letter": "C",
+          "text": "⊇"
+        },
+        {
+          "letter": "D",
+          "text": "<>"
+        },
+        {
+          "letter": "E",
+          "text": ">="
+        },
+        {
+          "letter": "F",
+          "text": "⊂"
+        },
+        {
+          "letter": "G",
+          "text": ">"
+        },
+        {
+          "letter": "H",
+          "text": "<"
+        }
+      ],
+      "correct_answers": [],
+      "answer_type": "single",
+      "language": "ru",
+      "has_code": false,
+      "topic": "",
+      "verification": "unverified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "Тест(jpg)#Тест(2)"
+      ],
+      "explanation": ""
+    },
+    {
+      "id": "DB-116",
+      "question": "Типы работы разработчика логической базы данных",
+      "options": [
+        {
+          "letter": "A",
+          "text": "абстрагированое и сетевое"
+        },
+        {
+          "letter": "B",
+          "text": "системный и сетевое проектирование"
+        },
+        {
+          "letter": "C",
+          "text": "логическое и эффективное проектирование"
+        },
+        {
+          "letter": "D",
+          "text": "концептуальное и логическое проектирование"
+        },
+        {
+          "letter": "E",
+          "text": "концептуальное и сетевое проектирование"
+        },
+        {
+          "letter": "F",
+          "text": "логическое и сетевое"
+        },
+        {
+          "letter": "G",
+          "text": "реляционное и концептуальное проектирование"
+        }
+      ],
+      "correct_answers": [
+        "D"
+      ],
+      "answer_type": "single",
+      "language": "ru",
+      "has_code": false,
+      "topic": "",
+      "verification": "verified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "Тест(jpg)#Тест(3)"
+      ],
+      "explanation": "Разработчик логической БД ведёт концептуальное и логическое проектирование.",
+      "topic_id": 14
+    },
+    {
+      "id": "DB-117",
+      "question": "Количество атрибутов в таблице называется",
+      "options": [
+        {
+          "letter": "A",
+          "text": "кардинальность отношения"
+        },
+        {
+          "letter": "B",
+          "text": "n-мерность отношения"
+        },
+        {
+          "letter": "C",
+          "text": "ранг отношения"
+        },
+        {
+          "letter": "D",
+          "text": "сила отношения"
+        },
+        {
+          "letter": "E",
+          "text": "мощность отношения"
+        },
+        {
+          "letter": "F",
+          "text": "степень отношения"
+        }
+      ],
+      "correct_answers": [
+        "F"
+      ],
+      "answer_type": "single",
+      "language": "ru",
+      "has_code": false,
+      "topic": "",
+      "verification": "verified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "Тест(jpg)#Тест(4)"
+      ],
+      "explanation": "Количество атрибутов в таблице — степень отношения (кардинальность — число строк).",
+      "topic_id": 1
+    },
+    {
+      "id": "DB-118",
+      "question": "Ключ, который является первичным в другой таблице, но в текущей таблице служит вспомогательным ключом для связи",
+      "options": [
+        {
+          "letter": "A",
+          "text": "естественный ключ"
+        },
+        {
+          "letter": "B",
+          "text": "вторичный ключ"
+        },
+        {
+          "letter": "C",
+          "text": "суррогатный ключ"
+        },
+        {
+          "letter": "D",
+          "text": "первичный ключ"
+        },
+        {
+          "letter": "E",
+          "text": "простой ключ"
+        },
+        {
+          "letter": "F",
+          "text": "внешний ключ"
+        },
+        {
+          "letter": "G",
+          "text": "составной ключ"
+        },
+        {
+          "letter": "H",
+          "text": "искусственный ключ"
+        }
+      ],
+      "correct_answers": [
+        "F"
+      ],
+      "answer_type": "single",
+      "language": "ru",
+      "has_code": false,
+      "topic": "",
+      "verification": "verified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "Тест(jpg)#Тест(5)"
+      ],
+      "explanation": "Внешний ключ: первичный в другой таблице, в текущей служит для связи.",
+      "topic_id": 6
+    },
+    {
+      "id": "DB-119",
+      "question": "Запрос, который выбирает сумму всех уникальных значений столбца в таблице",
+      "options": [
+        {
+          "letter": "A",
+          "text": "select sum(distinct column) from table;"
+        },
+        {
+          "letter": "B",
+          "text": "select sum(column) from table;"
+        },
+        {
+          "letter": "C",
+          "text": "select unique sum(column) from table;"
+        },
+        {
+          "letter": "D",
+          "text": "select mean(column) from table;"
+        },
+        {
+          "letter": "E",
+          "text": "select sum(column) from table where sum(column) is distinct;"
+        },
+        {
+          "letter": "F",
+          "text": "select sum(column) from table group by column;"
+        },
+        {
+          "letter": "G",
+          "text": "select column, sum(column) from table;"
+        }
+      ],
+      "correct_answers": [
+        "A"
+      ],
+      "answer_type": "single",
+      "language": "ru",
+      "has_code": true,
+      "topic": "",
+      "verification": "verified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "Тест(jpg)#Тест(6)"
+      ],
+      "explanation": "Сумма уникальных значений: SELECT SUM(DISTINCT column) FROM table;",
+      "topic_id": 8
+    },
+    {
+      "id": "DB-120",
+      "question": "Запрос, который выбирает поля, где column1 содержит букву 'a' или 'e'",
+      "options": [
+        {
+          "letter": "A",
+          "text": "select * from table where column1 like '%a' and column1 like '%e'"
+        },
+        {
+          "letter": "B",
+          "text": "select * from table where column1 consist of('a','e)"
+        },
+        {
+          "letter": "C",
+          "text": "select * from table where column1 like '%a%' or column1 like '%e%'"
+        },
+        {
+          "letter": "D",
+          "text": "select * from table where instr(column1,'a')>0 or instr(column1,'e')>0"
+        },
+        {
+          "letter": "E",
+          "text": "select * from table where instr(column1,'a')>0 and instr(column1,'e')>0"
+        },
+        {
+          "letter": "F",
+          "text": "select * from table where column1 like '%a%' and column1 like '%e%'"
+        },
+        {
+          "letter": "G",
+          "text": "select * from table where column1 like 'a' and column1 like 'e'"
+        },
+        {
+          "letter": "H",
+          "text": "select * from table where instr(column1,'a')=1 or instr(column1,'e')=1"
+        }
+      ],
+      "correct_answers": [
+        "C",
+        "D"
+      ],
+      "answer_type": "multi",
+      "language": "ru",
+      "has_code": true,
+      "topic": "",
+      "verification": "verified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "Тест(jpg)#Тест(7)"
+      ],
+      "explanation": "Содержит «a» или «e»: LIKE «%a%» OR LIKE «%e%», либо INSTR(...)>0 OR INSTR(...)>0.",
+      "topic_id": 9
+    },
+    {
+      "id": "DB-121",
+      "question": "Запрос, который выбирает поля, где column1 содержит значения от 1 до 3 включительно",
+      "options": [
+        {
+          "letter": "A",
+          "text": "select * from table where column1 =1 and 3"
+        },
+        {
+          "letter": "B",
+          "text": "select * from table where column1 between 1 and 3"
+        },
+        {
+          "letter": "C",
+          "text": "select * from table where column1>1 and column1<3"
+        },
+        {
+          "letter": "D",
+          "text": "select * from table where column1 in (1,2,3)"
+        },
+        {
+          "letter": "E",
+          "text": "select * from table where column1> 1 or column1 < 3"
+        },
+        {
+          "letter": "F",
+          "text": "select * from table where column1=1 and column1=2 or column1=3"
+        },
+        {
+          "letter": "G",
+          "text": "select * from table where column1=1 or column1=2 or column1=3"
+        },
+        {
+          "letter": "H",
+          "text": "select * from table where column1=1 and column1=2 and column1=3"
+        }
+      ],
+      "correct_answers": [
+        "B",
+        "D",
+        "G"
+      ],
+      "answer_type": "multi",
+      "language": "ru",
+      "has_code": true,
+      "topic": "",
+      "verification": "verified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "Тест(jpg)#Тест(8)"
+      ],
+      "explanation": "Значения 1–3 включительно: BETWEEN 1 AND 3, IN (1,2,3) или =1 OR =2 OR =3.",
+      "topic_id": 9
+    },
+    {
+      "id": "DB-122",
+      "question": "Запрос, сортирующий отделы (порядок возрастания) по сумме зарплат сотрудников, работающих там, при подсчете суммы учитывались только зарплаты больше 10000 (department, salary – атрибуты таблицы table)",
+      "options": [
+        {
+          "letter": "A",
+          "text": "select department, sum(salary) from table order by last_name desc"
+        },
+        {
+          "letter": "B",
+          "text": "select department, sum(salary) from table group by department order by last_name"
+        },
+        {
+          "letter": "C",
+          "text": "select department, sum(salary) from table group by department having salary>10000 order by sum(salary)"
+        },
+        {
+          "letter": "D",
+          "text": "select sum(salary), department from table where salary>10000 group by department order by sum(salary) asc"
+        },
+        {
+          "letter": "E",
+          "text": "select department, sum(salary) from table where salary>10000 group by department order by sum(salary)"
+        }
+      ],
+      "correct_answers": [
+        "D",
+        "E"
+      ],
+      "answer_type": "multi",
+      "language": "ru",
+      "has_code": true,
+      "topic": "",
+      "verification": "verified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "Тест(jpg)#Тест(9)"
+      ],
+      "explanation": "Фильтр salary>10000 — через WHERE, затем GROUP BY department и ORDER BY SUM(salary).",
+      "topic_id": 10
+    },
+    {
+      "id": "DB-123",
+      "question": "Запрос, сортирующий отделы по средней арифметической зарплаты в порядке возрастания (department, salary – атрибуты таблицы table)",
+      "options": [
+        {
+          "letter": "A",
+          "text": "select department, sum(salary)/count(*) from table group by department order by sum(salary)/count(*) asc"
+        },
+        {
+          "letter": "B",
+          "text": "select avg(salary) as average, department from table group by department order by avg(salary) asc"
+        },
+        {
+          "letter": "C",
+          "text": "select department, mean(salary) from table group by department order by mean(salary)"
+        },
+        {
+          "letter": "D",
+          "text": "select department, avg(salary) from table order by avg(salary) group by department"
+        },
+        {
+          "letter": "E",
+          "text": "select department, avg(salary) from table group by department order by avg(salary) desc"
+        },
+        {
+          "letter": "F",
+          "text": "select department, avg(salary) from table group by department order by avg(salary)"
+        }
+      ],
+      "correct_answers": [
+        "A",
+        "B",
+        "F"
+      ],
+      "answer_type": "multi",
+      "language": "ru",
+      "has_code": true,
+      "topic": "",
+      "verification": "verified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "Тест(jpg)#Тест(10)"
+      ],
+      "explanation": "Средняя зарплата по отделам по возрастанию: AVG(salary) (или SUM/COUNT) + GROUP BY + ORDER BY ... ASC.",
+      "topic_id": 10
+    },
+    {
+      "id": "DB-124",
+      "question": "Объединение двух таблиц, возвращающих только совпадающие строки из двух таблиц по сопоставленному условию",
+      "options": [
+        {
+          "letter": "A",
+          "text": "cross join"
+        },
+        {
+          "letter": "B",
+          "text": "left outer join"
+        },
+        {
+          "letter": "C",
+          "text": "right outer join"
+        },
+        {
+          "letter": "D",
+          "text": "outer join"
+        },
+        {
+          "letter": "E",
+          "text": "full outer join"
+        },
+        {
+          "letter": "F",
+          "text": "inner join"
+        }
+      ],
+      "correct_answers": [
+        "F"
+      ],
+      "answer_type": "single",
+      "language": "ru",
+      "has_code": true,
+      "topic": "",
+      "verification": "verified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "Тест(jpg)#Тест(11)"
+      ],
+      "explanation": "Только совпадающие строки возвращает INNER JOIN.",
+      "topic_id": 11
+    },
+    {
+      "id": "DB-125",
+      "question": "Подраздел SQL, который используется для добавления данных в базу данных, для изменения существующих данных в базе данных или удаления данных из базы данных",
+      "options": [
+        {
+          "letter": "A",
+          "text": "data manipulation language"
+        },
+        {
+          "letter": "B",
+          "text": "data definition language"
+        },
+        {
+          "letter": "C",
+          "text": "data altering language"
+        },
+        {
+          "letter": "D",
+          "text": "data control language"
+        },
+        {
+          "letter": "E",
+          "text": "transaction control language"
+        },
+        {
+          "letter": "F",
+          "text": "mdx"
+        },
+        {
+          "letter": "G",
+          "text": "query language"
+        },
+        {
+          "letter": "H",
+          "text": "query by example"
+        }
+      ],
+      "correct_answers": [
+        "A"
+      ],
+      "answer_type": "single",
+      "language": "ru",
+      "has_code": false,
+      "topic": "",
+      "verification": "verified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "Тест(jpg)#Тест(13)"
+      ],
+      "explanation": "Добавление/изменение/удаление данных — это DML (язык манипулирования данными).",
+      "topic_id": 12
+    },
+    {
+      "id": "DB-126",
+      "question": "Оператор, который завершает текущую транзакцию, отбрасывая все ожидающие изменения данных до предыдущих постоянных данных",
+      "options": [
+        {
+          "letter": "A",
+          "text": "rollback to savepoint A"
+        },
+        {
+          "letter": "B",
+          "text": "rollback"
+        },
+        {
+          "letter": "C",
+          "text": "checkpoint"
+        },
+        {
+          "letter": "D",
+          "text": "commit A"
+        },
+        {
+          "letter": "E",
+          "text": "commit"
+        },
+        {
+          "letter": "F",
+          "text": "savepoint A"
+        }
+      ],
+      "correct_answers": [
+        "B"
+      ],
+      "answer_type": "single",
+      "language": "ru",
+      "has_code": false,
+      "topic": "",
+      "verification": "verified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "Тест(jpg)#Тест(14)"
+      ],
+      "explanation": "ROLLBACK завершает транзакцию, отменяя все незафиксированные изменения.",
+      "topic_id": 12
+    },
+    {
+      "id": "DB-127",
+      "question": "Запрос, который выводит название продукта, чья цена выше средней арифметической цены всех продуктов",
+      "options": [
+        {
+          "letter": "A",
+          "text": "select price from products where price > (select avg(price) from products)"
+        },
+        {
+          "letter": "B",
+          "text": "select product_name from products where price > (select mean(price) from products)"
+        },
+        {
+          "letter": "C",
+          "text": "select product_name from products where price >avg(price)"
+        },
+        {
+          "letter": "D",
+          "text": "select product_name from products where price in (select avg(price) from products)"
+        },
+        {
+          "letter": "E",
+          "text": "select product_name from products where price > (select sum(price)/count(*) from products)"
+        },
+        {
+          "letter": "F",
+          "text": "select product_name from products where price > (select medizan(price) from products)"
+        },
+        {
+          "letter": "G",
+          "text": "select product_name from products where price > (select avg(price) from products)"
+        }
+      ],
+      "correct_answers": [
+        "E",
+        "G"
+      ],
+      "answer_type": "multi",
+      "language": "ru",
+      "has_code": true,
+      "topic": "",
+      "verification": "verified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "Тест(jpg)#Тест(15-q15)"
+      ],
+      "explanation": "Название продукта дороже средней цены: WHERE price > (SELECT AVG(price)...) (или SUM/COUNT).",
+      "topic_id": 13
+    },
+    {
+      "id": "DB-128",
+      "question": "Оператор DESCRIBE",
+      "options": [
+        {
+          "letter": "A",
+          "text": "передает программе описание столбцов результирующей таблицы"
+        },
+        {
+          "letter": "B",
+          "text": "предоставляет программе описание входных параметров"
+        },
+        {
+          "letter": "C",
+          "text": "освобождает память от дополнительной информации"
+        },
+        {
+          "letter": "D",
+          "text": "указывает на этап обработки данных"
+        },
+        {
+          "letter": "E",
+          "text": "отправляет дату и время транзакций"
+        },
+        {
+          "letter": "F",
+          "text": "отправляет курсор на дополнительную информацию"
+        },
+        {
+          "letter": "G",
+          "text": "выводит адрес ошибки"
+        }
+      ],
+      "correct_answers": [
+        "A"
+      ],
+      "answer_type": "single",
+      "language": "ru",
+      "has_code": false,
+      "topic": "",
+      "verification": "verified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "Тест(jpg)#Тест(16)"
+      ],
+      "explanation": "DESCRIBE передаёт программе описание столбцов результирующей таблицы.",
+      "topic_id": 12
+    },
+    {
+      "id": "DB-129",
+      "question": "Операторы сравнения однострочных подзапросов",
+      "options": [
+        {
+          "letter": "A",
+          "text": ">"
+        },
+        {
+          "letter": "B",
+          "text": "all"
+        },
+        {
+          "letter": "C",
+          "text": "<"
+        },
+        {
+          "letter": "D",
+          "text": "in"
+        },
+        {
+          "letter": "E",
+          "text": "="
+        },
+        {
+          "letter": "F",
+          "text": "some"
+        },
+        {
+          "letter": "G",
+          "text": "any"
+        }
+      ],
+      "correct_answers": [
+        "A",
+        "C",
+        "E"
+      ],
+      "answer_type": "multi",
+      "language": "ru",
+      "has_code": false,
+      "topic": "",
+      "verification": "verified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "Тест(jpg)#Тест(17)"
+      ],
+      "explanation": "Однострочный подзапрос сравнивают операторами >, <, = (ALL/ANY/IN — для многострочных).",
+      "topic_id": 13
+    },
+    {
+      "id": "DB-130",
+      "question": "Файловый сервер",
+      "options": [
+        {
+          "letter": "A",
+          "text": "клиент принимает от пользователя запрос"
+        },
+        {
+          "letter": "B",
+          "text": "клиент управляет пользовательским интерфейсом"
+        },
+        {
+          "letter": "C",
+          "text": "большой объем сетевого трафика"
+        },
+        {
+          "letter": "D",
+          "text": "на каждой рабочей станции должна находиться полная копия СУБД"
+        },
+        {
+          "letter": "E",
+          "text": "управление параллельной работой"
+        },
+        {
+          "letter": "F",
+          "text": "клиент управляет пользовательской логикой приложения"
+        }
+      ],
+      "correct_answers": [
+        "C",
+        "D"
+      ],
+      "answer_type": "multi",
+      "language": "ru",
+      "has_code": false,
+      "topic": "",
+      "verification": "verified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "Тест(jpg)#Тест(18)"
+      ],
+      "explanation": "Файл-сервер: большой сетевой трафик и полная копия СУБД на каждой рабочей станции.",
+      "topic_id": 3
+    },
+    {
+      "id": "DB-131",
+      "question": "Нормализация",
+      "options": [
+        {
+          "letter": "A",
+          "text": "включает объединение существующих таблиц в одну большую"
+        },
+        {
+          "letter": "B",
+          "text": "процесс удаления избыточных данных из таблиц для повышения эффективности хранения, целостности данных и масштабируемости"
+        },
+        {
+          "letter": "C",
+          "text": "процесс преобразования сложных структур данных в простые, стабильные структуры данных"
+        },
+        {
+          "letter": "D",
+          "text": "процесс добавления избыточных данных в таблицы для повышения эффективности хранения, целостности данных и масштабируемости"
+        },
+        {
+          "letter": "E",
+          "text": "процесс преобразования простых структур данных в сложные, стабильные структуры данных"
+        },
+        {
+          "letter": "F",
+          "text": "включает разделение существующих таблиц на несколько других, которые могут быть объединены или связаны когда выдается запрос"
+        }
+      ],
+      "correct_answers": [
+        "B",
+        "C",
+        "F"
+      ],
+      "answer_type": "multi",
+      "language": "ru",
+      "has_code": false,
+      "topic": "",
+      "verification": "verified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "Тест(jpg)#Тест(19)"
+      ],
+      "explanation": "Нормализация удаляет избыточность, упрощает структуры и разбивает таблицы на связанные.",
+      "topic_id": 15
+    },
+    {
+      "id": "DB-132",
+      "question": "Аномалии, которые возможны при денормализации",
+      "options": [
+        {
+          "letter": "A",
+          "text": "аномалии создания"
+        },
+        {
+          "letter": "B",
+          "text": "аномалии объединения"
+        },
+        {
+          "letter": "C",
+          "text": "аномалии обновления"
+        },
+        {
+          "letter": "D",
+          "text": "аномалии соединения"
+        },
+        {
+          "letter": "E",
+          "text": "аномалии слияния"
+        },
+        {
+          "letter": "F",
+          "text": "аномалии вставки"
+        },
+        {
+          "letter": "G",
+          "text": "аномалии удаления"
+        },
+        {
+          "letter": "H",
+          "text": "аномалии поиска"
+        }
+      ],
+      "correct_answers": [
+        "C",
+        "F",
+        "G"
+      ],
+      "answer_type": "multi",
+      "language": "ru",
+      "has_code": false,
+      "topic": "",
+      "verification": "verified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "Тест(jpg)#Тест(20-q20)"
+      ],
+      "explanation": "При денормализации возможны аномалии обновления, вставки и удаления.",
+      "topic_id": 15
+    },
+    {
+      "id": "DB-133",
+      "question": "Применить функцию аггрегации avg к следующему массиву данных: {1,5,6,7,8,3,10,0}",
+      "options": [
+        {
+          "letter": "A",
+          "text": "40"
+        },
+        {
+          "letter": "B",
+          "text": "42"
+        },
+        {
+          "letter": "C",
+          "text": "5"
+        },
+        {
+          "letter": "D",
+          "text": "41"
+        },
+        {
+          "letter": "E",
+          "text": "7"
+        },
+        {
+          "letter": "F",
+          "text": "43"
+        }
+      ],
+      "correct_answers": [
+        "C"
+      ],
+      "answer_type": "single",
+      "language": "ru",
+      "has_code": false,
+      "topic": "",
+      "verification": "verified",
+      "verification_note": "",
+      "has_figure": false,
+      "source_files": [
+        "Тест(png)#Тест(44)"
+      ],
+      "explanation": "AVG{1,5,6,7,8,3,10,0} = 40/8 = 5.",
+      "topic_id": 8
+    }
+  ]
+}
