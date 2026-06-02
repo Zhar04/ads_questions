@@ -140,6 +140,39 @@ a { color: var(--accent2); }
 .card:hover { border-color: var(--accent); }
 
 /* Большие кнопки-карточки главного меню */
+/* ---------- Переключатель языка теста ---------- */
+.lang-switch {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 22px;
+  padding: 12px 16px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+.lang-switch-label { color: var(--muted); font-size: 13px; }
+.seg { display: inline-flex; border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+.seg-btn {
+  min-height: var(--tap);
+  padding: 8px 18px;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--muted);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: background .15s, color .15s;
+}
+.seg-btn + .seg-btn { border-left: 1px solid var(--border); }
+.seg-btn.active {
+  color: #fff;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+}
+
 .menu-grid { display: grid; gap: var(--gap); margin-top: 22px; }
 .menu-card {
   display: block;

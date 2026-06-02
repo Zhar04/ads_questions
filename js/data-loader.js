@@ -1,12 +1,28 @@
 // data-loader.js — загрузка банка вопросов и конспекта из data/ с кешем в памяти.
 // Только относительные пути (для GitHub Pages в подпапке).
 
-const CACHE = { questions: null, topics: null };
+const CACHE = { questions: {}, topics: null };
+
+/** Банки вопросов по языку. ru — основной, kk — казахский. */
+const QUESTION_PATHS = {
+  ru: './data/ads_question_bank.json',
+  kk: './data/ads_question_kz_bank.json',
+};
 
 const PATHS = {
-  questions: './data/ads_question_bank.json',
   topics: './data/topics.json',
 };
+
+/** Поддерживаемые языки и их подписи (для UI). */
+export const LANGS = {
+  ru: { code: 'ru', label: 'Рус' },
+  kk: { code: 'kk', label: 'Қаз' },
+};
+
+/** Нормализует код языка к поддерживаемому (по умолчанию ru). */
+export function normalizeLang(lang) {
+  return QUESTION_PATHS[lang] ? lang : 'ru';
+}
 
 async function fetchJSON(url) {
   const res = await fetch(url, { cache: 'no-cache' });
@@ -14,12 +30,13 @@ async function fetchJSON(url) {
   return res.json();
 }
 
-/** Возвращает массив всех вопросов (с кешем). */
-export async function loadQuestions() {
-  if (CACHE.questions) return CACHE.questions;
-  const data = await fetchJSON(PATHS.questions);
+/** Возвращает массив всех вопросов выбранного языка (с кешем). */
+export async function loadQuestions(lang = 'ru') {
+  const key = normalizeLang(lang);
+  if (CACHE.questions[key]) return CACHE.questions[key];
+  const data = await fetchJSON(QUESTION_PATHS[key]);
   const list = Array.isArray(data) ? data : data.questions || [];
-  CACHE.questions = list;
+  CACHE.questions[key] = list;
   return list;
 }
 

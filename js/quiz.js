@@ -1,6 +1,6 @@
 // quiz.js — контроллер страницы теста (quiz.html). Режимы: blitz | full | topic | block.
 
-import { loadQuestions } from './data-loader.js';
+import { loadQuestions, normalizeLang } from './data-loader.js';
 import { recordTopicQuiz, recordFullTest } from './progress.js';
 import { esc, qs, el, showError } from './app.js';
 import {
@@ -28,6 +28,7 @@ const state = {
   answers: {},        // { qid: ['B'] }
   revealed: {},       // { qid: true } — показан ли ответ на этом вопросе
   topicId: null,
+  lang: 'ru',
   finished: false,
   timer: null,
 };
@@ -41,13 +42,19 @@ export async function initQuiz(container, titlebar) {
   const count = parseInt(qs('count', '15'), 10) || 15;
   const topicId = qs('topic') ? Number(qs('topic')) : null;
   const blockId = qs('block');
+  // Язык банка вопросов поддерживается в блице и полном тесте; темы/блоки — только рус.
+  const lang = (mode === 'blitz' || mode === 'full') ? normalizeLang(qs('lang', 'ru')) : 'ru';
   state.mode = mode;
   state.topicId = topicId;
+  state.lang = lang;
 
-  if (titleEl) titleEl.textContent = MODE_TITLES[mode] || 'Тест';
+  if (titleEl) {
+    const langTag = lang === 'kk' ? ' · Қаз' : '';
+    titleEl.textContent = (MODE_TITLES[mode] || 'Тест') + langTag;
+  }
 
   try {
-    const all = await loadQuestions();
+    const all = await loadQuestions(lang);
     let selected = [];
     if (mode === 'full') selected = stratifiedSample(all, count || 30);
     else if (mode === 'blitz') selected = stratifiedSample(all, count || 15);

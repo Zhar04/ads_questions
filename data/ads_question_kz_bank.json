@@ -1,0 +1,2053 @@
+{
+  "meta": {
+    "schema_version": "1.0",
+    "title": "Банк вопросов КТ — Алгоритмы и структуры данных (каз.)",
+    "discipline": "Алгоритмы и структуры данных",
+    "language": "kk",
+    "total_questions": 58,
+    "source_files": [
+      "Алгоритмы+БД.docx",
+      "БД + Алгоритмы.docx"
+    ],
+    "answered_questions": 43,
+    "note_kk": "Жауаптары толтырылмаған сұрақтар (OCR сапасы төмен) тестке қосылмайды."
+  },
+  "questions": [
+    {
+      "id": "ADSKZ-001",
+      "question": "Кыска жолды iзлеу тапсырчасында ДейксIр алгоритмнён орнына колланылатын алгоритм",
+      "options": [
+        {
+          "letter": "A",
+          "text": "Шелл алгорнтмi"
+        },
+        {
+          "letter": "B",
+          "text": "Штрассен алгоритмi"
+        },
+        {
+          "letter": "C",
+          "text": "Чудновск алгоритмi"
+        },
+        {
+          "letter": "D",
+          "text": "Крускал алгорнтмi"
+        },
+        {
+          "letter": "E",
+          "text": "Беллман-Форд алгоритмi"
+        }
+      ],
+      "correct_answers": [
+        "E"
+      ],
+      "answer_type": "single",
+      "language": "kk",
+      "verification": "verified",
+      "has_figure": false,
+      "source_files": [
+        "Алгоритмы+БД.docx#img001.png"
+      ],
+      "explanation": "Терiс салмақты қабырғалары бар графта ең қысқа жолды Беллман-Форд алгоритмі табады (Дейкстра терiс салмақпен жұмыс істемейді)."
+    },
+    {
+      "id": "ADSKZ-002",
+      "question": "Алгорнтчнiн курделлагёнён класстары",
+      "options": [
+        {
+          "letter": "A",
+          "text": "кубтык квадратык: константалы"
+        },
+        {
+          "letter": "B",
+          "text": "есктрген: жаксартылган"
+        },
+        {
+          "letter": "C",
+          "text": "чакси алды: : нI аЛДЫ"
+        },
+        {
+          "letter": "D",
+          "text": "ннын: eтe ннын"
+        },
+        {
+          "letter": "E",
+          "text": "онай: курдеzi"
+        }
+      ],
+      "correct_answers": [],
+      "answer_type": "single",
+      "language": "kk",
+      "verification": "unverified",
+      "has_figure": false,
+      "source_files": [
+        "Алгоритмы+БД.docx#img002.png"
+      ],
+      "explanation": ""
+    },
+    {
+      "id": "ADSKZ-003",
+      "question": "=include =iostream > usilg namnespace std: mnainQ) a[]={10:20: 30}: cout =  *a 1:}",
+      "options": [
+        {
+          "letter": "A",
+          "text": "21"
+        },
+        {
+          "letter": "B",
+          "text": "D} 11"
+        }
+      ],
+      "correct_answers": [],
+      "answer_type": "single",
+      "language": "kk",
+      "verification": "unverified",
+      "has_figure": false,
+      "source_files": [
+        "Алгоритмы+БД.docx#img003.png"
+      ],
+      "explanation": ""
+    },
+    {
+      "id": "ADSKZ-004",
+      "question": "интерпретагор",
+      "options": [
+        {
+          "letter": "A",
+          "text": "транслятор"
+        },
+        {
+          "letter": "B",
+          "text": "колданбалы програх а"
+        },
+        {
+          "letter": "C",
+          "text": "жуйелiк программа"
+        },
+        {
+          "letter": "D",
+          "text": "ко-шнлятор"
+        }
+      ],
+      "correct_answers": [],
+      "answer_type": "single",
+      "language": "kk",
+      "verification": "unverified",
+      "has_figure": false,
+      "source_files": [
+        "Алгоритмы+БД.docx#img005.png"
+      ],
+      "explanation": ""
+    },
+    {
+      "id": "ADSKZ-005",
+      "question": "А) тебелер кабыргалармен косыл ай з6 жек Iзpа бола алагын (инцидентны жалыылача графтын IKp1 багытталмаган кабыргалары бзр жалпылама графтын IYpi багытталан кабыргалары бзр жалпылача графтын TKpi D) арбiр кабыргачен екi Табе гана е чес сонычен катар кез келген iшкi тебелер косылагын жалпылама графтын I<pi багы:",
+      "options": [
+        {
+          "letter": "A",
+          "text": "яанF бягы"
+        },
+        {
+          "letter": "B",
+          "text": "ягян кабыогалярь б 0"
+        },
+        {
+          "letter": "C",
+          "text": "Лям:"
+        }
+      ],
+      "correct_answers": [],
+      "answer_type": "single",
+      "language": "kk",
+      "verification": "unverified",
+      "has_figure": false,
+      "source_files": [
+        "Алгоритмы+БД.docx#img006.png"
+      ],
+      "explanation": ""
+    },
+    {
+      "id": "ADSKZ-006",
+      "question": "тiлiнде анi кандай да бiр си волIар тiзбегi болатын айнымчалынын Iнпi",
+      "options": [
+        {
+          "letter": "A",
+          "text": "long"
+        },
+        {
+          "letter": "B",
+          "text": "real"
+        },
+        {
+          "letter": "C",
+          "text": "double"
+        },
+        {
+          "letter": "D",
+          "text": "string"
+        }
+      ],
+      "correct_answers": [
+        "D"
+      ],
+      "answer_type": "single",
+      "language": "kk",
+      "verification": "verified",
+      "has_figure": false,
+      "source_files": [
+        "Алгоритмы+БД.docx#img011.png"
+      ],
+      "explanation": "Символдар тізбегін сақтайтын тип — string."
+    },
+    {
+      "id": "ADSKZ-007",
+      "question": "int func charx: float  : double t): функцнясынын чэнёнён тнпi",
+      "options": [
+        {
+          "letter": "A",
+          "text": "char"
+        },
+        {
+          "letter": "B",
+          "text": "iilt"
+        },
+        {
+          "letter": "C",
+          "text": "double"
+        },
+        {
+          "letter": "D",
+          "text": "0)   string"
+        },
+        {
+          "letter": "E",
+          "text": "float"
+        }
+      ],
+      "correct_answers": [
+        "B"
+      ],
+      "answer_type": "single",
+      "language": "kk",
+      "verification": "verified",
+      "has_figure": false,
+      "source_files": [
+        "Алгоритмы+БД.docx#img012.png"
+      ],
+      "explanation": "Функция int деп жарияланған, сондықтан бүтін (int) мән қайтарады."
+    },
+    {
+      "id": "ADSKZ-008",
+      "question": "Програмчанын #скауларын чашнналык Iiлге тiзбектей адарылуын качтамасыз ететiн програ мз",
+      "options": [
+        {
+          "letter": "A",
+          "text": "ко пнлятор"
+        },
+        {
+          "letter": "B",
+          "text": "колданбалы программа"
+        },
+        {
+          "letter": "C",
+          "text": "интерпретагор"
+        },
+        {
+          "letter": "D",
+          "text": "жуйелк програм з"
+        },
+        {
+          "letter": "E",
+          "text": "транслятор"
+        }
+      ],
+      "correct_answers": [
+        "C"
+      ],
+      "answer_type": "single",
+      "language": "kk",
+      "verification": "verified",
+      "has_figure": false,
+      "source_files": [
+        "Алгоритмы+БД.docx#img013.png"
+      ],
+      "explanation": "Интерпретатор бағдарлама нұсқауларын машиналық тілге жолма-жол аударады."
+    },
+    {
+      "id": "ADSKZ-009",
+      "question": "Хеш-кестенан Iкpi",
+      "options": [
+        {
+          "letter": "A",
+          "text": "тура ашык а_респен хеш-кесте"
+        },
+        {
+          "letter": "B",
+          "text": "туйык атреспен хеш-кесте"
+        },
+        {
+          "letter": "C",
+          "text": "тiзбексёз адреспен хеш-кесте"
+        },
+        {
+          "letter": "D",
+          "text": "параллель адреспен хеш-кесте"
+        },
+        {
+          "letter": "E",
+          "text": "ерекше а_респен хеш-кесте"
+        }
+      ],
+      "correct_answers": [],
+      "answer_type": "single",
+      "language": "kk",
+      "verification": "unverified",
+      "has_figure": false,
+      "source_files": [
+        "Алгоритмы+БД.docx#img014.png"
+      ],
+      "explanation": ""
+    },
+    {
+      "id": "ADSKZ-010",
+      "question": "Программала жiберёлген кателiк =include ~stcio h> Finclude =iostreamn> static inlt а=0: roid func(int з) {fla):} roid flinlt a) {cout << а:} int mainl {func(a): fetllrnl 0:",
+      "options": [
+        {
+          "letter": "A",
+          "text": "елeт"
+        },
+        {
+          "letter": "B",
+          "text": "extem roid flint):"
+        }
+      ],
+      "correct_answers": [],
+      "answer_type": "single",
+      "language": "kk",
+      "verification": "unverified",
+      "has_figure": false,
+      "source_files": [
+        "Алгоритмы+БД.docx#img018.png"
+      ],
+      "explanation": ""
+    },
+    {
+      "id": "ADSKZ-011",
+      "question": "Кезек карапайы тИЁчлi каснетке Ie",
+      "options": [
+        {
+          "letter": "A",
+          "text": "LIFO касиетён коллзнады"
+        },
+        {
+          "letter": "B",
+          "text": "кезек басынан жоюды ка тамасыз етелi"
+        },
+        {
+          "letter": "C",
+          "text": "n-I ден артык емec элеченттер снгызады"
+        },
+        {
+          "letter": "D",
+          "text": "кезект1 сонынан жоюды камтамаССЫЗ етел"
+        },
+        {
+          "letter": "E",
+          "text": "кезект1 ек1 шетнен жоюлы качта ассыз етед1"
+        }
+      ],
+      "correct_answers": [
+        "B"
+      ],
+      "answer_type": "single",
+      "language": "kk",
+      "verification": "verified",
+      "has_figure": false,
+      "source_files": [
+        "Алгоритмы+БД.docx#img019.png"
+      ],
+      "explanation": "Кезек (queue) — FIFO құрылымы: элемент басынан жойылады."
+    },
+    {
+      "id": "ADSKZ-012",
+      "question": "Хйёндi",
+      "options": [
+        {
+          "letter": "A",
+          "text": "эрбiр жапырак d немесе d-1 теренлкке Ie женё кез келен тебенён менi онын Ерпагынын мэнанен улкен (кiшi) болатын шарттарлы канагагтянтыратын екiлк агаш"
+        },
+        {
+          "letter": "B",
+          "text": "Н яссивТiнан арбiр уяшыгы eкi kiлI ендi тiзi ён байланыска керсеткёш болып табылалы"
+        },
+        {
+          "letter": "C",
+          "text": "жадыла бЁрмнн артынан бip1 орналаскан бiр тнптi айнымалылардын жиыны"
+        },
+        {
+          "letter": "D",
+          "text": "0)  барлык чэндер аллн аza белгiл1 болганда колдзнылалы немесе анда сантз езгёртёледi"
+        },
+        {
+          "letter": "E",
+          "text": "артурлi эле менттердi сактау ушIн арналан малiметтер н рылы ы. Жене барлык элементтер бiр Fана жады адресне сакталалы"
+        }
+      ],
+      "correct_answers": [
+        "A"
+      ],
+      "answer_type": "single",
+      "language": "kk",
+      "verification": "verified",
+      "has_figure": false,
+      "source_files": [
+        "Алгоритмы+БД.docx#img020.png"
+      ],
+      "explanation": "Үйінді (heap) — әр түйіннің мәні ұрпақтарының мәнінен үлкен (немесе кіші) болатын екілік ағаш."
+    },
+    {
+      "id": "ADSKZ-013",
+      "question": "ункцнянын ёшнде гана белгiлi: Сонын iшёнде аныкталагын айнычалы алуы",
+      "options": [
+        {
+          "letter": "A",
+          "text": "зукымды айнымалы"
+        },
+        {
+          "letter": "B",
+          "text": "белг1с1з айны алы"
+        },
+        {
+          "letter": "C",
+          "text": "белгшл1 айны алы"
+        },
+        {
+          "letter": "D",
+          "text": "жергёлiктi айнымалы"
+        },
+        {
+          "letter": "E",
+          "text": "рекурсивтi айнычалы"
+        }
+      ],
+      "correct_answers": [
+        "D"
+      ],
+      "answer_type": "single",
+      "language": "kk",
+      "verification": "verified",
+      "has_figure": false,
+      "source_files": [
+        "Алгоритмы+БД.docx#img027.png"
+      ],
+      "explanation": "Тек функция ішінде белгілі айнымалы — жергілікті айнымалы."
+    },
+    {
+      "id": "ADSKZ-014",
+      "question": "Курделiлiгi орташа жагдзйта",
+      "options": [
+        {
+          "letter": "A",
+          "text": "болатьн скрыптау алгорнтмi"
+        },
+        {
+          "letter": "B",
+          "text": "бiрiктiру"
+        },
+        {
+          "letter": "C",
+          "text": "eкiлiк агаш"
+        },
+        {
+          "letter": "D",
+          "text": "пирачиталык"
+        },
+        {
+          "letter": "E",
+          "text": "тандау"
+        },
+        {
+          "letter": "F",
+          "text": "#ылдач"
+        }
+      ],
+      "correct_answers": [],
+      "answer_type": "single",
+      "language": "kk",
+      "verification": "unverified",
+      "has_figure": false,
+      "source_files": [
+        "Алгоритмы+БД.docx#img028.png"
+      ],
+      "explanation": ""
+    },
+    {
+      "id": "ADSKZ-015",
+      "question": "хеш-коллнзия",
+      "options": [
+        {
+          "letter": "A",
+          "text": "масснв злементтершнин орынын ауыстыру"
+        },
+        {
+          "letter": "B",
+          "text": "масснв злементтершн керсеткш сиякты !йы чдастыру"
+        },
+        {
+          "letter": "C",
+          "text": "0) арбiр операцня кезёнле курдеzi хеш-кестенi ёсептеу"
+        },
+        {
+          "letter": "D",
+          "text": "кестелерд1 тiзбектёк чассив сИякТы уйыдастыру"
+        }
+      ],
+      "correct_answers": [],
+      "answer_type": "single",
+      "language": "kk",
+      "verification": "unverified",
+      "has_figure": false,
+      "source_files": [
+        "Алгоритмы+БД.docx#img029.png"
+      ],
+      "explanation": ""
+    },
+    {
+      "id": "ADSKZ-016",
+      "question": "Программалау парадиг асы",
+      "options": [
+        {
+          "letter": "A",
+          "text": "объектiлер туралы зныктамз"
+        },
+        {
+          "letter": "B",
+          "text": "максатка жегте багытталан: Орындаушыга айкын жазылган жэне накты коандалар"
+        },
+        {
+          "letter": "C",
+          "text": "програм анын жазыту стилн зныктайтын нускаулардын: ережелердн жэне идеялардын жнынтыгы"
+        },
+        {
+          "letter": "D",
+          "text": "мэл четтердiн жлыны жэне олардын снпаттамасы"
+        },
+        {
+          "letter": "E",
+          "text": "Орындаушыга Орында ушён бершлген командалар"
+        }
+      ],
+      "correct_answers": [
+        "C"
+      ],
+      "answer_type": "single",
+      "language": "kk",
+      "verification": "verified",
+      "has_figure": false,
+      "source_files": [
+        "Алгоритмы+БД.docx#img033.png"
+      ],
+      "explanation": "Программалау парадигмасы — код жазу стилін анықтайтын ережелер мен идеялар жиынтығы."
+    },
+    {
+      "id": "ADSKZ-017",
+      "question": "шеллдк с_рыптзу",
+      "options": [
+        {
+          "letter": "A",
+          "text": "кою аркылы стрыптау"
+        },
+        {
+          "letter": "B",
+          "text": "пирачиталык стрыпта"
+        },
+        {
+          "letter": "C",
+          "text": "курдел1 стрыптау"
+        },
+        {
+          "letter": "D",
+          "text": "хыллам скрыптау"
+        }
+      ],
+      "correct_answers": [],
+      "answer_type": "single",
+      "language": "kk",
+      "verification": "unverified",
+      "has_figure": false,
+      "source_files": [
+        "Алгоритмы+БД.docx#img034.png"
+      ],
+      "explanation": ""
+    },
+    {
+      "id": "ADSKZ-018",
+      "question": "Агашты керсету }шн колланылатьн масснвтн индекстен пкрагьн пйннIн он жак #рпагынын индекст",
+      "options": [
+        {
+          "letter": "A",
+          "text": "27 -"
+        },
+        {
+          "letter": "B",
+          "text": "1 -1"
+        },
+        {
+          "letter": "C",
+          "text": "2\"1"
+        },
+        {
+          "letter": "D",
+          "text": "пzl"
+        },
+        {
+          "letter": "E",
+          "text": "27 -"
+        }
+      ],
+      "correct_answers": [],
+      "answer_type": "single",
+      "language": "kk",
+      "verification": "unverified",
+      "has_figure": false,
+      "source_files": [
+        "Алгоритмы+БД.docx#img035.png"
+      ],
+      "explanation": ""
+    },
+    {
+      "id": "ADSKZ-019",
+      "question": "Тест тапсырмасыны- нэчiрг",
+      "options": [
+        {
+          "letter": "A",
+          "text": "Сiздiн жауабыны:"
+        },
+        {
+          "letter": "B",
+          "text": "Тестiлеудн натижесi"
+        }
+      ],
+      "correct_answers": [],
+      "answer_type": "single",
+      "language": "kk",
+      "verification": "unverified",
+      "has_figure": false,
+      "source_files": [
+        "Алгоритмы+БД.docx#img038.png"
+      ],
+      "explanation": ""
+    },
+    {
+      "id": "ADSKZ-020",
+      "question": "Интерпретаторлар",
+      "options": [
+        {
+          "letter": "A",
+          "text": "багдарламзнын чэтiнан карап дэнекерсёз операторларлы орындлйлы"
+        },
+        {
+          "letter": "B",
+          "text": "програм аларды снпяттайды"
+        },
+        {
+          "letter": "C",
+          "text": "алгорнтмдерлi орындайды"
+        },
+        {
+          "letter": "D",
+          "text": "чашиналык кодтарда эквнвалентт1 багадрлама алыП оны орындлйлы"
+        },
+        {
+          "letter": "E",
+          "text": "есептерд1 шешел"
+        }
+      ],
+      "correct_answers": [
+        "A"
+      ],
+      "answer_type": "single",
+      "language": "kk",
+      "verification": "verified",
+      "has_figure": false,
+      "source_files": [
+        "Алгоритмы+БД.docx#img039.png"
+      ],
+      "explanation": "Интерпретатор бағдарламаны басынан бастап операторларды тікелей орындайды."
+    },
+    {
+      "id": "ADSKZ-021",
+      "question": "Програчча фраг чентёнён нэтыжжесi inlt a=5: int b=0: ilt =a: r=btt: Cout =  1",
+      "options": [
+        {
+          "letter": "A",
+          "text": "Cout = 1: Cout =b:"
+        },
+        {
+          "letter": "B",
+          "text": "O00"
+        }
+      ],
+      "correct_answers": [],
+      "answer_type": "single",
+      "language": "kk",
+      "verification": "unverified",
+      "has_figure": false,
+      "source_files": [
+        "Алгоритмы+БД.docx#img040.png"
+      ],
+      "explanation": ""
+    },
+    {
+      "id": "ADSKZ-022",
+      "question": "Кешру орын атыстырута караанда срынлалу тезд1г1",
+      "options": [
+        {
+          "letter": "A",
+          "text": "он eсе"
+        },
+        {
+          "letter": "B",
+          "text": "ek1 ёсe"
+        },
+        {
+          "letter": "C",
+          "text": "#7з есе"
+        },
+        {
+          "letter": "D",
+          "text": "уш есе"
+        },
+        {
+          "letter": "E",
+          "text": "бес eсe"
+        }
+      ],
+      "correct_answers": [],
+      "answer_type": "single",
+      "language": "kk",
+      "verification": "unverified",
+      "has_figure": false,
+      "source_files": [
+        "Алгоритмы+БД.docx#img041.png"
+      ],
+      "explanation": ""
+    },
+    {
+      "id": "ADSKZ-023",
+      "question": "Хеш-кесте курылады",
+      "options": [
+        {
+          "letter": "A",
+          "text": "дектнн нег1знде"
+        },
+        {
+          "letter": "B",
+          "text": "ассоцнатнвгi массивтён негiзёнде"
+        },
+        {
+          "letter": "C",
+          "text": "стектiн негiзанде"
+        },
+        {
+          "letter": "D",
+          "text": "#ныннын негзнде"
+        },
+        {
+          "letter": "E",
+          "text": "кезектн нег1зинле"
+        }
+      ],
+      "correct_answers": [
+        "B"
+      ],
+      "answer_type": "single",
+      "language": "kk",
+      "verification": "verified",
+      "has_figure": false,
+      "source_files": [
+        "Алгоритмы+БД.docx#img042.png"
+      ],
+      "explanation": "Хеш-кесте ассоциативтік массив негізінде құрылады."
+    },
+    {
+      "id": "ADSKZ-024",
+      "question": "Бннарлы аfаш Tpi",
+      "options": [
+        {
+          "letter": "A",
+          "text": "Кызыл кара"
+        },
+        {
+          "letter": "B",
+          "text": "Кызыл ак"
+        },
+        {
+          "letter": "C",
+          "text": "Кызыл жасыл"
+        },
+        {
+          "letter": "D",
+          "text": "Кызыл crp"
+        },
+        {
+          "letter": "E",
+          "text": "Кызыл кeк"
+        }
+      ],
+      "correct_answers": [
+        "A"
+      ],
+      "answer_type": "single",
+      "language": "kk",
+      "verification": "verified",
+      "has_figure": false,
+      "source_files": [
+        "Алгоритмы+БД.docx#img043.png"
+      ],
+      "explanation": "Қызыл-қара (red-black) ағаш — өзін теңгеретін екілік іздеу ағашы."
+    },
+    {
+      "id": "ADSKZ-025",
+      "question": "G=(V: E) ернегёмен берёлген графты зйнату элiсiнiн чзгынасы",
+      "options": [
+        {
+          "letter": "A",
+          "text": "эйлерлк iздеу"
+        },
+        {
+          "letter": "B",
+          "text": "РекрусивI 1злeу"
+        },
+        {
+          "letter": "C",
+          "text": "терендеп 1здеу"
+        },
+        {
+          "letter": "D",
+          "text": "кеншнен 1здеу"
+        },
+        {
+          "letter": "E",
+          "text": "зралас ёздеу"
+        }
+      ],
+      "correct_answers": [],
+      "answer_type": "single",
+      "language": "kk",
+      "verification": "unverified",
+      "has_figure": false,
+      "source_files": [
+        "Алгоритмы+БД.docx#img044.png"
+      ],
+      "explanation": ""
+    },
+    {
+      "id": "ADSKZ-026",
+      "question": "логикаль Iёсттiлеу",
+      "options": [
+        {
+          "letter": "A",
+          "text": "{скасыл жэшёкэ} адiсi бойынша тесттiлеу"
+        },
+        {
+          "letter": "B",
+          "text": "аякта тесттлеу"
+        },
+        {
+          "letter": "C",
+          "text": "{Crp хешёкъ afici бойынша тесттiлеу"
+        },
+        {
+          "letter": "D",
+          "text": "пооперлторное тестшiле:"
+        }
+      ],
+      "correct_answers": [
+        "A"
+      ],
+      "answer_type": "single",
+      "language": "kk",
+      "verification": "verified",
+      "has_figure": false,
+      "source_files": [
+        "Алгоритмы+БД.docx#img050.png"
+      ],
+      "explanation": "Логикалық тестілеу — «ақ жәшік» (white-box) әдісі."
+    },
+    {
+      "id": "ADSKZ-027",
+      "question": "Эзён езi шакыратын функция",
+      "options": [
+        {
+          "letter": "A",
+          "text": "Рекурсия"
+        },
+        {
+          "letter": "B",
+          "text": "масснв"
+        },
+        {
+          "letter": "C",
+          "text": "стек"
+        },
+        {
+          "letter": "D",
+          "text": "процедура"
+        },
+        {
+          "letter": "E",
+          "text": "функцня"
+        }
+      ],
+      "correct_answers": [
+        "A"
+      ],
+      "answer_type": "single",
+      "language": "kk",
+      "verification": "verified",
+      "has_figure": false,
+      "source_files": [
+        "Алгоритмы+БД.docx#img051.png"
+      ],
+      "explanation": "Өзін-өзі шақыратын функция — рекурсия."
+    },
+    {
+      "id": "ADSKZ-028",
+      "question": "Кезек сактлу ушн колланылады",
+      "options": [
+        {
+          "letter": "A",
+          "text": "аяк асты болзтын сырткы кагерлёр туралы хабарлама"
+        },
+        {
+          "letter": "B",
+          "text": "кою кезанде авIОМаIIы Скрыпталатын элеченттер"
+        },
+        {
+          "letter": "C",
+          "text": "енделетн алгебральк ернектердн сн воллы атлуы"
+        },
+        {
+          "letter": "D",
+          "text": "стрыптау кезiнде автоматты табылатын зле енттер"
+        },
+        {
+          "letter": "E",
+          "text": "XаI жазу кезёнде колданушымен басылган перне:"
+        }
+      ],
+      "correct_answers": [],
+      "answer_type": "single",
+      "language": "kk",
+      "verification": "unverified",
+      "has_figure": false,
+      "source_files": [
+        "Алгоритмы+БД.docx#img052.png"
+      ],
+      "explanation": ""
+    },
+    {
+      "id": "ADSKZ-029",
+      "question": "Дога",
+      "options": [
+        {
+          "letter": "A",
+          "text": "сызык"
+        },
+        {
+          "letter": "B",
+          "text": "тебе"
+        },
+        {
+          "letter": "C",
+          "text": "кабырга"
+        },
+        {
+          "letter": "D",
+          "text": "нктe"
+        }
+      ],
+      "correct_answers": [
+        "C"
+      ],
+      "answer_type": "single",
+      "language": "kk",
+      "verification": "verified",
+      "has_figure": false,
+      "source_files": [
+        "Алгоритмы+БД.docx#img053.png"
+      ],
+      "explanation": "Графта доға — қабырға (ребро)."
+    },
+    {
+      "id": "ADSKZ-030",
+      "question": "int func() функциясы қайтарады",
+      "options": [
+        {
+          "letter": "A",
+          "text": "символ деректі"
+        },
+        {
+          "letter": "B",
+          "text": "мәтін деректі"
+        },
+        {
+          "letter": "C",
+          "text": "бүтін деректі"
+        },
+        {
+          "letter": "D",
+          "text": "бөлшек деректі"
+        },
+        {
+          "letter": "E",
+          "text": "логикалық деректі"
+        }
+      ],
+      "correct_answers": [
+        "C"
+      ],
+      "answer_type": "single",
+      "language": "kk",
+      "verification": "verified",
+      "has_figure": false,
+      "source_files": [
+        "БД + Алгоритмы.docx#img001"
+      ],
+      "explanation": "int func() бүтін (int) мән қайтарады."
+    },
+    {
+      "id": "ADSKZ-031",
+      "question": "(6,3,2,8,1,7,4,5) бастапқы тізбек үшін көпіршік әдісімен сұрыптау алгоритмінің бірінші қадамының нәтижесінде алынатын тізбек",
+      "options": [
+        {
+          "letter": "A",
+          "text": "(1,2,3,8,6,7,4,5)"
+        },
+        {
+          "letter": "B",
+          "text": "(3,2,8,6,7,4,5,1)"
+        },
+        {
+          "letter": "C",
+          "text": "(3,2,6,1,7,4,5,8)"
+        },
+        {
+          "letter": "D",
+          "text": "(2,6,3,1,4,8,5,7)"
+        },
+        {
+          "letter": "E",
+          "text": "(6,3,2,8,1,7,4,5)"
+        }
+      ],
+      "correct_answers": [
+        "C"
+      ],
+      "answer_type": "single",
+      "language": "kk",
+      "verification": "verified",
+      "has_figure": false,
+      "source_files": [
+        "БД + Алгоритмы.docx#img002"
+      ],
+      "explanation": "Көпіршік әдісінің бірінші қадамында ең үлкен элемент (8) соңына жылжиды: (3,2,6,1,7,4,5,8)."
+    },
+    {
+      "id": "ADSKZ-032",
+      "question": "Толтырылған массив ұяшығына кілтті хештеудің атауы",
+      "options": [
+        {
+          "letter": "A",
+          "text": "бірігу"
+        },
+        {
+          "letter": "B",
+          "text": "коллизия"
+        },
+        {
+          "letter": "C",
+          "text": "ажырау"
+        },
+        {
+          "letter": "D",
+          "text": "қиылысу"
+        },
+        {
+          "letter": "E",
+          "text": "бөліну"
+        }
+      ],
+      "correct_answers": [
+        "B"
+      ],
+      "answer_type": "single",
+      "language": "kk",
+      "verification": "verified",
+      "has_figure": false,
+      "source_files": [
+        "БД + Алгоритмы.docx#img003"
+      ],
+      "explanation": "Кілт толтырылған ұяшыққа түссе — бұл коллизия."
+    },
+    {
+      "id": "ADSKZ-033",
+      "question": "O(log n) уақытта жұмыс істейтін алгоритм",
+      "options": [
+        {
+          "letter": "A",
+          "text": "екі матрицаны көбейту алгоритмі"
+        },
+        {
+          "letter": "B",
+          "text": "сызықты іздеу алгоритмі"
+        },
+        {
+          "letter": "C",
+          "text": "көпіршікті сұрыптау алгоритмі"
+        },
+        {
+          "letter": "D",
+          "text": "бүтін санның тақ-жұптығын табу алгоритмі"
+        },
+        {
+          "letter": "E",
+          "text": "екілік іздеу алгоритмі"
+        }
+      ],
+      "correct_answers": [
+        "E"
+      ],
+      "answer_type": "single",
+      "language": "kk",
+      "verification": "verified",
+      "has_figure": false,
+      "source_files": [
+        "БД + Алгоритмы.docx#img005"
+      ],
+      "explanation": "O(log n) уақытта жұмыс істейтін — екілік іздеу алгоритмі."
+    },
+    {
+      "id": "ADSKZ-034",
+      "question": "Префиксті декремент дұрыс жазылуы",
+      "options": [
+        {
+          "letter": "A",
+          "text": "a--"
+        },
+        {
+          "letter": "B",
+          "text": "-=a"
+        },
+        {
+          "letter": "C",
+          "text": "a-="
+        },
+        {
+          "letter": "D",
+          "text": "--a"
+        },
+        {
+          "letter": "E",
+          "text": "+=a"
+        }
+      ],
+      "correct_answers": [
+        "D"
+      ],
+      "answer_type": "single",
+      "language": "kk",
+      "verification": "verified",
+      "has_figure": false,
+      "source_files": [
+        "БД + Алгоритмы.docx#img010"
+      ],
+      "explanation": "Префиксті декремент: --a."
+    },
+    {
+      "id": "ADSKZ-035",
+      "question": "Массивтегі іздеу алгоритмінің классификациясы",
+      "options": [
+        {
+          "letter": "A",
+          "text": "шелл іздеуі"
+        },
+        {
+          "letter": "B",
+          "text": "таңдап іздеу"
+        },
+        {
+          "letter": "C",
+          "text": "кірістіріп іздеу"
+        },
+        {
+          "letter": "D",
+          "text": "екілік (бинарлы) іздеу"
+        },
+        {
+          "letter": "E",
+          "text": "квадраттық іздеу"
+        }
+      ],
+      "correct_answers": [
+        "D"
+      ],
+      "answer_type": "single",
+      "language": "kk",
+      "verification": "verified",
+      "has_figure": false,
+      "source_files": [
+        "БД + Алгоритмы.docx#img011"
+      ],
+      "explanation": "Массивтегі іздеу түрі — екілік (бинарлы) іздеу."
+    },
+    {
+      "id": "ADSKZ-036",
+      "question": "20 түйіні бар толық екілік ағаш бар. тамыры 0 деңгейінде орналасқан болса 4 деңгейіндегі түйін саны",
+      "options": [
+        {
+          "letter": "A",
+          "text": "0"
+        },
+        {
+          "letter": "B",
+          "text": "8"
+        },
+        {
+          "letter": "C",
+          "text": "1"
+        },
+        {
+          "letter": "D",
+          "text": "4"
+        },
+        {
+          "letter": "E",
+          "text": "5"
+        }
+      ],
+      "correct_answers": [
+        "E"
+      ],
+      "answer_type": "single",
+      "language": "kk",
+      "verification": "verified",
+      "has_figure": false,
+      "source_files": [
+        "БД + Алгоритмы.docx#img012"
+      ],
+      "explanation": "1+2+4+8=15 түйін 0–3 деңгейде, қалған 20−15=5 түйін 4-деңгейде."
+    },
+    {
+      "id": "ADSKZ-037",
+      "question": "S жолы бос болғанда true, ал бос болмағанда false қайтаратын жолдардағы әдіс",
+      "options": [
+        {
+          "letter": "A",
+          "text": "S.substr()"
+        },
+        {
+          "letter": "B",
+          "text": "S.find()"
+        },
+        {
+          "letter": "C",
+          "text": "S.insert()"
+        },
+        {
+          "letter": "D",
+          "text": "S.size()"
+        },
+        {
+          "letter": "E",
+          "text": "S.empty()"
+        }
+      ],
+      "correct_answers": [
+        "E"
+      ],
+      "answer_type": "single",
+      "language": "kk",
+      "verification": "verified",
+      "has_figure": false,
+      "source_files": [
+        "БД + Алгоритмы.docx#img013"
+      ],
+      "explanation": "Жол бос болғанда true қайтарады — empty()."
+    },
+    {
+      "id": "ADSKZ-038",
+      "question": "Стек әдістеріне жатпайтын функция",
+      "options": [
+        {
+          "letter": "A",
+          "text": "pop()"
+        },
+        {
+          "letter": "B",
+          "text": "size()"
+        },
+        {
+          "letter": "C",
+          "text": "push()"
+        },
+        {
+          "letter": "D",
+          "text": "clear"
+        },
+        {
+          "letter": "E",
+          "text": "contains()"
+        }
+      ],
+      "correct_answers": [
+        "E"
+      ],
+      "answer_type": "single",
+      "language": "kk",
+      "verification": "verified",
+      "has_figure": false,
+      "source_files": [
+        "БД + Алгоритмы.docx#img014"
+      ],
+      "explanation": "contains() — стек әдісі емес."
+    },
+    {
+      "id": "ADSKZ-039",
+      "question": "Барлық төбелік жұптар үшін ең қысқа жолдарды құру есебінде ең қысқа жол ізделеді",
+      "options": [
+        {
+          "letter": "A",
+          "text": "бастапқы төбеден бастап бірнеше қабырға қашықтықтағы басқа шыңдарға дейін"
+        },
+        {
+          "letter": "B",
+          "text": "әр төбеден барлық басқа төбелерге дейін"
+        },
+        {
+          "letter": "C",
+          "text": "бастапқы төбеден бастап бір қабырға қашықтықтағы басқа шыңдарға дейін"
+        },
+        {
+          "letter": "D",
+          "text": "бастапқы төбеден басқа төбелерге дейін"
+        },
+        {
+          "letter": "E",
+          "text": "әр төбеден бастапқы төбеге дейін"
+        }
+      ],
+      "correct_answers": [
+        "B"
+      ],
+      "answer_type": "single",
+      "language": "kk",
+      "verification": "verified",
+      "has_figure": false,
+      "source_files": [
+        "БД + Алгоритмы.docx#img015"
+      ],
+      "explanation": "Барлық жұп үшін ең қысқа жол: әр төбеден барлық басқа төбелерге дейін."
+    },
+    {
+      "id": "ADSKZ-040",
+      "question": "Көптік таңдау құрылымы",
+      "options": [
+        {
+          "letter": "A",
+          "text": "if"
+        },
+        {
+          "letter": "B",
+          "text": "do-while"
+        },
+        {
+          "letter": "C",
+          "text": "while-do"
+        },
+        {
+          "letter": "D",
+          "text": "if-else"
+        },
+        {
+          "letter": "E",
+          "text": "switch"
+        }
+      ],
+      "correct_answers": [
+        "E"
+      ],
+      "answer_type": "single",
+      "language": "kk",
+      "verification": "verified",
+      "has_figure": false,
+      "source_files": [
+        "БД + Алгоритмы.docx#img020"
+      ],
+      "explanation": "Көптік таңдау құрылымы — switch."
+    },
+    {
+      "id": "ADSKZ-041",
+      "question": "ЖӘНЕ логикалық операторының дұрыс жазылуы",
+      "options": [
+        {
+          "letter": "A",
+          "text": "a||b"
+        },
+        {
+          "letter": "B",
+          "text": "a&&b"
+        },
+        {
+          "letter": "C",
+          "text": "a!"
+        },
+        {
+          "letter": "D",
+          "text": "a//b"
+        },
+        {
+          "letter": "E",
+          "text": "a<<b"
+        }
+      ],
+      "correct_answers": [
+        "B"
+      ],
+      "answer_type": "single",
+      "language": "kk",
+      "verification": "verified",
+      "has_figure": false,
+      "source_files": [
+        "БД + Алгоритмы.docx#img021"
+      ],
+      "explanation": "ЖӘНЕ (AND) операторы — &&."
+    },
+    {
+      "id": "ADSKZ-042",
+      "question": "Көпіршікті сұрыптау алгоритмінің уақыттық күрделілігі",
+      "options": [
+        {
+          "letter": "A",
+          "text": "O(n^3)"
+        },
+        {
+          "letter": "B",
+          "text": "O(n log n)"
+        },
+        {
+          "letter": "C",
+          "text": "O(n^2)"
+        },
+        {
+          "letter": "D",
+          "text": "O(1)"
+        },
+        {
+          "letter": "E",
+          "text": "O(log n)"
+        }
+      ],
+      "correct_answers": [
+        "C"
+      ],
+      "answer_type": "single",
+      "language": "kk",
+      "verification": "verified",
+      "has_figure": false,
+      "source_files": [
+        "БД + Алгоритмы.docx#img022"
+      ],
+      "explanation": "Көпіршік сұрыптауының күрделілігі — O(n^2)."
+    },
+    {
+      "id": "ADSKZ-043",
+      "question": "Графтың түйінінің атауы",
+      "options": [
+        {
+          "letter": "A",
+          "text": "мекенжай"
+        },
+        {
+          "letter": "B",
+          "text": "қабырға"
+        },
+        {
+          "letter": "C",
+          "text": "төбе"
+        },
+        {
+          "letter": "D",
+          "text": "нүкте"
+        },
+        {
+          "letter": "E",
+          "text": "жол"
+        }
+      ],
+      "correct_answers": [
+        "C"
+      ],
+      "answer_type": "single",
+      "language": "kk",
+      "verification": "verified",
+      "has_figure": false,
+      "source_files": [
+        "БД + Алгоритмы.docx#img023"
+      ],
+      "explanation": "Графтың түйіні — төбе (вершина)."
+    },
+    {
+      "id": "ADSKZ-044",
+      "question": "Алгоритмдердің міндетті қасиеттерінің бірі",
+      "options": [
+        {
+          "letter": "A",
+          "text": "түсіндірмелік"
+        },
+        {
+          "letter": "B",
+          "text": "анықталмағандық"
+        },
+        {
+          "letter": "C",
+          "text": "шексіздік"
+        },
+        {
+          "letter": "D",
+          "text": "дискреттілік"
+        },
+        {
+          "letter": "E",
+          "text": "үздіксіздік"
+        }
+      ],
+      "correct_answers": [
+        "D"
+      ],
+      "answer_type": "single",
+      "language": "kk",
+      "verification": "verified",
+      "has_figure": false,
+      "source_files": [
+        "БД + Алгоритмы.docx#img026"
+      ],
+      "explanation": "Алгоритмнің міндетті қасиеті — дискреттілік."
+    },
+    {
+      "id": "ADSKZ-045",
+      "question": "C++ тілінде: int i = 25; if (i > 15) cout << \"i-дің мәні 15-тен үлкен\"; else cout << \"i-дің мәні 15-тен кіші\"; — тармақталған алгоритмдік құрылымы нәтижесінде жауапқа шығатын өрнек",
+      "options": [
+        {
+          "letter": "A",
+          "text": "i-дің мәні 15-тен үлкен"
+        },
+        {
+          "letter": "B",
+          "text": "i-дің мәні 15-ке жуық"
+        },
+        {
+          "letter": "C",
+          "text": "i-дің мәні 15-ке тең"
+        },
+        {
+          "letter": "D",
+          "text": "i-дің мәні белгісіз"
+        }
+      ],
+      "correct_answers": [
+        "A"
+      ],
+      "answer_type": "single",
+      "language": "kk",
+      "verification": "verified",
+      "has_figure": false,
+      "source_files": [
+        "БД + Алгоритмы.docx#img027"
+      ],
+      "explanation": "25>15 ақиқат, сондықтан «15-тен үлкен» шығады."
+    },
+    {
+      "id": "ADSKZ-046",
+      "question": "f(n)=n! функцияларының дұрыс берілуі",
+      "options": [
+        {
+          "letter": "A",
+          "text": "f(0)=1, f(n)=f(n-1)+1"
+        },
+        {
+          "letter": "B",
+          "text": "f(0)=0, f(n)=f(n-1)+2"
+        },
+        {
+          "letter": "C",
+          "text": "f(0)=1, f(n)=2n*f(n-1)"
+        },
+        {
+          "letter": "D",
+          "text": "f(0)=1, f(n)=n*f(n-1)"
+        },
+        {
+          "letter": "E",
+          "text": "f(0)=0, f(n)=f(n-1)+1"
+        }
+      ],
+      "correct_answers": [
+        "D"
+      ],
+      "answer_type": "single",
+      "language": "kk",
+      "verification": "verified",
+      "has_figure": false,
+      "source_files": [
+        "БД + Алгоритмы.docx#img028"
+      ],
+      "explanation": "n! рекурсиясы: f(0)=1, f(n)=n*f(n-1)."
+    },
+    {
+      "id": "ADSKZ-047",
+      "question": "Бір байланыстырылған тізім анықтамасы",
+      "options": [
+        {
+          "letter": "A",
+          "text": "бұл FILO принципі бойынша жұмыс істейтін мәліметтер құрылымы"
+        },
+        {
+          "letter": "B",
+          "text": "бұл дерек пен келесі және алдыңғы түйінге көрсеткіші бар мәліметтер құрылымы"
+        },
+        {
+          "letter": "C",
+          "text": "бұл LILO принципі бойынша жұмыс істейтін мәліметтер құрылымы"
+        },
+        {
+          "letter": "D",
+          "text": "бұл LIFO принципі бойынша жұмыс істейтін мәліметтер құрылымы"
+        },
+        {
+          "letter": "E",
+          "text": "бұл дерек пен келесі түйінге көрсеткіші бар мәліметтер құрылымы"
+        }
+      ],
+      "correct_answers": [
+        "E"
+      ],
+      "answer_type": "single",
+      "language": "kk",
+      "verification": "verified",
+      "has_figure": false,
+      "source_files": [
+        "БД + Алгоритмы.docx#img029"
+      ],
+      "explanation": "Бір байланыстырылған тізім — дерек пен келесі түйінге сілтемесі бар құрылым."
+    },
+    {
+      "id": "ADSKZ-048",
+      "question": "Хеш кестесінде коллизиядан құтылу әдісі",
+      "options": [
+        {
+          "letter": "A",
+          "text": "ашық адресациялау әдісі"
+        },
+        {
+          "letter": "B",
+          "text": "трапеция әдісі"
+        },
+        {
+          "letter": "C",
+          "text": "орамдар әдісі"
+        },
+        {
+          "letter": "D",
+          "text": "қадамдық бөлшектеу әдісі"
+        },
+        {
+          "letter": "E",
+          "text": "квадрат ортасы әдісі"
+        }
+      ],
+      "correct_answers": [
+        "A"
+      ],
+      "answer_type": "single",
+      "language": "kk",
+      "verification": "verified",
+      "has_figure": false,
+      "source_files": [
+        "БД + Алгоритмы.docx#img030"
+      ],
+      "explanation": "Коллизиядан құтылу — ашық адресациялау (open addressing)."
+    },
+    {
+      "id": "ADSKZ-049",
+      "question": "Екілік ағаштағы іздеу қызылды-қаралы ағаш қасиеттерінің бірі",
+      "options": [
+        {
+          "letter": "A",
+          "text": "түйіннің сол ішкі ағашының кілтінің мәні түйіннің кілтінің мәнінен үлкен болса"
+        },
+        {
+          "letter": "B",
+          "text": "барлық қызыл-қара ағаштың жапырақтары бір деңгейде орналасса"
+        },
+        {
+          "letter": "C",
+          "text": "түйіннің сол ішкі ағашының кілтінің мәні түйіннің кілтінің мәнінен кіші болса"
+        },
+        {
+          "letter": "D",
+          "text": "егер төбе қызыл, онда оның екі мұрагері де қара"
+        },
+        {
+          "letter": "E",
+          "text": "әрбір түйіннің ең болмағанда бір ішкі ағашы бос"
+        }
+      ],
+      "correct_answers": [
+        "D"
+      ],
+      "answer_type": "single",
+      "language": "kk",
+      "verification": "verified",
+      "has_figure": false,
+      "source_files": [
+        "БД + Алгоритмы.docx#img031"
+      ],
+      "explanation": "Қызыл-қара ағаш: егер төбе қызыл болса, екі ұрпағы да қара."
+    },
+    {
+      "id": "ADSKZ-050",
+      "question": "Постфиксті декремент дұрыс жазылуы",
+      "options": [
+        {
+          "letter": "A",
+          "text": "-=a"
+        },
+        {
+          "letter": "B",
+          "text": "--a"
+        },
+        {
+          "letter": "C",
+          "text": "a++"
+        },
+        {
+          "letter": "D",
+          "text": "+=a"
+        },
+        {
+          "letter": "E",
+          "text": "a--"
+        }
+      ],
+      "correct_answers": [
+        "E"
+      ],
+      "answer_type": "single",
+      "language": "kk",
+      "verification": "verified",
+      "has_figure": false,
+      "source_files": [
+        "БД + Алгоритмы.docx#img035"
+      ],
+      "explanation": "Постфиксті декремент: a--."
+    },
+    {
+      "id": "ADSKZ-051",
+      "question": "Массивтерді сыртқы сұрыптау алгоритмі",
+      "options": [
+        {
+          "letter": "A",
+          "text": "біріктіріп сұрыптау"
+        },
+        {
+          "letter": "B",
+          "text": "қосып сұрыптау"
+        },
+        {
+          "letter": "C",
+          "text": "шейкерлік сұрыптау"
+        },
+        {
+          "letter": "D",
+          "text": "көпіршікті сұрыптау"
+        },
+        {
+          "letter": "E",
+          "text": "кірістіріп сұрыптау"
+        }
+      ],
+      "correct_answers": [
+        "A"
+      ],
+      "answer_type": "single",
+      "language": "kk",
+      "verification": "verified",
+      "has_figure": false,
+      "source_files": [
+        "БД + Алгоритмы.docx#img037"
+      ],
+      "explanation": "Сыртқы сұрыптау — біріктіріп сұрыптау (merge sort)."
+    },
+    {
+      "id": "ADSKZ-052",
+      "question": "Хеш кестесінің анықтамасы",
+      "options": [
+        {
+          "letter": "A",
+          "text": "хеш кестесі – типтері бірдей элементтерден тұратын деректер құрылымы"
+        },
+        {
+          "letter": "B",
+          "text": "хеш кестесі – әр-түрлі типті реттелген деректердің құрылымы"
+        },
+        {
+          "letter": "C",
+          "text": "хеш кестесі – FIFO принципі бойынша жұмыс істейтін деректер құрылымы"
+        },
+        {
+          "letter": "D",
+          "text": "хеш кестесі – өте жылдам іздеу мен қоюды қамтамасыздандыратын деректер құрылымы"
+        },
+        {
+          "letter": "E",
+          "text": "хеш кестесі – бір-бірімен байланысқан деректер құрылымы"
+        }
+      ],
+      "correct_answers": [
+        "D"
+      ],
+      "answer_type": "single",
+      "language": "kk",
+      "verification": "verified",
+      "has_figure": false,
+      "source_files": [
+        "БД + Алгоритмы.docx#img039"
+      ],
+      "explanation": "Хеш-кесте — өте жылдам іздеу мен қоюды қамтамасыз ететін құрылым."
+    },
+    {
+      "id": "ADSKZ-053",
+      "question": "Егер байланыспаған графтың төбелерінің әрқайсысы басқаларымен қабырғалармен жалғанған болса онда ол граф",
+      "options": [
+        {
+          "letter": "A",
+          "text": "толық емес граф деп аталады"
+        },
+        {
+          "letter": "B",
+          "text": "гиперграф деп аталады"
+        },
+        {
+          "letter": "C",
+          "text": "шынжыр(тізбек) деп аталады"
+        },
+        {
+          "letter": "D",
+          "text": "толық граф деп аталады"
+        },
+        {
+          "letter": "E",
+          "text": "мультиграф деп аталады"
+        }
+      ],
+      "correct_answers": [
+        "D"
+      ],
+      "answer_type": "single",
+      "language": "kk",
+      "verification": "verified",
+      "has_figure": false,
+      "source_files": [
+        "БД + Алгоритмы.docx#img040"
+      ],
+      "explanation": "Әр төбесі барлығымен жалғанған граф — толық граф."
+    },
+    {
+      "id": "ADSKZ-054",
+      "question": "Алгоритм күрделілігінің өсу ретімен орналасқан нұсқалары",
+      "options": [
+        {
+          "letter": "A",
+          "text": "O(N^2), O(N), O(log N)"
+        },
+        {
+          "letter": "B",
+          "text": "O(1), O(N), O(N^3)"
+        },
+        {
+          "letter": "C",
+          "text": "O(2N), O(N), O(1)"
+        },
+        {
+          "letter": "D",
+          "text": "O(N), O(1), O(N log N)"
+        },
+        {
+          "letter": "E",
+          "text": "O(N^2), O(log N), O(N^3)"
+        }
+      ],
+      "correct_answers": [
+        "B"
+      ],
+      "answer_type": "single",
+      "language": "kk",
+      "verification": "verified",
+      "has_figure": false,
+      "source_files": [
+        "БД + Алгоритмы.docx#img043"
+      ],
+      "explanation": "Өсу реті: O(1) < O(N) < O(N^3)."
+    },
+    {
+      "id": "ADSKZ-055",
+      "question": "C++ тілінде: double x=3.5; int y; if(x==0) y=7*pow(x,3); else y=2*pow(x,3); cout<<y; — нәтижесінде экранға шығатын жауап",
+      "options": [
+        {
+          "letter": "A",
+          "text": "0"
+        },
+        {
+          "letter": "B",
+          "text": "85.75"
+        },
+        {
+          "letter": "C",
+          "text": "85"
+        },
+        {
+          "letter": "D",
+          "text": "75"
+        },
+        {
+          "letter": "E",
+          "text": "54"
+        }
+      ],
+      "correct_answers": [
+        "C"
+      ],
+      "answer_type": "single",
+      "language": "kk",
+      "verification": "verified",
+      "has_figure": false,
+      "source_files": [
+        "БД + Алгоритмы.docx#img045"
+      ],
+      "explanation": "x=3.5≠0, y=2*3.5^3=85.75, бүтін y=85."
+    },
+    {
+      "id": "ADSKZ-056",
+      "question": "printf() функциясының дұрыс жазылуы",
+      "options": [
+        {
+          "letter": "A",
+          "text": "int a; printf(\"%c\", a);"
+        },
+        {
+          "letter": "B",
+          "text": "int a; printf(\"a=%s\", a);"
+        },
+        {
+          "letter": "C",
+          "text": "int a; printf(\"%s\", a);"
+        },
+        {
+          "letter": "D",
+          "text": "int a; printf(\"%d\", a);"
+        },
+        {
+          "letter": "E",
+          "text": "int a; printf(\"a=&i\", a);"
+        }
+      ],
+      "correct_answers": [
+        "D"
+      ],
+      "answer_type": "single",
+      "language": "kk",
+      "verification": "verified",
+      "has_figure": false,
+      "source_files": [
+        "БД + Алгоритмы.docx#img046"
+      ],
+      "explanation": "int үшін дұрыс: printf(\"%d\", a)."
+    },
+    {
+      "id": "ADSKZ-057",
+      "question": "C++ тілінде динамикалық бүтін типті массивті жариялаудың дұрыс жазылуы",
+      "options": [
+        {
+          "letter": "A",
+          "text": "int* a = new int[n]"
+        },
+        {
+          "letter": "B",
+          "text": "int* a = new int*[n]"
+        },
+        {
+          "letter": "C",
+          "text": "int a = new int[n]"
+        },
+        {
+          "letter": "D",
+          "text": "int a[n]"
+        },
+        {
+          "letter": "E",
+          "text": "int* a = new int(n)"
+        }
+      ],
+      "correct_answers": [
+        "A"
+      ],
+      "answer_type": "single",
+      "language": "kk",
+      "verification": "verified",
+      "has_figure": false,
+      "source_files": [
+        "БД + Алгоритмы.docx#img047"
+      ],
+      "explanation": "Динамикалық бүтін массив: int* a = new int[n]."
+    },
+    {
+      "id": "ADSKZ-058",
+      "question": "AVL ағашында жою операциясының орындалу уақыты",
+      "options": [
+        {
+          "letter": "A",
+          "text": "O(n^3)"
+        },
+        {
+          "letter": "B",
+          "text": "O(n^2)"
+        },
+        {
+          "letter": "C",
+          "text": "O(nlogn)"
+        },
+        {
+          "letter": "D",
+          "text": "O(logn)"
+        },
+        {
+          "letter": "E",
+          "text": "O(1)"
+        }
+      ],
+      "correct_answers": [
+        "D"
+      ],
+      "answer_type": "single",
+      "language": "kk",
+      "verification": "verified",
+      "has_figure": false,
+      "source_files": [
+        "БД + Алгоритмы.docx#img048"
+      ],
+      "explanation": "AVL ағашында жою операциясы — O(log n)."
+    }
+  ]
+}

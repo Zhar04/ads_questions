@@ -26,18 +26,26 @@
       <p class="subtitle">Тренажёр для подготовки к комплексному тестированию · Республика Казахстан</p>
     </header>
 
+    <div class="lang-switch" role="group" aria-label="Язык теста">
+      <span class="lang-switch-label">Язык теста / Тест тілі:</span>
+      <div class="seg">
+        <button type="button" class="seg-btn" data-lang="ru">Рус</button>
+        <button type="button" class="seg-btn" data-lang="kk">Қаз</button>
+      </div>
+    </div>
+
     <nav class="menu-grid">
       <a class="menu-card full" href="topics.html">
         <span class="mc-icon">📚</span>
         <div class="mc-title">Темы</div>
         <div class="mc-desc">10 тем с конспектом, тестами блоков и прогрессом</div>
       </a>
-      <a class="menu-card" href="quiz.html?mode=blitz&count=15">
+      <a class="menu-card" id="card-blitz" href="quiz.html?mode=blitz&count=15">
         <span class="mc-icon">⚡</span>
         <div class="mc-title">Блиц-тест</div>
         <div class="mc-desc">15 вопросов · обучающий режим с разбором</div>
       </a>
-      <a class="menu-card" href="quiz.html?mode=full&count=30">
+      <a class="menu-card" id="card-full" href="quiz.html?mode=full&count=30">
         <span class="mc-icon">🎓</span>
         <div class="mc-title">Полный тест</div>
         <div class="mc-desc">30 вопросов · формат КТ · с таймером</div>
@@ -61,9 +69,26 @@
   </main>
 
   <script type="module">
-    import { loadTopicsWithCounts, loadQuestions } from './js/data-loader.js';
+    import { loadTopicsWithCounts, loadQuestions, normalizeLang } from './js/data-loader.js';
     import { computeOverallPercent, countCompletedTopics, getFullTestBest, resetAllProgress } from './js/progress.js';
     import './js/app.js'; // регистрирует service worker
+
+    /* ---------- Выбор языка теста (блиц / полный) ---------- */
+    const LANG_KEY = 'kt-quiz-lang';
+    function getLang() { return normalizeLang(localStorage.getItem(LANG_KEY) || 'ru'); }
+    function applyLang(lang) {
+      lang = normalizeLang(lang);
+      localStorage.setItem(LANG_KEY, lang);
+      document.querySelectorAll('.seg-btn').forEach((b) =>
+        b.classList.toggle('active', b.dataset.lang === lang)
+      );
+      document.getElementById('card-blitz').href = `quiz.html?mode=blitz&count=15&lang=${lang}`;
+      document.getElementById('card-full').href = `quiz.html?mode=full&count=30&lang=${lang}`;
+    }
+    document.querySelectorAll('.seg-btn').forEach((b) =>
+      b.addEventListener('click', () => applyLang(b.dataset.lang))
+    );
+    applyLang(getLang());
 
     async function render() {
       try {
