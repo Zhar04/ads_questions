@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Самопроверка · КТ АиСД</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Unbounded:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    .test { display:flex; gap:10px; padding:9px 12px; border:1px solid var(--border); border-radius:var(--radius); margin-bottom:6px; font-size:13px; align-items:flex-start; }
+    .test.pass { border-left:3px solid var(--green); }
+    .test.fail { border-left:3px solid var(--red); background:rgba(239,68,68,.08); }
+    .test .ic { font-weight:700; }
+    .test.pass .ic { color:var(--green); }
+    .test.fail .ic { color:var(--red); }
+    .test .det { color:var(--muted); font-size:12px; }
+    .summary-big { font-family:var(--font-head); font-size:40px; text-align:center; }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <a class="back" href="index.html" aria-label="На главную">←</a>
+    <div class="title">Самопроверка готовности</div>
+  </div>
+  <main class="container">
+    <h1>Тесты готовности продукта</h1>
+    <p class="subtitle">Проверяют данные, модули и логику. Запускаются автоматически.</p>
+    <div class="card" id="summary"><div class="loading"><div class="spinner"></div>Запуск тестов…</div></div>
+    <h2>Детали</h2>
+    <div id="results"></div>
+    <div class="footer">
+      <a class="btn btn-primary" href="index.html">Открыть приложение →</a>
+    </div>
+  </main>
+
+  <script type="module">
+    import { loadQuestions, loadTopics, loadTopicsWithCounts } from './js/data-loader.js';
+    import { stratifiedSample, topicSample, blockSet, isCorrect, scoreQuiz, shuffle, fmtTime } from './js/quiz-engine.js';
+    import { computeTopicPercent, getTopicProgress } from './js/progress.js';
+    import { renderMarkdown } from './js/app.js';
+
+    const results = [];
+    const T = (name) => ({
+      name,
+      ok(cond, detail = '') { results.push({ name, pass: !!cond, detail }); return cond; },
+    });
+    function check(name, cond, detail = '') { results.push({ name, pass: !!cond, detail }); }
+
+    async function run() {
+      let questions, topicsData, topicsWithCounts;
+      try {
+        questions = await loadQuestions();
+        topicsData = await loadTopics();
+        topicsWithCounts = await loadTopicsWithCounts();
+      } catch (e) {
+        check('Загрузка данных (fetch JSON)', false, e.message);
+        render();
+        return;
+      }
+
+      // --- Данные ---
+      check('Банк вопросов загружается', Array.isArray(questions) && questions.length > 0, `вопросов: ${questions?.length}`);
+      check('В банке ≥ 109 вопросов', questions.length >= 109, `фактически: ${questions.length}`);
+
+      const noTopic = questions.filter(q => !q.topic_id);
+      check('У всех вопросов задан topic_id', noTopic.length === 0, noTopic.map(q=>q.id).join(', ') || 'ok');
+
+      const topicsRange = questions.every(q => q.topic_id >= 1 && q.topic_id <= 10);
+      check('Все topic_id в диапазоне 1..10', topicsRange);
+
+      const noExpl = questions.filter(q => !q.explanation || /готовится/.test(q.explanation));
+      check('У всех вопросов есть содержательное explanation', noExpl.length === 0, noExpl.map(q=>q.id).join(', ') || 'ok');
+
+      const noCorrect = questions.filter(q => !Array.isArray(q.correct_answers) || q.correct_answers.length === 0);
+      // ADS-113 — вопрос с рисунком без ответа, допустимо
+      const unexpectedNoCorrect = noCorrect.filter(q => !q.has_figure);
+      check('У всех вопросов (кроме рисуночных) есть верный ответ', unexpectedNoCorrect.length === 0, noCorrect.map(q=>q.id).join(', ') || 'ok');
+
+      const badLetters = questions.filter(q => {
+        const letters = new Set(q.options.map(o => o.letter));
+        return (q.correct_answers || []).some(c => !letters.has(c));
+      });
+      check('Верные ответы соответствуют буквам вариантов', badLetters.length === 0, badLetters.map(q=>q.id).join(', ') || 'ok');
+
+      const codeQs = questions.filter(q => q.code);
+      check('Поле code присутствует у вопросов с кодом', codeQs.length > 0, `с кодом: ${codeQs.length}`);
+
+      // --- Темы ---
+      check('Загружено ровно 10 тем', topicsData.topics.length === 10, `тем: ${topicsData.topics.length}`);
+      const needNotes = topicsData.topics.filter(t => t.needs_notes);
+      check('Нет тем с needs_notes:true (6 и 8 дописаны)', needNotes.length === 0, needNotes.map(t=>t.topic_id).join(', ') || 'ok');
+      const emptyTopics = topicsData.topics.filter(t => !(t.blocks||[]).length);
+      check('У каждой темы есть блоки конспекта', emptyTopics.length === 0, emptyTopics.map(t=>t.topic_id).join(', ') || 'ok');
+      const t6 = topicsData.topics.find(t=>t.topic_id===6);
+      const t8 = topicsData.topics.find(t=>t.topic_id===8);
+      check('Тема 6 (сложность) имеет блоки', (t6?.blocks||[]).length > 0, `блоков: ${(t6?.blocks||[]).length}`);
+      check('Тема 8 (хеш-таблицы) имеет блоки', (t8?.blocks||[]).length > 0, `блоков: ${(t8?.blocks||[]).length}`);
+
+      // каждая тема имеет ≥1 вопрос
+      const topicsNoQ = topicsWithCounts.filter(t => t.questionCount === 0);
+      check('У каждой темы есть хотя бы один вопрос', topicsNoQ.length === 0, topicsNoQ.map(t=>t.topic_id).join(', ') || 'ok');
+
+      // --- Стратифицированная выборка ---
+      const s30 = stratifiedSample(questions, 30);
+      check('Полный тест набирает 30 вопросов', s30.length === 30, `набрано: ${s30.length}`);
+      const ids = new Set(s30.map(q=>q.id));
+      check('Стратификация: нет повторов вопросов', ids.size === s30.length);
+      const topicsCovered = new Set(s30.map(q=>q.topic_id));
+      check('Стратификация: покрыто ≥ 8 тем из 10', topicsCovered.size >= 8, `покрыто тем: ${topicsCovered.size}`);
+      const noFigInSample = s30.every(q => !q.has_figure);
+      check('Авто-набор пропускает вопросы с рисунком', noFigInSample);
+
+      const s15 = stratifiedSample(questions, 15);
+      check('Блиц набирает 15 вопросов', s15.length === 15, `набрано: ${s15.length}`);
+
+      // --- topicSample / blockSet ---
+      const ts = topicSample(questions, 5, 10);
+      check('topicSample(тема 5) даёт вопросы только темы 5', ts.length > 0 && ts.every(q=>q.topic_id===5), `шт: ${ts.length}`);
+
+      // --- скоринг ---
+      const q0 = questions.find(q => (q.correct_answers||[]).length === 1);
+      check('isCorrect: верный ответ засчитывается', isCorrect(q0, q0.correct_answers));
+      check('isCorrect: неверный ответ не засчитывается', !isCorrect(q0, ['Z']));
+      const sc = scoreQuiz([q0], { [q0.id]: q0.correct_answers });
+      check('scoreQuiz: 1/1 = 100%', sc.correct === 1 && Math.round(sc.pct01*100) === 100);
+
+      // --- shuffle сохраняет элементы ---
+      const arr = [1,2,3,4,5];
+      const sh = shuffle(arr);
+      check('shuffle сохраняет состав и длину', sh.length === 5 && [...sh].sort().join() === '1,2,3,4,5' && arr.join()==='1,2,3,4,5');
+
+      // --- fmtTime ---
+      check('fmtTime(65) = 01:05', fmtTime(65) === '01:05', fmtTime(65));
+
+      // --- прогресс ---
+      check('computeTopicPercent в диапазоне 0..100', (() => { const p = computeTopicPercent(1, 8); return p>=0 && p<=100; })());
+
+      // --- markdown ---
+      const md = renderMarkdown('### Заголовок\n\n- пункт **жирный**\n\n```cpp\nint x=1;\n```');
+      check('renderMarkdown: заголовок', /<h3>/.test(md));
+      check('renderMarkdown: список', /<ul>.*<li>/.test(md));
+      check('renderMarkdown: жирный', /<strong>жирный<\/strong>/.test(md));
+      check('renderMarkdown: блок кода', /<pre><code>/.test(md));
+      check('renderMarkdown: экранирование HTML', !/<script>/.test(renderMarkdown('<script>alert(1)</script>')));
+
+      render();
+    }
+
+    function render() {
+      const passed = results.filter(r=>r.pass).length;
+      const total = results.length;
+      const allOk = passed === total;
+      document.getElementById('summary').innerHTML = `
+        <div class="summary-big" style="color:${allOk?'var(--green)':'var(--red)'}">${passed}/${total}</div>
+        <div class="center muted">${allOk ? '✅ Все проверки пройдены — продукт готов' : '⚠️ Есть проваленные проверки (см. ниже)'}</div>`;
+      const box = document.getElementById('results');
+      box.innerHTML = results.map(r => `
+        <div class="test ${r.pass?'pass':'fail'}">
+          <span class="ic">${r.pass?'✓':'✗'}</span>
+          <span>${r.name}${r.detail?` <span class="det">— ${r.detail}</span>`:''}</span>
+        </div>`).join('');
+      document.title = `${passed}/${total} · Самопроверка`;
+    }
+
+    run();
+  </script>
+</body>
+</html>
