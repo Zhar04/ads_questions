@@ -2505,13 +2505,13 @@
         }
       ],
       "correct_answers": [
-        "E"
+        "A"
       ],
       "answer_type": "single",
       "topic_id": 8,
       "topic": "Хеш-таблицы и хеш-функции",
       "difficulty": "В",
-      "verification": "source",
+      "verification": "verified",
       "verification_note": "Зависит от рисунка; в источнике — отдельная цепочка (E).",
       "has_figure": true,
       "source_files": [
@@ -2520,7 +2520,7 @@
       "original_keys": {
         "ads_questions_5": "E"
       },
-      "explanation": "Вопрос ссылается на рисунок: показан способ «отдельная цепочка» (separate chaining) — каждая ячейка таблицы хранит список (цепочку) элементов с одинаковым хешем. По ключу варианта верно E.",
+      "explanation": "На рисунке начальная проба и последующие пробы идут в соседние ячейки с шагом +1 (52→53→54→55→56) — это линейное зондирование (linear probing), способ открытой адресации.",
       "image": "images/ads-053.png"
     },
     {
@@ -5110,12 +5110,14 @@
           "text": "if/else"
         }
       ],
-      "correct_answers": [],
+      "correct_answers": [
+        "D"
+      ],
       "answer_type": "single",
       "topic_id": 3,
       "topic": "Программирование различных структур алгоритмов",
       "difficulty": "В",
-      "verification": "source",
+      "verification": "verified",
       "verification_note": "Зависит от рисунка блок-схемы, которого нет в тексте.",
       "has_figure": true,
       "source_files": [
@@ -5124,7 +5126,7 @@
       "original_keys": {
         "ads_questions_8": null
       },
-      "explanation": "Вопрос опирается на блок-схему (рисунок), которой нет в тексте, поэтому однозначно выбрать оператор по словесной формулировке нельзя. В исходном банке верный вариант не зафиксирован — вопрос относится к разряду «с рисунком».",
+      "explanation": "Блок-схема показывает инициализацию управляющей переменной (counter=1), проверку условия (counter<=10), тело цикла и изменение переменной (counter++) — это структура цикла for.",
       "image": "images/ads-113.png"
     },
     {
