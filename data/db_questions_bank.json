@@ -1960,12 +1960,13 @@
       "topic": "",
       "verification": "ocr_clean_pdf",
       "verification_note": "",
-      "has_figure": false,
+      "has_figure": true,
       "source_files": [
         "Database/#Database (1).png",
         "База данных с ответами 2. docx(1).pdf(clean)"
       ],
-      "explanation": ""
+      "explanation": "",
+      "image": "images/db-044.png"
     },
     {
       "id": "DB-045",
@@ -2007,12 +2008,13 @@
       "topic": "",
       "verification": "ocr_clean_pdf",
       "verification_note": "",
-      "has_figure": false,
+      "has_figure": true,
       "source_files": [
         "Database/#Database (2).png",
         "База данных с ответами 2. docx(1).pdf(clean)"
       ],
-      "explanation": ""
+      "explanation": "",
+      "image": "images/db-045.png"
     },
     {
       "id": "DB-046",
@@ -2046,11 +2048,12 @@
       "topic": "",
       "verification": "unverified",
       "verification_note": "",
-      "has_figure": false,
+      "has_figure": true,
       "source_files": [
         "Database/#Database (3).png"
       ],
-      "explanation": ""
+      "explanation": "",
+      "image": "images/db-046.png"
     },
     {
       "id": "DB-047",
@@ -2084,12 +2087,13 @@
       "topic": "",
       "verification": "ocr_clean_pdf",
       "verification_note": "",
-      "has_figure": false,
+      "has_figure": true,
       "source_files": [
         "Database/#Database (6).png",
         "База данных с ответами 2. docx(1).pdf(clean)"
       ],
-      "explanation": ""
+      "explanation": "",
+      "image": "images/db-047.png"
     },
     {
       "id": "DB-048",
@@ -2135,11 +2139,12 @@
       "topic": "",
       "verification": "unverified",
       "verification_note": "",
-      "has_figure": false,
+      "has_figure": true,
       "source_files": [
         "Database/#Database (7).png"
       ],
-      "explanation": ""
+      "explanation": "",
+      "image": "images/db-048.png"
     },
     {
       "id": "DB-049",
@@ -2238,12 +2243,13 @@
       "topic": "",
       "verification": "ocr_clean_pdf",
       "verification_note": "",
-      "has_figure": false,
+      "has_figure": true,
       "source_files": [
         "Database/#Database (9).png",
         "База данных с ответами 2. docx(1).pdf(clean)"
       ],
-      "explanation": ""
+      "explanation": "",
+      "image": "images/db-050.png"
     },
     {
       "id": "DB-051",
@@ -2285,11 +2291,12 @@
       "topic": "",
       "verification": "unverified",
       "verification_note": "",
-      "has_figure": false,
+      "has_figure": true,
       "source_files": [
         "Database/#Database (10).png"
       ],
-      "explanation": ""
+      "explanation": "",
+      "image": "images/db-051.png"
     },
     {
       "id": "DB-052",
@@ -2335,11 +2342,12 @@
       "topic": "",
       "verification": "unverified",
       "verification_note": "",
-      "has_figure": false,
+      "has_figure": true,
       "source_files": [
         "Database/#Database (11).png"
       ],
-      "explanation": ""
+      "explanation": "",
+      "image": "images/db-052.png"
     },
     {
       "id": "DB-053",
@@ -2385,11 +2393,12 @@
       "topic": "",
       "verification": "unverified",
       "verification_note": "",
-      "has_figure": false,
+      "has_figure": true,
       "source_files": [
         "Database/#Database (12).png"
       ],
-      "explanation": ""
+      "explanation": "",
+      "image": "images/db-053.png"
     },
     {
       "id": "DB-054",
@@ -2435,11 +2444,12 @@
       "topic": "",
       "verification": "unverified",
       "verification_note": "",
-      "has_figure": false,
+      "has_figure": true,
       "source_files": [
         "Database/#Database (13).png"
       ],
-      "explanation": ""
+      "explanation": "",
+      "image": "images/db-054.png"
     },
     {
       "id": "DB-055",
@@ -2485,11 +2495,12 @@
       "topic": "",
       "verification": "unverified",
       "verification_note": "",
-      "has_figure": false,
+      "has_figure": true,
       "source_files": [
         "Database/#Database (14).png"
       ],
-      "explanation": ""
+      "explanation": "",
+      "image": "images/db-055.png"
     },
     {
       "id": "DB-056",
@@ -2535,12 +2546,13 @@
       "topic": "",
       "verification": "ocr_clean_pdf",
       "verification_note": "",
-      "has_figure": false,
+      "has_figure": true,
       "source_files": [
         "Database/#Database (15).png",
         "База данных с ответами 2. docx(1).pdf(clean)"
       ],
-      "explanation": ""
+      "explanation": "",
+      "image": "images/db-056.png"
     },
     {
       "id": "DB-057",
@@ -2586,11 +2598,12 @@
       "topic": "",
       "verification": "unverified",
       "verification_note": "",
-      "has_figure": false,
+      "has_figure": true,
       "source_files": [
         "Database/#Database (16).png"
       ],
-      "explanation": ""
+      "explanation": "",
+      "image": "images/db-057.png"
     },
     {
       "id": "DB-058",
@@ -2636,11 +2649,12 @@
       "topic": "",
       "verification": "unverified",
       "verification_note": "",
-      "has_figure": false,
+      "has_figure": true,
       "source_files": [
         "Database/#Database (17).png"
       ],
-      "explanation": ""
+      "explanation": "",
+      "image": "images/db-058.png"
     },
     {
       "id": "DB-059",
@@ -2682,11 +2696,12 @@
       "topic": "",
       "verification": "unverified",
       "verification_note": "",
-      "has_figure": false,
+      "has_figure": true,
       "source_files": [
         "Database/#Database (18).png"
       ],
-      "explanation": ""
+      "explanation": "",
+      "image": "images/db-059.png"
     },
     {
       "id": "DB-060",
@@ -2732,11 +2747,12 @@
       "topic": "",
       "verification": "unverified",
       "verification_note": "",
-      "has_figure": false,
+      "has_figure": true,
       "source_files": [
         "Database/#Database (19).png"
       ],
-      "explanation": ""
+      "explanation": "",
+      "image": "images/db-060.png"
     },
     {
       "id": "DB-061",
@@ -2782,11 +2798,12 @@
       "topic": "",
       "verification": "unverified",
       "verification_note": "",
-      "has_figure": false,
+      "has_figure": true,
       "source_files": [
         "Database/#Database (20).png"
       ],
-      "explanation": ""
+      "explanation": "",
+      "image": "images/db-061.png"
     },
     {
       "id": "DB-062",
@@ -2828,11 +2845,12 @@
       "topic": "",
       "verification": "unverified",
       "verification_note": "",
-      "has_figure": false,
+      "has_figure": true,
       "source_files": [
         "Database/#Database (61).png"
       ],
-      "explanation": ""
+      "explanation": "",
+      "image": "images/db-062.png"
     },
     {
       "id": "DB-063",
@@ -2870,11 +2888,12 @@
       "topic": "",
       "verification": "unverified",
       "verification_note": "",
-      "has_figure": false,
+      "has_figure": true,
       "source_files": [
         "Database/#Database (62).png"
       ],
-      "explanation": ""
+      "explanation": "",
+      "image": "images/db-063.png"
     },
     {
       "id": "DB-064",
@@ -2916,11 +2935,12 @@
       "topic": "",
       "verification": "unverified",
       "verification_note": "",
-      "has_figure": false,
+      "has_figure": true,
       "source_files": [
         "Database/#Database (76).png"
       ],
-      "explanation": ""
+      "explanation": "",
+      "image": "images/db-064.png"
     },
     {
       "id": "DB-065",
@@ -2946,11 +2966,12 @@
       "topic": "",
       "verification": "unverified",
       "verification_note": "",
-      "has_figure": false,
+      "has_figure": true,
       "source_files": [
         "Database/#Database (78).png"
       ],
-      "explanation": ""
+      "explanation": "",
+      "image": "images/db-065.png"
     },
     {
       "id": "DB-066",
@@ -2996,11 +3017,12 @@
       "topic": "",
       "verification": "unverified",
       "verification_note": "",
-      "has_figure": false,
+      "has_figure": true,
       "source_files": [
         "Database/#Database (80).png"
       ],
-      "explanation": ""
+      "explanation": "",
+      "image": "images/db-066.png"
     },
     {
       "id": "DB-067",
@@ -3046,11 +3068,12 @@
       "topic": "",
       "verification": "unverified",
       "verification_note": "",
-      "has_figure": false,
+      "has_figure": true,
       "source_files": [
         "Database/#Database (84).png"
       ],
-      "explanation": ""
+      "explanation": "",
+      "image": "images/db-067.png"
     },
     {
       "id": "DB-068",
@@ -3096,11 +3119,12 @@
       "topic": "",
       "verification": "unverified",
       "verification_note": "",
-      "has_figure": false,
+      "has_figure": true,
       "source_files": [
         "Database/#Database (94).png"
       ],
-      "explanation": ""
+      "explanation": "",
+      "image": "images/db-068.png"
     },
     {
       "id": "DB-069",
@@ -3142,11 +3166,12 @@
       "topic": "",
       "verification": "unverified",
       "verification_note": "",
-      "has_figure": false,
+      "has_figure": true,
       "source_files": [
         "Database/#Database (103).png"
       ],
-      "explanation": ""
+      "explanation": "",
+      "image": "images/db-069.png"
     },
     {
       "id": "DB-070",
@@ -3176,11 +3201,12 @@
       "topic": "",
       "verification": "unverified",
       "verification_note": "",
-      "has_figure": false,
+      "has_figure": true,
       "source_files": [
         "Database/#Database (105).png"
       ],
-      "explanation": ""
+      "explanation": "",
+      "image": "images/db-070.png"
     },
     {
       "id": "DB-071",
@@ -3218,11 +3244,12 @@
       "topic": "",
       "verification": "unverified",
       "verification_note": "",
-      "has_figure": false,
+      "has_figure": true,
       "source_files": [
         "Database/#Database (125).png"
       ],
-      "explanation": ""
+      "explanation": "",
+      "image": "images/db-071.png"
     },
     {
       "id": "DB-072",
@@ -3248,11 +3275,12 @@
       "topic": "",
       "verification": "unverified",
       "verification_note": "",
-      "has_figure": false,
+      "has_figure": true,
       "source_files": [
         "Database/#Database (128).png"
       ],
-      "explanation": ""
+      "explanation": "",
+      "image": "images/db-072.png"
     },
     {
       "id": "DB-073",
@@ -3294,11 +3322,12 @@
       "topic": "",
       "verification": "unverified",
       "verification_note": "",
-      "has_figure": false,
+      "has_figure": true,
       "source_files": [
         "Database/#Database (145).png"
       ],
-      "explanation": ""
+      "explanation": "",
+      "image": "images/db-073.png"
     },
     {
       "id": "DB-074",
@@ -3344,11 +3373,12 @@
       "topic": "",
       "verification": "unverified",
       "verification_note": "",
-      "has_figure": false,
+      "has_figure": true,
       "source_files": [
         "Database/#Database (146).png"
       ],
-      "explanation": ""
+      "explanation": "",
+      "image": "images/db-074.png"
     },
     {
       "id": "DB-075",
@@ -3370,11 +3400,12 @@
       "topic": "",
       "verification": "unverified",
       "verification_note": "",
-      "has_figure": false,
+      "has_figure": true,
       "source_files": [
         "Database/#Database (151).png"
       ],
-      "explanation": ""
+      "explanation": "",
+      "image": "images/db-075.png"
     },
     {
       "id": "DB-076",
@@ -3420,11 +3451,12 @@
       "topic": "",
       "verification": "unverified",
       "verification_note": "",
-      "has_figure": false,
+      "has_figure": true,
       "source_files": [
         "Database/#Database (155).png"
       ],
-      "explanation": ""
+      "explanation": "",
+      "image": "images/db-076.png"
     },
     {
       "id": "DB-077",
@@ -3470,11 +3502,12 @@
       "topic": "",
       "verification": "unverified",
       "verification_note": "",
-      "has_figure": false,
+      "has_figure": true,
       "source_files": [
         "Database/#Database (160).png"
       ],
-      "explanation": ""
+      "explanation": "",
+      "image": "images/db-077.png"
     },
     {
       "id": "DB-078",
@@ -3520,11 +3553,12 @@
       "topic": "",
       "verification": "unverified",
       "verification_note": "",
-      "has_figure": false,
+      "has_figure": true,
       "source_files": [
         "Database/#Database (163).png"
       ],
-      "explanation": ""
+      "explanation": "",
+      "image": "images/db-078.png"
     },
     {
       "id": "DB-079",
@@ -3570,11 +3604,12 @@
       "topic": "",
       "verification": "unverified",
       "verification_note": "",
-      "has_figure": false,
+      "has_figure": true,
       "source_files": [
         "Database/#Database (167).png"
       ],
-      "explanation": ""
+      "explanation": "",
+      "image": "images/db-079.png"
     },
     {
       "id": "DB-080",
@@ -3909,11 +3944,12 @@
       "topic": "",
       "verification": "unverified",
       "verification_note": "",
-      "has_figure": false,
+      "has_figure": true,
       "source_files": [
         "БД_скриншоты#Screenshot_15"
       ],
-      "explanation": ""
+      "explanation": "",
+      "image": "images/db-086.png"
     },
     {
       "id": "DB-087",
@@ -4004,11 +4040,12 @@
       "topic": "",
       "verification": "unverified",
       "verification_note": "",
-      "has_figure": false,
+      "has_figure": true,
       "source_files": [
         "База данных с ответами 2. docx(1).pdf#?"
       ],
-      "explanation": ""
+      "explanation": "",
+      "image": "images/db-088.png"
     },
     {
       "id": "DB-089",
@@ -4030,11 +4067,12 @@
       "topic": "",
       "verification": "unverified",
       "verification_note": "",
-      "has_figure": false,
+      "has_figure": true,
       "source_files": [
         "База данных с ответами 2. docx(1).pdf#?"
       ],
-      "explanation": ""
+      "explanation": "",
+      "image": "images/db-089.png"
     },
     {
       "id": "DB-090",
@@ -4060,11 +4098,12 @@
       "topic": "",
       "verification": "unverified",
       "verification_note": "",
-      "has_figure": false,
+      "has_figure": true,
       "source_files": [
         "База данных с ответами 2. docx(1).pdf#?"
       ],
-      "explanation": ""
+      "explanation": "",
+      "image": "images/db-090.png"
     },
     {
       "id": "DB-091",
@@ -4106,11 +4145,12 @@
       "topic": "",
       "verification": "unverified",
       "verification_note": "",
-      "has_figure": false,
+      "has_figure": true,
       "source_files": [
         "База данных с ответами 2. docx(1).pdf#?"
       ],
-      "explanation": ""
+      "explanation": "",
+      "image": "images/db-091.png"
     },
     {
       "id": "DB-092",
@@ -4152,11 +4192,12 @@
       "topic": "",
       "verification": "unverified",
       "verification_note": "",
-      "has_figure": false,
+      "has_figure": true,
       "source_files": [
         "База данных с ответами 2. docx(1).pdf#?"
       ],
-      "explanation": ""
+      "explanation": "",
+      "image": "images/db-092.png"
     },
     {
       "id": "DB-093",
@@ -4202,11 +4243,12 @@
       "topic": "",
       "verification": "unverified",
       "verification_note": "",
-      "has_figure": false,
+      "has_figure": true,
       "source_files": [
         "База данных с ответами 2. docx(1).pdf#?"
       ],
-      "explanation": ""
+      "explanation": "",
+      "image": "images/db-093.png"
     },
     {
       "id": "DB-094",
@@ -4240,11 +4282,12 @@
       "topic": "",
       "verification": "unverified",
       "verification_note": "",
-      "has_figure": false,
+      "has_figure": true,
       "source_files": [
         "База данных с ответами 2. docx(1).pdf#?"
       ],
-      "explanation": ""
+      "explanation": "",
+      "image": "images/db-094.png"
     },
     {
       "id": "DB-095",
@@ -4282,11 +4325,12 @@
       "topic": "",
       "verification": "unverified",
       "verification_note": "",
-      "has_figure": false,
+      "has_figure": true,
       "source_files": [
         "Тест(png)#Тест (25).png"
       ],
-      "explanation": ""
+      "explanation": "",
+      "image": "images/db-095.png"
     },
     {
       "id": "DB-096",
@@ -4324,11 +4368,12 @@
       "topic": "",
       "verification": "unverified",
       "verification_note": "",
-      "has_figure": false,
+      "has_figure": true,
       "source_files": [
         "Тест(png)#Тест (26).png"
       ],
-      "explanation": ""
+      "explanation": "",
+      "image": "images/db-096.png"
     },
     {
       "id": "DB-097",
@@ -4366,11 +4411,12 @@
       "topic": "",
       "verification": "unverified",
       "verification_note": "",
-      "has_figure": false,
+      "has_figure": true,
       "source_files": [
         "Тест(png)#Тест (27).png"
       ],
-      "explanation": ""
+      "explanation": "",
+      "image": "images/db-097.png"
     },
     {
       "id": "DB-098",
@@ -4400,11 +4446,12 @@
       "topic": "",
       "verification": "unverified",
       "verification_note": "",
-      "has_figure": false,
+      "has_figure": true,
       "source_files": [
         "Тест(png)#Тест (28).png"
       ],
-      "explanation": ""
+      "explanation": "",
+      "image": "images/db-098.png"
     },
     {
       "id": "DB-099",
@@ -4446,11 +4493,12 @@
       "topic": "",
       "verification": "unverified",
       "verification_note": "",
-      "has_figure": false,
+      "has_figure": true,
       "source_files": [
         "Тест(png)#Тест (29).png"
       ],
-      "explanation": ""
+      "explanation": "",
+      "image": "images/db-099.png"
     },
     {
       "id": "DB-100",
@@ -4488,11 +4536,12 @@
       "topic": "",
       "verification": "unverified",
       "verification_note": "",
-      "has_figure": false,
+      "has_figure": true,
       "source_files": [
         "Тест(png)#Тест (30).png"
       ],
-      "explanation": ""
+      "explanation": "",
+      "image": "images/db-100.png"
     },
     {
       "id": "DB-101",
@@ -4534,11 +4583,12 @@
       "topic": "",
       "verification": "unverified",
       "verification_note": "",
-      "has_figure": false,
+      "has_figure": true,
       "source_files": [
         "Тест(png)#Тест (31).png"
       ],
-      "explanation": ""
+      "explanation": "",
+      "image": "images/db-101.png"
     },
     {
       "id": "DB-102",
@@ -4560,11 +4610,12 @@
       "topic": "",
       "verification": "unverified",
       "verification_note": "",
-      "has_figure": false,
+      "has_figure": true,
       "source_files": [
         "Тест(png)#Тест (32).png"
       ],
-      "explanation": ""
+      "explanation": "",
+      "image": "images/db-102.png"
     },
     {
       "id": "DB-103",
@@ -4602,11 +4653,12 @@
       "topic": "",
       "verification": "unverified",
       "verification_note": "",
-      "has_figure": false,
+      "has_figure": true,
       "source_files": [
         "Тест(png)#Тест (33).png"
       ],
-      "explanation": ""
+      "explanation": "",
+      "image": "images/db-103.png"
     },
     {
       "id": "DB-104",
@@ -4644,11 +4696,12 @@
       "topic": "",
       "verification": "unverified",
       "verification_note": "",
-      "has_figure": false,
+      "has_figure": true,
       "source_files": [
         "Тест(png)#Тест (34).png"
       ],
-      "explanation": ""
+      "explanation": "",
+      "image": "images/db-104.png"
     },
     {
       "id": "DB-105",
@@ -4686,11 +4739,12 @@
       "topic": "",
       "verification": "unverified",
       "verification_note": "",
-      "has_figure": false,
+      "has_figure": true,
       "source_files": [
         "Тест(png)#Тест (35).png"
       ],
-      "explanation": ""
+      "explanation": "",
+      "image": "images/db-105.png"
     },
     {
       "id": "DB-106",
@@ -4720,11 +4774,12 @@
       "topic": "",
       "verification": "unverified",
       "verification_note": "",
-      "has_figure": false,
+      "has_figure": true,
       "source_files": [
         "Тест(png)#Тест (36).png"
       ],
-      "explanation": ""
+      "explanation": "",
+      "image": "images/db-106.png"
     },
     {
       "id": "DB-107",
@@ -4754,11 +4809,12 @@
       "topic": "",
       "verification": "unverified",
       "verification_note": "",
-      "has_figure": false,
+      "has_figure": true,
       "source_files": [
         "Тест(png)#Тест (37).png"
       ],
-      "explanation": ""
+      "explanation": "",
+      "image": "images/db-107.png"
     },
     {
       "id": "DB-108",
@@ -4792,11 +4848,12 @@
       "topic": "",
       "verification": "unverified",
       "verification_note": "",
-      "has_figure": false,
+      "has_figure": true,
       "source_files": [
         "Тест(png)#Тест (38).png"
       ],
-      "explanation": ""
+      "explanation": "",
+      "image": "images/db-108.png"
     },
     {
       "id": "DB-109",
@@ -4818,11 +4875,12 @@
       "topic": "",
       "verification": "unverified",
       "verification_note": "",
-      "has_figure": false,
+      "has_figure": true,
       "source_files": [
         "Тест(png)#Тест (39).png"
       ],
-      "explanation": ""
+      "explanation": "",
+      "image": "images/db-109.png"
     },
     {
       "id": "DB-110",
@@ -4848,11 +4906,12 @@
       "topic": "",
       "verification": "unverified",
       "verification_note": "",
-      "has_figure": false,
+      "has_figure": true,
       "source_files": [
         "Тест(png)#Тест (40).png"
       ],
-      "explanation": ""
+      "explanation": "",
+      "image": "images/db-110.png"
     },
     {
       "id": "DB-111",
@@ -4882,11 +4941,12 @@
       "topic": "",
       "verification": "unverified",
       "verification_note": "",
-      "has_figure": false,
+      "has_figure": true,
       "source_files": [
         "Тест(png)#Тест (41).png"
       ],
-      "explanation": ""
+      "explanation": "",
+      "image": "images/db-111.png"
     },
     {
       "id": "DB-112",
@@ -4908,11 +4968,12 @@
       "topic": "",
       "verification": "unverified",
       "verification_note": "",
-      "has_figure": false,
+      "has_figure": true,
       "source_files": [
         "Тест(png)#Тест (42).png"
       ],
-      "explanation": ""
+      "explanation": "",
+      "image": "images/db-112.png"
     },
     {
       "id": "DB-113",
@@ -4954,11 +5015,12 @@
       "topic": "",
       "verification": "unverified",
       "verification_note": "",
-      "has_figure": false,
+      "has_figure": true,
       "source_files": [
         "Тест(png)#Тест (43).png"
       ],
-      "explanation": ""
+      "explanation": "",
+      "image": "images/db-113.png"
     },
     {
       "id": "DB-114",
@@ -5057,11 +5119,12 @@
       "topic": "",
       "verification": "unverified",
       "verification_note": "",
-      "has_figure": false,
+      "has_figure": true,
       "source_files": [
         "Тест(jpg)#Тест(2)"
       ],
-      "explanation": ""
+      "explanation": "",
+      "image": "images/db-115.png"
     },
     {
       "id": "DB-116",
