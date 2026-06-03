@@ -372,6 +372,18 @@ a { color: var(--accent2); }
 @keyframes pulse { 50% { opacity: .5; } }
 
 .q-text { font-size: 16px; line-height: 1.5; margin: 12px 0 16px; }
+.q-figure {
+  margin: 14px 0;
+  text-align: center;
+}
+.q-figure img {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: #fff;
+  padding: 8px;
+}
 .q-fig-note {
   font-size: 12px;
   color: var(--yellow);

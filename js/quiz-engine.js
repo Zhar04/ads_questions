@@ -19,10 +19,10 @@ export function shuffle(arr) {
  *  - перемешиваем внутри каждой темы;
  *  - набираем по кругу, пока не наберём count;
  *  - итог ещё раз перемешиваем по порядку показа.
- * Вопросы с has_figure пропускаются в авто-наборе.
+ * Вопросы с has_figure пропускаются в авто-наборе, КРОМЕ тех, у кого есть картинка (поле image).
  */
 export function stratifiedSample(questions, count) {
-  const usable = questions.filter((q) => !q.has_figure && hasValidAnswer(q));
+  const usable = questions.filter((q) => (!q.has_figure || q.image) && hasValidAnswer(q));
   const groups = new Map();
   for (const q of usable) {
     const t = Number(q.topic_id);

@@ -128,9 +128,12 @@ function renderQuestion() {
 
   const card = el('div', { class: 'card', style: 'margin-top:16px' });
 
-  let figNote = q.has_figure
-    ? '<div class="q-fig-note">⚠️ Вопрос относится к рисунку, которого нет в банке — оценивайте по тексту.</div>'
-    : '';
+  // Иллюстрация: если есть image — показываем картинку; иначе (если помечен рисунок) — предупреждение.
+  const figHtml = q.image
+    ? `<figure class="q-figure"><img src="./${esc(q.image)}" alt="Иллюстрация к вопросу" loading="lazy" /></figure>`
+    : q.has_figure
+      ? '<div class="q-fig-note">⚠️ Вопрос относится к рисунку, которого нет в банке — оценивайте по тексту.</div>'
+      : '';
 
   let codeHtml = q.code
     ? `<div class="code-block">${esc(q.code)}</div>`
@@ -140,7 +143,7 @@ function renderQuestion() {
     ? '<div class="q-multi-hint">Множественный выбор: отметьте все верные варианты (1–3). Баллы: 2 / 1 / 0.</div>'
     : '';
 
-  card.innerHTML = `${figNote}<div class="q-text">${esc(q.question)}</div>${codeHtml}${multiHint}<div class="options"></div>`;
+  card.innerHTML = `<div class="q-text">${esc(q.question)}</div>${figHtml}${codeHtml}${multiHint}<div class="options"></div>`;
   const optsEl = card.querySelector('.options');
 
   const correct = new Set(q.correct_answers || []);
@@ -262,8 +265,10 @@ function finishQuiz(byTimeout) {
       tag = d.correct ? '<span class="ri-tag ok">верно</span>' : '<span class="ri-tag no">неверно</span>';
     }
     const codeHtml = q.code ? `<div class="code-block">${esc(q.code)}</div>` : '';
+    const figHtml = q.image ? `<figure class="q-figure"><img src="./${esc(q.image)}" alt="Иллюстрация к вопросу" loading="lazy" /></figure>` : '';
     item.innerHTML = `
       <div class="ri-q">${idx + 1}. ${esc(q.question)} ${tag}</div>
+      ${figHtml}
       ${codeHtml}
       <div class="ri-ans">Ваш ответ: <strong>${esc(selLetters)}</strong></div>
       <div class="ri-ans">Верный ответ: <strong>${esc(correctLetters)}</strong></div>

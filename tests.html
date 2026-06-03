@@ -109,8 +109,8 @@
       check('Стратификация: нет повторов вопросов', ids.size === s30.length);
       const topicsCovered = new Set(s30.map(q=>q.topic_id));
       check('Стратификация: покрыто ≥ 8 тем из 10', topicsCovered.size >= 8, `покрыто тем: ${topicsCovered.size}`);
-      const noFigInSample = s30.every(q => !q.has_figure);
-      check('Авто-набор пропускает вопросы с рисунком', noFigInSample);
+      const figOk = s30.every(q => !q.has_figure || q.image);
+      check('Авто-набор: рисуночные вопросы только с картинкой', figOk, 'рисунок без картинки исключается');
 
       const s15 = stratifiedSample(questions, 15);
       check('Блиц набирает 15 вопросов', s15.length === 15, `набрано: ${s15.length}`);
