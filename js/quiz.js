@@ -120,17 +120,85 @@ function formatCode(code) {
   return out.replace(/[ \t]+\n/g, '\n').replace(/\n[ \t]+/g, '\n').replace(/\n{2,}/g, '\n').trim();
 }
 
-/**
- * Делит текст вопроса на прозаическую часть (lead) и форматированный код.
- * Приоритет — у явного поля q.code (исторический формат банка); иначе код
- * выделяется из текста по ключевым словам и переносится по операторам.
- */
-function splitQuestionCode(q) {
-  if (q.code) return { lead: q.question || '', code: q.code };
-  const text = q.question || '';
+/** HTML для куска текста: проза в .q-text + (если найден код) блок .code-block. */
+function textOrCodeHtml(text) {
+  text = (text || '').trim();
+  if (!text) return '';
   const m = text.match(CODE_START_RE);
-  if (!m) return { lead: text, code: '' };
-  return { lead: text.slice(0, m.index).trim(), code: formatCode(text.slice(m.index).trim()) };
+  if (!m) return `<div class="q-text">${esc(text)}</div>`;
+  const lead = text.slice(0, m.index).trim();
+  const code = formatCode(text.slice(m.index).trim());
+  return (lead ? `<div class="q-text">${esc(lead)}</div>` : '') + `<div class="code-block">${esc(code)}</div>`;
+}
+
+/**
+ * Распознаёт вопросы-таблицы вида «… Названия столбцов: A, B, C. Ниже строки
+ * этой таблицы …: r1c1, r1c2, …; r2c1, …; … . <вопрос>».
+ * Возвращает { before, columns, rows, after } либо null.
+ */
+function parseTable(text) {
+  const m = text.match(/Названия столбцов:\s*([^.]+?)\.\s*Ниже строки[^:]*:\s*([\s\S]+)/i);
+  if (!m) return null;
+  const columns = m[1].split(',').map((s) => s.trim()).filter(Boolean);
+  if (columns.length < 2) return null;
+  const n = columns.length;
+  const before = text.slice(0, m.index).trim();
+  const segs = m[2].trim().split(';');
+  const rows = [];
+  let after = '';
+  for (let i = 0; i < segs.length; i++) {
+    const cells = segs[i].split(',').map((s) => s.trim());
+    if (cells.length < n) {
+      after = segs.slice(i).join(';');
+      break;
+    }
+    const row = cells.slice(0, n);
+    const tailParts = [];
+    // В последней ячейке строки может «прилипнуть» начало вопроса: «2. Выберите…».
+    const split = row[n - 1].split(/\.\s+/);
+    if (split.length > 1) {
+      row[n - 1] = split[0];
+      tailParts.push(split.slice(1).join('. '));
+    }
+    // Лишние ячейки сверх n — продолжение вопроса, разрезанное запятыми.
+    if (cells.length > n) tailParts.push(cells.slice(n).join(', '));
+    rows.push(row);
+    if (tailParts.length) {
+      after = tailParts.join(', ') + (i + 1 < segs.length ? ';' + segs.slice(i + 1).join(';') : '');
+      break;
+    }
+  }
+  if (!rows.length) return null;
+  return { before, columns, rows, after: after.trim() };
+}
+
+/** HTML таблицы вопроса. */
+function tableHtml(columns, rows) {
+  const thead = '<thead><tr>' + columns.map((c) => `<th>${esc(c)}</th>`).join('') + '</tr></thead>';
+  const tbody =
+    '<tbody>' +
+    rows.map((r) => '<tr>' + r.map((c) => `<td>${esc(c)}</td>`).join('') + '</tr>').join('') +
+    '</tbody>';
+  return `<div class="q-table-wrap"><table class="q-table">${thead}${tbody}</table></div>`;
+}
+
+/** Полный HTML тела вопроса: проза + таблица + блок кода (в нужном порядке). */
+function buildQuestionBody(q) {
+  // Явное поле code (исторический формат банка) имеет приоритет.
+  if (q.code) {
+    const lead = q.question ? `<div class="q-text">${esc(q.question)}</div>` : '';
+    return lead + `<div class="code-block">${esc(q.code)}</div>`;
+  }
+  const parts = [];
+  let text = q.question || '';
+  const tbl = parseTable(text);
+  if (tbl) {
+    if (tbl.before) parts.push(textOrCodeHtml(tbl.before));
+    parts.push(tableHtml(tbl.columns, tbl.rows));
+    text = tbl.after || '';
+  }
+  if (text) parts.push(textOrCodeHtml(text));
+  return parts.join('');
 }
 
 /* ---------- Рендер одного вопроса ---------- */
@@ -159,6 +227,25 @@ function renderQuestion() {
   const prog = el('div', { class: 'progress' }, `<span style="width:${pct}%"></span>`);
   root.appendChild(prog);
 
+  // Навигатор по вопросам — переход на любой вопрос по номеру.
+  if (n > 1) {
+    const grid = el('div', { class: 'qnav-grid' });
+    for (let qi = 0; qi < n; qi++) {
+      const qq = state.questions[qi];
+      const answered = (state.answers[qq.id] || []).length > 0;
+      let cls = 'qnav-cell';
+      if (qi === state.index) cls += ' current';
+      else if (answered) cls += ' answered';
+      const cell = el('button', { class: cls, type: 'button' }, String(qi + 1));
+      cell.addEventListener('click', () => {
+        state.index = qi;
+        renderQuestion();
+      });
+      grid.appendChild(cell);
+    }
+    root.appendChild(grid);
+  }
+
   const card = el('div', { class: 'card', style: 'margin-top:16px' });
 
   // Иллюстрация: если есть image — показываем картинку; иначе (если помечен рисунок) — предупреждение.
@@ -168,15 +255,13 @@ function renderQuestion() {
       ? '<div class="q-fig-note">⚠️ Вопрос относится к рисунку, которого нет в банке — оценивайте по тексту.</div>'
       : '';
 
-  const { lead, code: codeBody } = splitQuestionCode(q);
-  const codeHtml = codeBody ? `<div class="code-block">${esc(codeBody)}</div>` : '';
-  const leadHtml = lead ? `<div class="q-text">${esc(lead)}</div>` : '';
+  const bodyHtml = buildQuestionBody(q);
 
   const multiHint = isMulti
     ? '<div class="q-multi-hint">Множественный выбор: отметьте все верные варианты (1–3). Баллы: 2 / 1 / 0.</div>'
     : '';
 
-  card.innerHTML = `${leadHtml}${figHtml}${codeHtml}${multiHint}<div class="options"></div>`;
+  card.innerHTML = `${bodyHtml}${figHtml}${multiHint}<div class="options"></div>`;
   const optsEl = card.querySelector('.options');
 
   const correct = new Set(q.correct_answers || []);
@@ -297,13 +382,12 @@ function finishQuiz(byTimeout) {
     } else {
       tag = d.correct ? '<span class="ri-tag ok">верно</span>' : '<span class="ri-tag no">неверно</span>';
     }
-    const { lead, code: codeBody } = splitQuestionCode(q);
-    const codeHtml = codeBody ? `<div class="code-block">${esc(codeBody)}</div>` : '';
+    const bodyHtml = buildQuestionBody(q);
     const figHtml = q.image ? `<figure class="q-figure"><img src="./${esc(q.image)}" alt="Иллюстрация к вопросу" loading="lazy" /></figure>` : '';
     item.innerHTML = `
-      <div class="ri-q">${idx + 1}. ${esc(lead || q.question)} ${tag}</div>
+      <div class="ri-q">${idx + 1}. ${tag}</div>
+      ${bodyHtml}
       ${figHtml}
-      ${codeHtml}
       <div class="ri-ans">Ваш ответ: <strong>${esc(selLetters)}</strong></div>
       <div class="ri-ans">Верный ответ: <strong>${esc(correctLetters)}</strong></div>
       <div class="explain"><span class="lbl">Разбор</span>${esc(q.explanation || '')}</div>`;

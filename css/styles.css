@@ -464,6 +464,49 @@ a { color: var(--accent2); }
   -webkit-overflow-scrolling: touch;
 }
 
+/* таблица внутри текста вопроса */
+.q-table-wrap { overflow-x: auto; margin: 12px 0; -webkit-overflow-scrolling: touch; }
+.q-table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 13.5px;
+}
+.q-table th, .q-table td {
+  border: 1px solid var(--border);
+  padding: 6px 10px;
+  text-align: left;
+  white-space: nowrap;
+}
+.q-table thead th {
+  background: var(--bg);
+  color: var(--accent2);
+  font-weight: 700;
+}
+
+/* навигатор по вопросам (переход на любой вопрос по номеру) */
+.qnav-grid { display: flex; flex-wrap: wrap; gap: 6px; margin: 14px 0 4px; }
+.qnav-cell {
+  min-width: 34px;
+  height: 34px;
+  padding: 0 6px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--muted);
+  font-size: 13px;
+  font-family: var(--font-body);
+  cursor: pointer;
+  transition: border-color .15s, color .15s, background .15s;
+}
+.qnav-cell:hover { border-color: var(--accent2); color: var(--text); }
+.qnav-cell.answered { color: var(--text); border-color: var(--accent2); background: rgba(6, 182, 212, 0.10); }
+.qnav-cell.current {
+  border-color: var(--accent);
+  color: var(--accent);
+  font-weight: 700;
+  box-shadow: 0 0 0 2px rgba(124, 58, 237, 0.30);
+}
+
 .quiz-nav { display: flex; justify-content: space-between; gap: 12px; margin-top: 20px; }
 
 /* ---------- Result screen ---------- */
