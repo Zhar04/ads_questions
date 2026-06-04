@@ -607,9 +607,10 @@
         }
       ],
       "correct_answers": [
-        "B"
+        "B",
+        "H"
       ],
-      "answer_type": "single",
+      "answer_type": "multi",
       "language": "ru",
       "has_code": false,
       "topic": "",
@@ -619,7 +620,7 @@
       "source_files": [
         "Тест_трехуровневая_архитектура#12"
       ],
-      "explanation": "Создание индекса: CREATE INDEX idx ON table1(column1);",
+      "explanation": "Корректны оба: create index idx on table1(column1) и create index idx on table1(column1,column2) — индекс можно создать по одному или нескольким столбцам. «create or replace index», «for table1», «alter index ... on column1» — неверны.",
       "topic_id": 12
     },
     {
@@ -2532,6 +2533,8 @@
       "correct_answers": [
         "A",
         "B",
+        "E",
+        "F",
         "H"
       ],
       "answer_type": "multi",
@@ -2544,7 +2547,7 @@
       "source_files": [
         "Database/#Database (14).png"
       ],
-      "explanation": "К базам данных применимы операции создания, удаления и обновления.",
+      "explanation": "К базам данных применимы операции: создание, удаление, обновление, сжатие, оптимизация. Систематизация, форматирование и корреляция — не операции над БД.",
       "topic_id": 12
     },
     {
@@ -4477,9 +4480,11 @@
         }
       ],
       "correct_answers": [
+        "B",
         "C",
         "D",
-        "G"
+        "G",
+        "H"
       ],
       "answer_type": "multi",
       "language": "ru",
@@ -4491,7 +4496,7 @@
       "source_files": [
         "Тест(png)#Тест (25).png"
       ],
-      "explanation": "К базам данных применимы операции создания, удаления и обновления.",
+      "explanation": "К базам данных применимы операции: создание, удаление, обновление, сжатие, оптимизация. Систематизация, форматирование и корреляция — не операции над БД.",
       "topic_id": 12
     },
     {
