@@ -8,7 +8,7 @@
     "answer_format": "single_choice",
     "answer_format_note": "Поле correct_answers — массив; пусто, если верный вариант не помечен в источнике.",
     "generated_on": "2026-06-02",
-    "total_questions": 129,
+    "total_questions": 142,
     "source_files": [
       "Тест_трехуровневая_архитектура",
       "БД(2)",
@@ -19,7 +19,7 @@
       "Тест(png)",
       "Тест(jpg)"
     ],
-    "answered_questions": 140,
+    "answered_questions": 141,
     "scoring": "partial_2_1_0",
     "note": "Вопросы с диаграммами/скриншотами (плохой OCR) оставлены без ответа и не попадают в тест."
   },
@@ -1485,7 +1485,7 @@
     },
     {
       "id": "DB-035",
-      "question": "Дана следующая таблица: Названия столбцов: ID, Name, Surname, GPA, COURSE. Ниже строки этой таблицы относительно столбцов выше: 1, Yerbol, Kazhigerey, 2.5, 3; 2, Aidana, Khassenova, 3, 2; 3, Marat, Aidosov, 4, 1; 4, Aidos, Kurmanov, 1.4, 4; 5, Elena, Fedorova, 2, 1; 6, Aidar, Elmanov, 3.1, 3; 7, Anna, Karenina, 2.1, 2. Выберите правильно написанные SQL запросы использующие group by",
+      "question": "Для следующей таблицы: Названия столбцов: ID, Name, Surname, GPA, COURSE. Ниже строки этой таблицы относительно столбцов выше: 1, Yerbol, Kazhigerey, 2.5, 3; 2, Aidana, Khassenova, 3, 2; 3, Marat, Aidosov, 4, 1; 4, Aidos, Kurmanov, 1.4, 4; 5, Elena, Fedorova, 2, 1; 6, Aidar, Elmanov, 3.1, 3; 7, Anna, Karenina, 2.1, 2. Выберите правильно написанные SQL запросы использующие group by",
       "options": [
         {
           "letter": "A",
@@ -1497,7 +1497,7 @@
         },
         {
           "letter": "C",
-          "text": "SELECT COURSE, MIN(GPA) FROM STUDENTS GROUPING BY COURSE;"
+          "text": "SELECT COURSE, MIN(GPA) FROM STUDENTS GROUPINGBY COURSE;"
         },
         {
           "letter": "D",
@@ -1514,16 +1514,11 @@
         {
           "letter": "G",
           "text": "SELECT WHICH(COURSE), MAX(GPA) FROM STUDENTS GROUP BY COURSE;"
-        },
-        {
-          "letter": "H",
-          "text": "SELECT COURSE, MAX(GPA) FROM STUDENTS GROUP BY COURSE;"
         }
       ],
       "correct_answers": [
         "A",
-        "E",
-        "H"
+        "E"
       ],
       "answer_type": "multi",
       "language": "ru",
@@ -1535,7 +1530,7 @@
       "source_files": [
         "Основная_подборка#DB11"
       ],
-      "explanation": "Корректны запросы с MIN/AVG/MAX и правильным GROUP BY (не GROUPING BY).",
+      "explanation": "Корректны только запросы с правильным ключевым словом GROUP BY и допустимой агрегатной функцией: MIN (A) и AVG (E). WHICH/WHO — не функции, GROUPINGBY/«GROUPING BY» — неверный синтаксис.",
       "topic_id": 10
     },
     {
@@ -1879,7 +1874,7 @@
     },
     {
       "id": "DB-043",
-      "question": "Дана таблица Students (ID, Name, Surname, GPA, COURSE) со строками: 1, Yerbol, Kazhigerey, 2.5, 3; 2, Aidana, Khassenova, 3, 2; 3, Marat, Aidosov, 4, 1; 4, Aidos, Kurmanov, 1.4, 4; 5, Elena, Fedorova, 2, 1; 6, Aidar, Elmanov, 3.1, 3; 7, Anna, Karenina, 2.1, 2. Выберите все результаты следующего SQL запроса SELECT Name FROM Students WHERE ID=1 OR ID=2;",
+      "question": "Для следующей таблицы: Названия столбцов: ID, Name, Surname, GPA, COURSE. Ниже строки этой таблицы относительно столбцов выше: 1, Yerbol, Kazhigerey, 2.5, 3; 2, Aidana, Khassenova, 3, 2; 3, Marat, Aidosov, 4, 1; 4, Aidos, Kurmanov, 1.4, 4; 5, Elena, Fedorova, 2, 1; 6, Aidar, Elmanov, 3.1, 3; 7, Anna, Karenina, 2.1, 2. Выберите все результаты следующего SQL запроса: SELECT Name FROM Students WHERE ID=1 OR ID=2;",
       "options": [
         {
           "letter": "A",
@@ -1924,7 +1919,7 @@
       "source_files": [
         "Основная_подборка#DB19"
       ],
-      "explanation": "WHERE ID=1 OR ID=2 => имена Yerbol и Aidana.",
+      "explanation": "WHERE ID=1 OR ID=2 выбирает строки с ID 1 и 2; столбец Name даёт Yerbol (ID=1) и Aidana (ID=2).",
       "topic_id": 9
     },
     {
@@ -6995,6 +6990,49 @@
         "A",
         "E"
       ]
+    },
+    {
+      "id": "DB-147",
+      "question": "Для того чтобы изменить данные в таблице используется команда",
+      "options": [
+        {
+          "letter": "A",
+          "text": "CREATE"
+        },
+        {
+          "letter": "B",
+          "text": "UPDATE"
+        },
+        {
+          "letter": "C",
+          "text": "ATTACH"
+        },
+        {
+          "letter": "D",
+          "text": "ALTER"
+        },
+        {
+          "letter": "E",
+          "text": "DROP"
+        },
+        {
+          "letter": "F",
+          "text": "USE"
+        }
+      ],
+      "correct_answers": [
+        "B"
+      ],
+      "answer_type": "single",
+      "language": "ru",
+      "has_code": false,
+      "topic_id": 12,
+      "verification": "verified",
+      "has_figure": false,
+      "source_files": [
+        "new_db_questions_to_add.md"
+      ],
+      "explanation": "Изменение существующих данных в таблице выполняет команда UPDATE (CREATE/ALTER/DROP — это DDL над структурой)."
     }
   ]
 }
