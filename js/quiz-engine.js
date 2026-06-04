@@ -90,6 +90,8 @@ export function countMistakes(question, selectedLetters) {
  *   0 ошибок → 2 балла, 1 ошибка → 1 балл, ≥2 ошибок → 0 баллов.
  */
 export function questionPoints(question, selectedLetters, maxPoints = 2) {
+  // Нет выбранных вариантов — вопрос не отвечен, баллы не начисляются.
+  if (!selectedLetters || selectedLetters.length === 0) return 0;
   const m = countMistakes(question, selectedLetters);
   return Math.max(0, maxPoints - m);
 }

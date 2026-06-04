@@ -100,6 +100,39 @@ function startTimer() {
   state.timer.start();
 }
 
+/* ---------- Форматирование встроенного кода в тексте вопроса ---------- */
+// Сильные признаки начала кода (SQL / C++) внутри текста вопроса.
+const CODE_START_RE = /(create\s+table|insert\s+into|delete\s+from|alter\s+table|drop\s+table|update\s+\w+\s+set|select\s+[\w*(]|#\s*include|using\s+namespace|cout\s*<<|cin\s*>>|printf\s*\(|scanf\s*\(|for\s*\(|while\s*\(|(?:unsigned\s+|signed\s+|long\s+|short\s+)*int\s+\w+\s*[=;[]|double\s+\w+\s*=|float\s+\w+\s*=|char\s+\w+\s*[=[])/i;
+
+/**
+ * Перенос каждого оператора на отдельную строку (после ';'), но только на
+ * верхнем уровне — ';' внутри скобок (например, заголовок for(;;)) не разрываем.
+ */
+function formatCode(code) {
+  let out = '';
+  let depth = 0;
+  for (const ch of code) {
+    if (ch === '(') depth++;
+    else if (ch === ')') depth = Math.max(0, depth - 1);
+    out += ch;
+    if (ch === ';' && depth === 0) out += '\n';
+  }
+  return out.replace(/[ \t]+\n/g, '\n').replace(/\n[ \t]+/g, '\n').replace(/\n{2,}/g, '\n').trim();
+}
+
+/**
+ * Делит текст вопроса на прозаическую часть (lead) и форматированный код.
+ * Приоритет — у явного поля q.code (исторический формат банка); иначе код
+ * выделяется из текста по ключевым словам и переносится по операторам.
+ */
+function splitQuestionCode(q) {
+  if (q.code) return { lead: q.question || '', code: q.code };
+  const text = q.question || '';
+  const m = text.match(CODE_START_RE);
+  if (!m) return { lead: text, code: '' };
+  return { lead: text.slice(0, m.index).trim(), code: formatCode(text.slice(m.index).trim()) };
+}
+
 /* ---------- Рендер одного вопроса ---------- */
 function renderQuestion() {
   const q = state.questions[state.index];
@@ -135,15 +168,15 @@ function renderQuestion() {
       ? '<div class="q-fig-note">⚠️ Вопрос относится к рисунку, которого нет в банке — оценивайте по тексту.</div>'
       : '';
 
-  let codeHtml = q.code
-    ? `<div class="code-block">${esc(q.code)}</div>`
-    : '';
+  const { lead, code: codeBody } = splitQuestionCode(q);
+  const codeHtml = codeBody ? `<div class="code-block">${esc(codeBody)}</div>` : '';
+  const leadHtml = lead ? `<div class="q-text">${esc(lead)}</div>` : '';
 
   const multiHint = isMulti
     ? '<div class="q-multi-hint">Множественный выбор: отметьте все верные варианты (1–3). Баллы: 2 / 1 / 0.</div>'
     : '';
 
-  card.innerHTML = `<div class="q-text">${esc(q.question)}</div>${figHtml}${codeHtml}${multiHint}<div class="options"></div>`;
+  card.innerHTML = `${leadHtml}${figHtml}${codeHtml}${multiHint}<div class="options"></div>`;
   const optsEl = card.querySelector('.options');
 
   const correct = new Set(q.correct_answers || []);
@@ -264,10 +297,11 @@ function finishQuiz(byTimeout) {
     } else {
       tag = d.correct ? '<span class="ri-tag ok">верно</span>' : '<span class="ri-tag no">неверно</span>';
     }
-    const codeHtml = q.code ? `<div class="code-block">${esc(q.code)}</div>` : '';
+    const { lead, code: codeBody } = splitQuestionCode(q);
+    const codeHtml = codeBody ? `<div class="code-block">${esc(codeBody)}</div>` : '';
     const figHtml = q.image ? `<figure class="q-figure"><img src="./${esc(q.image)}" alt="Иллюстрация к вопросу" loading="lazy" /></figure>` : '';
     item.innerHTML = `
-      <div class="ri-q">${idx + 1}. ${esc(q.question)} ${tag}</div>
+      <div class="ri-q">${idx + 1}. ${esc(lead || q.question)} ${tag}</div>
       ${figHtml}
       ${codeHtml}
       <div class="ri-ans">Ваш ответ: <strong>${esc(selLetters)}</strong></div>

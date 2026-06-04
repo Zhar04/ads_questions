@@ -442,14 +442,16 @@ a { color: var(--accent2); }
 }
 .explain .lbl { color: var(--accent2); font-weight: 700; display: block; margin-bottom: 6px; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; }
 .code-block {
-  font-family: var(--font-body);
+  font-family: ui-monospace, "SF Mono", "Cascadia Code", "JetBrains Mono", Consolas, "Liberation Mono", monospace;
   background: var(--bg);
   border: 1px solid var(--border);
   border-left: 3px solid var(--accent);
   border-radius: var(--radius);
   padding: 12px 14px;
   overflow-x: auto;
-  white-space: pre;
+  white-space: pre-wrap;
+  word-break: break-word;
+  line-height: 1.55;
   font-size: 13px;
   margin: 10px 0;
   -webkit-overflow-scrolling: touch;
