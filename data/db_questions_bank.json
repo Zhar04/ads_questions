@@ -160,9 +160,10 @@
         }
       ],
       "correct_answers": [
-        "B"
+        "B",
+        "D"
       ],
-      "answer_type": "single",
+      "answer_type": "multi",
       "language": "ru",
       "has_code": false,
       "topic": "",
@@ -172,7 +173,7 @@
       "source_files": [
         "Тест_трехуровневая_архитектура#3"
       ],
-      "explanation": "Объединение множеств даёт все уникальные элементы: {1,2,3,4,5,8,9}.",
+      "explanation": "Объединение даёт множество {1,2,3,4,5,8,9}; варианты B и D — одно и то же множество в разном порядке.",
       "topic_id": 4
     },
     {
@@ -791,9 +792,10 @@
         }
       ],
       "correct_answers": [
-        "A"
+        "A",
+        "D"
       ],
-      "answer_type": "single",
+      "answer_type": "multi",
       "language": "ru",
       "has_code": true,
       "topic": "",
@@ -803,7 +805,7 @@
       "source_files": [
         "Тест_трехуровневая_архитектура#16"
       ],
-      "explanation": "price > ALL(1000,10000,12000) => price > 12000 => {15000, 30000}.",
+      "explanation": "price > ALL(1000,10000,12000) => price > 12000 => {15000, 30000}; варианты A и D — одно множество в разном порядке.",
       "topic_id": 13
     },
     {
