@@ -19,7 +19,7 @@
       "Тест(png)",
       "Тест(jpg)"
     ],
-    "answered_questions": 141,
+    "answered_questions": 142,
     "scoring": "partial_2_1_0",
     "note": "Вопросы с диаграммами/скриншотами (плохой OCR) оставлены без ответа и не попадают в тест."
   },
@@ -844,9 +844,11 @@
         }
       ],
       "correct_answers": [
-        "B"
+        "B",
+        "C",
+        "G"
       ],
-      "answer_type": "single",
+      "answer_type": "multi",
       "language": "ru",
       "has_code": true,
       "topic": "",
@@ -856,7 +858,7 @@
       "source_files": [
         "Тест_трехуровневая_архитектура#17"
       ],
-      "explanation": "price > ANY(1000,30000,12000) истинно, если цена больше минимума набора (1000) — подходят все три цены.",
+      "explanation": "price > ANY(1000,30000,12000) истинно для всех трёх цен; варианты B, C, G — одно множество {2000, 15000, 20000} в разном порядке, поэтому верны все три.",
       "topic_id": 13
     },
     {
@@ -2850,7 +2852,7 @@
         }
       ],
       "correct_answers": [
-        "F"
+        "D"
       ],
       "answer_type": "single",
       "language": "ru",
@@ -2862,7 +2864,7 @@
       "source_files": [
         "Database/#Database (20).png"
       ],
-      "explanation": "Корректно: select univer, faculty, group from students where name=\"Alma\".",
+      "explanation": "Корректно: select * from students where name='Alma'. В остальных вариантах слово group (зарезервированное) используется без кавычек либо кавычки расставлены неверно.",
       "topic_id": 9
     },
     {
@@ -3229,33 +3231,40 @@
         },
         {
           "letter": "C",
-          "text": "50"
+          "text": "45"
         },
         {
           "letter": "D",
-          "text": "55"
+          "text": "50"
         },
         {
           "letter": "E",
-          "text": "255"
+          "text": "55"
         },
         {
           "letter": "F",
+          "text": "225"
+        },
+        {
+          "letter": "G",
           "text": "5"
         }
       ],
-      "correct_answers": [],
-      "answer_type": "single",
+      "correct_answers": [
+        "B",
+        "D"
+      ],
+      "answer_type": "multi",
       "language": "ru",
       "has_code": true,
       "topic": "",
-      "verification": "unverified",
+      "verification": "verified",
       "verification_note": "",
       "has_figure": false,
       "source_files": [
         "Database/#Database (103).png"
       ],
-      "explanation": "",
+      "explanation": "select x, y, x+y для строки (5, 45) даёт 5, 45, 50: вариант B (5, 45) и вариант D (50) вместе составляют результат.",
       "topic_id": 9
     },
     {
@@ -4053,7 +4062,7 @@
         }
       ],
       "correct_answers": [
-        "D",
+        "C",
         "E",
         "G"
       ],
@@ -4067,7 +4076,7 @@
       "source_files": [
         "БД_скриншоты#Screenshot_15"
       ],
-      "explanation": "С точки зрения определения данных оценивают поддержку первичных и внешних ключей и предусмотренные типы данных.",
+      "explanation": "С точки зрения определения данных оценивают предусмотренные файловые структуры (C), определение внешних ключей (E) и предусмотренные типы данных (G).",
       "topic_id": 3
     },
     {
@@ -5099,9 +5108,10 @@
         }
       ],
       "correct_answers": [
-        "C"
+        "C",
+        "f"
       ],
-      "answer_type": "single",
+      "answer_type": "multi",
       "language": "ru",
       "has_code": true,
       "topic": "",
@@ -5111,7 +5121,7 @@
       "source_files": [
         "Тест(png)#Тест (38).png"
       ],
-      "explanation": "Туризм или курсы 2–4: where speciality='Tourism' or course>'1'.",
+      "explanation": "Условие «курсы 2–4 ИЛИ специальность Туризм» — speciality='Tourism' OR course>1: верны оба варианта C и f.",
       "topic_id": 9
     },
     {
@@ -6870,7 +6880,7 @@
           "text": "архитектурное проектирование"
         }
       ],
-      "answer_type": "single",
+      "answer_type": "multi",
       "language": "ru",
       "has_code": false,
       "topic": "",
@@ -6880,9 +6890,10 @@
       "source_files": [
         "database.docx"
       ],
-      "explanation": "Логическое проектирование включает инфологический и даталогический этапы.",
+      "explanation": "Этап включает инфологическое (концептуальное, A) и даталогическое (логическое, C) проектирование.",
       "topic_id": 14,
       "correct_answers": [
+        "A",
         "C"
       ]
     },
