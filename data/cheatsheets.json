@@ -41,6 +41,12 @@
         "emoji": "💻",
         "title": "C++ — памятка синтаксиса",
         "content_md": "| Что | Как |\n| --- | --- |\n| Конец оператора | `;` |\n| Однострочный комментарий | `//` |\n| Тип «ничего не возвращает» | `void` |\n| Строковый тип | `string` |\n| Подстрока | `substr(pos, len)` |\n| Возведение в степень | `pow(x, y)` из `<cmath>` |\n| Случайное число | `rand()` из `<cstdlib>`; кость: `1 + rand() % 6` |\n| Вывод / ввод | `cout <<` / `cin >>` |\n| Безусловный переход | `goto метка` |\n\n**Формат функции:** `тип_возврата имя(список_параметров) { тело }`.\n\n**`<<`** = «поместить в поток» (для `cout`) или сдвиг влево (для чисел). **`>>`** — наоборот."
+      },
+      {
+        "id": "ads-abbrev",
+        "emoji": "🔤",
+        "title": "Аббревиатуры (LIFO, FIFO и др.)",
+        "content_md": "\n| Аббр. | Расшифровка | Что значит |\n| --- | --- | --- |\n| LIFO | Last In, First Out | **стек**: последний вошёл — первый вышел |\n| FILO | First In, Last Out | то же, что LIFO (синоним для стека) |\n| FIFO | First In, First Out | **очередь**: первый вошёл — первый вышел |\n| ADT | Abstract Data Type | абстрактный тип данных (что делает, а не как устроен) |\n| BST | Binary Search Tree | двоичное дерево поиска (левый < узел < правый) |\n| AVL | Adelson-Velsky, Landis | самобалансирующееся дерево (высота O(log n)) |\n| MST | Minimum Spanning Tree | минимальное остовное дерево (Прим / Краскал) |\n| DAG | Directed Acyclic Graph | ориентированный ациклический граф |\n| DFS | Depth-First Search | поиск в глубину (использует стек) |\n| BFS | Breadth-First Search | поиск в ширину (использует очередь) |\n| BigO, O() | — | асимптотическая оценка сложности алгоритма |\n\n**Запомни пару:** LIFO = стек (тарелки), FIFO = очередь (касса). DFS = стек, BFS = очередь.\n"
       }
     ],
     "db": [
@@ -73,6 +79,18 @@
         "emoji": "🏛️",
         "title": "Архитектуры и целостность",
         "content_md": "### Архитектуры СУБД\n\n| Тип | Суть |\n| --- | --- |\n| Файл-сервер | общий БД-файл на сервере, обработка на клиентах |\n| Двухуровневая (клиент-сервер) | клиент ↔ сервер БД |\n| Трёхуровневая | клиент ↔ сервер приложений ↔ сервер БД |\n\n### Уровни схем (ANSI/SPARC)\n\n| Уровень | Что описывает |\n| --- | --- |\n| Внешний (пользовательский) | представления для пользователей |\n| Концептуальный | единая логическая модель всей БД |\n| Внутренний | физическое хранение (файлы, индексы) |\n\n### Виды целостности\n\n| Целостность | Гарантирует |\n| --- | --- |\n| Сущностей (entity) | у каждой строки уникальный не-NULL PK |\n| Ссылочная (referential) | FK ссылается на существующий PK |\n| Доменная (domain) | значения в пределах домена/типа |"
+      },
+      {
+        "id": "db-sql-syntax",
+        "emoji": "📝",
+        "title": "SQL — за что отвечает каждое слово",
+        "content_md": "\n### Ключевые слова\n\n| Слово | За что отвечает |\n| --- | --- |\n| SELECT | какие столбцы вернуть (`*` — все) |\n| FROM | из какой таблицы брать данные |\n| WHERE | фильтр строк (до группировки) |\n| DISTINCT | убрать повторяющиеся строки |\n| ORDER BY | сортировка результата |\n| ASC | по возрастанию (по умолчанию) |\n| DESC | по убыванию |\n| GROUP BY | сгруппировать строки (для агрегатов) |\n| HAVING | фильтр уже сгруппированных строк (после GROUP BY) |\n| JOIN … ON | соединить таблицы по условию |\n| AS | псевдоним столбца или таблицы |\n| INSERT INTO … VALUES | добавить новые строки |\n| UPDATE … SET … WHERE | изменить существующие строки |\n| DELETE FROM … WHERE | удалить строки |\n| CREATE TABLE | создать таблицу |\n| ALTER TABLE | изменить структуру таблицы |\n| DROP TABLE | удалить таблицу целиком |\n\n### Примеры\n\n```sql\nSELECT name, salary FROM emp WHERE dept = 5 ORDER BY salary DESC;\nINSERT INTO emp (id, name, salary) VALUES (1, 'Ali', 50000);\nUPDATE emp SET salary = 60000 WHERE id = 1;\nDELETE FROM emp WHERE id = 1;\n```\n\n⚠️ **Без WHERE** `UPDATE`/`DELETE` затронут **все** строки таблицы. `ORDER BY` без `ASC/DESC` — это `ASC`.\n"
+      },
+      {
+        "id": "db-abbrev",
+        "emoji": "🔤",
+        "title": "Аббревиатуры SQL/БД",
+        "content_md": "\n| Аббр. | Расшифровка | Что значит |\n| --- | --- | --- |\n| SQL | Structured Query Language | язык запросов к реляционной БД |\n| DDL | Data Definition Language | структура: CREATE, ALTER, DROP |\n| DML | Data Manipulation Language | данные: INSERT, UPDATE, DELETE |\n| DQL | Data Query Language | выборка: SELECT |\n| DCL | Data Control Language | права: GRANT, REVOKE |\n| TCL | Transaction Control Language | транзакции: COMMIT, ROLLBACK |\n| PK | Primary Key | первичный ключ (уникален, не NULL) |\n| FK | Foreign Key | внешний ключ (ссылка на PK другой таблицы) |\n| ACID | Atomicity, Consistency, Isolation, Durability | свойства транзакций |\n| CRUD | Create, Read, Update, Delete | базовые операции над данными |\n| ER | Entity-Relationship | модель «сущность-связь» |\n| RDBMS | Relational Database Management System | реляционная СУБД |\n| NULL | — | отсутствие значения (не 0 и не пустая строка) |\n\n**Мнемоника:** DDL — про *структуру*, DML — про *данные*, DQL — про *выборку*.\n"
       }
     ]
   }
