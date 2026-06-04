@@ -3297,7 +3297,7 @@
       "options": [
         {
           "letter": "A",
-          "text": "O(n?)"
+          "text": "O(n²)"
         },
         {
           "letter": "B",
@@ -3309,11 +3309,11 @@
         },
         {
           "letter": "D",
-          "text": "O(nl)"
+          "text": "O(n!)"
         },
         {
           "letter": "E",
-          "text": "O(2n)"
+          "text": "O(2ⁿ)"
         }
       ],
       "correct_answers": [
@@ -3324,7 +3324,7 @@
       "topic": "Оценка сложности алгоритмов",
       "difficulty": "В",
       "verification": "verified",
-      "verification_note": "Квадратичная сложность — O(n²) (в OCR искажено как O(n?)).",
+      "verification_note": "Квадратичная сложность — O(n²) (вариант A). В исходном OCR степени были искажены (O(n?), O(2n), O(nl)) — восстановлены как O(n²), O(2ⁿ), O(n!).",
       "has_figure": false,
       "source_files": [
         "ads_questions_7_unique#Algorithms (15).png"
@@ -3332,7 +3332,7 @@
       "original_keys": {
         "ads_questions_7": "A"
       },
-      "explanation": "Квадратичная сложность в O-нотации — O(n²). Верно A (искажение «O(n?)» означает O(n²)). O(n) — линейная, O(2ⁿ) — экспоненциальная."
+      "explanation": "Квадратичная сложность в O-нотации — O(n²), это вариант A. Для сравнения: O(n) — линейная, O(log n) — логарифмическая, O(n!) — факториальная, O(2ⁿ) — экспоненциальная."
     },
     {
       "id": "ADS-072",
