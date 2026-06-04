@@ -123,6 +123,18 @@ export async function renderTopicPage(container, titleEl) {
           '</p>';
       }
 
+      // иллюстрации блока (вытащены из исходных конспектов .docx)
+      const figuresHtml = Array.isArray(b.figures) && b.figures.length
+        ? b.figures
+            .map(
+              (f) =>
+                `<figure class="q-figure block-figure"><img src="./${esc(f.src)}" alt="${esc(f.caption || '')}" loading="lazy" />${
+                  f.caption ? `<figcaption>${esc(f.caption)}</figcaption>` : ''
+                }</figure>`
+            )
+            .join('')
+        : '';
+
       // есть ли фиксированные вопросы блока?
       const blockQs = questions.filter((q) => q.block_id === b.block_id);
       const blockTestBtn = blockQs.length
@@ -135,6 +147,7 @@ export async function renderTopicPage(container, titleEl) {
           <span class="read-flag">✓ прочитано</span>
         </div>
         <div class="md">${renderMarkdown(b.content_md)}</div>
+        ${figuresHtml}
         ${linksHtml}
         <div class="block-actions">
           <button class="btn btn-ghost mark-read" type="button">Отметить прочитанным</button>
