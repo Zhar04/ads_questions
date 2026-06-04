@@ -56,6 +56,16 @@
         <div class="mc-title">Полный тест</div>
         <div class="mc-desc">30 вопросов · формат КТ · с таймером</div>
       </a>
+      <a class="menu-card" id="card-mistakes" href="quiz.html?mode=mistakes&count=20">
+        <span class="mc-icon">🔁</span>
+        <div class="mc-title">Работа над ошибками</div>
+        <div class="mc-desc" id="mistakes-desc">Повтор вопросов, в которых ты ошибался</div>
+      </a>
+      <a class="menu-card" href="cheatsheets.html">
+        <span class="mc-icon">🧠</span>
+        <div class="mc-title">Шпаргалки</div>
+        <div class="mc-desc">Памятки: сложность, сортировки, структуры — освежить перед тестом</div>
+      </a>
     </nav>
 
     <section class="card" style="margin-top:24px">
@@ -68,6 +78,11 @@
       </div>
     </section>
 
+    <section class="card" id="history-card" style="margin-top:16px; display:none">
+      <div class="progress-label"><span>📊 Последние результаты</span><span id="hist-last">—</span></div>
+      <div class="hist-chart" id="hist-chart"></div>
+    </section>
+
     <footer class="footer">
       <div>КТ АиСД · офлайн-тренажёр (PWA) · данные хранятся только на вашем устройстве</div>
       <button class="btn btn-ghost" type="button" id="reset-btn">Сбросить прогресс</button>
@@ -76,8 +91,8 @@
 
   <script type="module">
     import { loadTopicsWithCounts, loadQuestions, normalizeLang } from './js/data-loader.js';
-    import { computeOverallPercent, countCompletedTopics, getFullTestBest, resetAllProgress } from './js/progress.js';
-    import './js/app.js'; // регистрирует service worker
+    import { computeOverallPercent, countCompletedTopics, getFullTestBest, resetAllProgress, getHistory, getMistakes } from './js/progress.js';
+    import { renderHistoryChart } from './js/app.js'; // + регистрирует service worker
 
     /* ---------- Выбор языка теста (блиц / полный) ---------- */
     const LANG_KEY = 'kt-quiz-lang';
@@ -105,6 +120,15 @@
         document.getElementById('stat-topics').textContent = countCompletedTopics(topics) + '/' + topics.length;
         document.getElementById('stat-questions').textContent = questions.length;
         document.getElementById('stat-best').textContent = Math.round(getFullTestBest() * 100) + '%';
+
+        renderHistoryChart(getHistory(), {
+          card: document.getElementById('history-card'),
+          chart: document.getElementById('hist-chart'),
+          last: document.getElementById('hist-last'),
+        });
+        const mc = getMistakes().length;
+        document.getElementById('mistakes-desc').textContent =
+          mc ? `${mc} вопрос${mc % 10 === 1 && mc % 100 !== 11 ? '' : 'ов'} на повтор` : 'Пока нет ошибок — пройди тест';
       } catch (e) {
         document.getElementById('overall-pct').textContent = 'ошибка';
         console.error(e);

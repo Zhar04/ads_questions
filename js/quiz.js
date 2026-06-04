@@ -2,12 +2,14 @@
 // Поддержка двух предметов: ads (одиночный выбор) и db (множественный выбор, баллы 2/1/0).
 
 import { loadQuestions, normalizeLang, normalizeSubject, SUBJECTS } from './data-loader.js';
-import { recordTopicQuiz, recordFullTest } from './progress.js';
+import { recordTopicQuiz, recordFullTest, recordResult, updateMistakes, getMistakes } from './progress.js';
 import { esc, qs, el, showError } from './app.js';
 import {
   stratifiedSample,
   topicSample,
   blockSet,
+  shuffle,
+  shuffleQuestion,
   scoreQuiz,
   createTimer,
   fmtTime,
@@ -19,6 +21,7 @@ const MODE_TITLES = {
   full: 'Полный тест (формат КТ)',
   topic: 'Квиз по теме',
   block: 'Тест по блоку',
+  mistakes: 'Работа над ошибками',
 };
 
 const state = {
@@ -69,14 +72,25 @@ export async function initQuiz(container, titlebar) {
     else if (mode === 'blitz') selected = stratifiedSample(all, count || 15);
     else if (mode === 'topic') selected = topicSample(all, topicId, count || 15);
     else if (mode === 'block') selected = blockSet(all, blockId, 10);
+    else if (mode === 'mistakes') {
+      const ids = new Set(getMistakes(subject));
+      selected = shuffle(all.filter((q) => ids.has(q.id))).slice(0, count || 20);
+    }
 
     if (!selected.length) {
-      showError(root, 'Для выбранного режима не нашлось вопросов.');
+      showError(
+        root,
+        mode === 'mistakes'
+          ? 'Журнал ошибок пуст — пройди блиц или полный тест, и сюда попадут вопросы, в которых ты ошибся.'
+          : 'Для выбранного режима не нашлось вопросов.'
+      );
       return;
     }
-    state.questions = selected;
+    // Перемешиваем варианты во всех режимах, КРОМЕ полного теста (реализм КТ).
+    state.questions = mode === 'full' ? selected : selected.map(shuffleQuestion);
     state.index = 0;
 
+    installHotkeys();
     if (mode === 'full') startTimer();
     renderQuestion();
   } catch (e) {
@@ -201,6 +215,56 @@ function buildQuestionBody(q) {
   return parts.join('');
 }
 
+/* ---------- Действия над текущим вопросом (общие для кликов и горячих клавиш) ---------- */
+function chooseOption(letter) {
+  const q = state.questions[state.index];
+  if (!q || state.revealed[q.id]) return;
+  if (!q.options.some((o) => o.letter === letter)) return;
+  if (state.multi) {
+    const cur = state.answers[q.id] || [];
+    state.answers[q.id] = cur.includes(letter) ? cur.filter((l) => l !== letter) : [...cur, letter];
+  } else {
+    state.answers[q.id] = [letter];
+    if (state.mode === 'blitz' || state.mode === 'block') state.revealed[q.id] = true;
+  }
+  renderQuestion();
+}
+
+function goNext() {
+  if (state.index === state.questions.length - 1) finishQuiz(false);
+  else { state.index++; renderQuestion(); }
+}
+function goPrev() {
+  if (state.index > 0) { state.index--; renderQuestion(); }
+}
+
+/* ---------- Горячие клавиши (устанавливаются один раз) ---------- */
+let hotkeysInstalled = false;
+function installHotkeys() {
+  if (hotkeysInstalled) return;
+  hotkeysInstalled = true;
+  document.addEventListener('keydown', (e) => {
+    if (state.finished || e.ctrlKey || e.metaKey || e.altKey) return;
+    const tag = (e.target.tagName || '').toLowerCase();
+    if (tag === 'input' || tag === 'textarea') return;
+    const q = state.questions[state.index];
+    if (!q) return;
+    const n = q.options.length;
+    // буквы A–J
+    const up = e.key.length === 1 ? e.key.toUpperCase() : '';
+    if (up >= 'A' && up <= 'J' && 'ABCDEFGHIJ'.indexOf(up) < n) { e.preventDefault(); chooseOption(up); return; }
+    // цифры 1..n
+    if (/^[1-9]$/.test(e.key)) { const i = +e.key - 1; if (i < n) { e.preventDefault(); chooseOption(q.options[i].letter); } return; }
+    if (e.key === 'Enter') {
+      // если фокус на кнопке/ссылке — пусть сработает сам элемент, не дублируем
+      if (tag === 'button' || tag === 'a' || tag === 'summary') return;
+      e.preventDefault(); goNext(); return;
+    }
+    if (e.key === 'ArrowRight') { e.preventDefault(); goNext(); return; }
+    if (e.key === 'ArrowLeft') { e.preventDefault(); goPrev(); return; }
+  });
+}
+
 /* ---------- Рендер одного вопроса ---------- */
 function renderQuestion() {
   const q = state.questions[state.index];
@@ -276,19 +340,7 @@ function renderQuestion() {
       if (correct.has(opt.letter)) btn.classList.add('correct');
       else if (isSel) btn.classList.add('wrong');
     } else {
-      btn.addEventListener('click', () => {
-        if (isMulti) {
-          // переключаем выбор варианта
-          const cur = state.answers[q.id] || [];
-          state.answers[q.id] = cur.includes(opt.letter)
-            ? cur.filter((l) => l !== opt.letter)
-            : [...cur, opt.letter];
-        } else {
-          state.answers[q.id] = [opt.letter]; // одиночный выбор
-          if (isBlitz) state.revealed[q.id] = true; // обучающий режим: сразу показать
-        }
-        renderQuestion();
-      });
+      btn.addEventListener('click', () => chooseOption(opt.letter));
     }
     optsEl.appendChild(btn);
   }
@@ -317,20 +369,19 @@ function renderQuestion() {
   const nav = el('div', { class: 'quiz-nav' });
   const prevBtn = el('button', { class: 'btn', type: 'button' }, '← Назад');
   prevBtn.disabled = state.index === 0;
-  prevBtn.addEventListener('click', () => {
-    if (state.index > 0) { state.index--; renderQuestion(); }
-  });
+  prevBtn.addEventListener('click', goPrev);
 
   const isLast = state.index === n - 1;
   const nextBtn = el('button', { class: 'btn btn-primary', type: 'button' }, isLast ? 'Завершить ✓' : 'Далее →');
-  nextBtn.addEventListener('click', () => {
-    if (isLast) finishQuiz(false);
-    else { state.index++; renderQuestion(); }
-  });
+  nextBtn.addEventListener('click', goNext);
 
   nav.appendChild(prevBtn);
   nav.appendChild(nextBtn);
   root.appendChild(nav);
+
+  root.appendChild(
+    el('div', { class: 'kbd-hint muted' }, 'Клавиши: <kbd>1–9</kbd>/<kbd>A–E</kbd> — выбрать · <kbd>←</kbd><kbd>→</kbd> — листать · <kbd>Enter</kbd> — далее')
+  );
 }
 
 /* ---------- Экран результата ---------- */
@@ -346,6 +397,8 @@ function finishQuiz(byTimeout) {
   // сохранение прогресса
   if (state.mode === 'topic' && state.topicId) recordTopicQuiz(state.topicId, result.pct01, state.subject);
   if (state.mode === 'full') recordFullTest(result.pct01, state.subject);
+  recordResult(state.subject, state.mode, result.pct01);
+  updateMistakes(result.details, state.subject); // верные — убрать из журнала, ошибки — добавить
 
   if (titleEl) titleEl.textContent = 'Результат';
   root.innerHTML = '';
@@ -365,6 +418,31 @@ function finishQuiz(byTimeout) {
       <a class="btn" href="${home}">На главную</a>
     </div>`;
   root.appendChild(summary);
+
+  // Разбор по темам с ошибками — чтобы вернуться в конспект и повторить.
+  const errByTopic = new Map();
+  for (const d of result.details) {
+    if (d.status === 'full') continue;
+    const tid = d.question.topic_id;
+    const cur = errByTopic.get(tid) || { count: 0, title: d.question.topic || `Тема ${tid}` };
+    cur.count++;
+    errByTopic.set(tid, cur);
+  }
+  if (errByTopic.size) {
+    const subjQ = state.subject === 'ads' ? '' : `&subject=${state.subject}`;
+    const rows = [...errByTopic.entries()]
+      .sort((a, b) => b[1].count - a[1].count)
+      .map(
+        ([tid, info]) =>
+          `<a class="topic-err" href="./topic.html?id=${tid}${subjQ}"><span>${esc(info.title)}</span><span class="te-count">${info.count} ${info.count === 1 ? 'ошибка' : 'ошиб.'}</span></a>`
+      )
+      .join('');
+    const review = el('div', { class: 'card review-topics' });
+    review.innerHTML = `<h3 style="margin-top:0">📚 Повторить темы с ошибками</h3>
+      <p class="muted" style="margin:4px 0 10px">Нажми на тему, чтобы открыть конспект и закрепить материал:</p>
+      <div class="topic-err-list">${rows}</div>`;
+    root.appendChild(review);
+  }
 
   const protocolTitle = state.mode === 'full' ? 'Протокол ответов' : 'Разбор вопросов';
   root.appendChild(el('h2', {}, protocolTitle));

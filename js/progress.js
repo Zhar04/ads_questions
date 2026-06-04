@@ -11,6 +11,9 @@ const BASE = 'kt_';
 const PREFIX = (subject = 'ads') => `${BASE}${subject}:`;
 const TOPIC_KEY = (id, subject) => `${PREFIX(subject)}progress:topic:${id}`;
 const FULL_BEST_KEY = (subject) => `${PREFIX(subject)}progress:fullTestBest`;
+const MISTAKES_KEY = (subject) => `${PREFIX(subject)}mistakes`;
+const HISTORY_KEY = (subject) => `${PREFIX(subject)}history`;
+const HISTORY_LIMIT = 60;
 
 function readJSON(key, fallback) {
   try {
@@ -74,6 +77,53 @@ export function recordFullTest(pct01, subject = 'ads') {
 export function getFullTestBest(subject = 'ads') {
   const v = readJSON(FULL_BEST_KEY(subject), 0);
   return typeof v === 'number' ? v : 0;
+}
+
+/* ---------- Журнал ошибок (для режима «работа над ошибками») ---------- */
+
+/** Множество id вопросов, на которые отвечено не на максимум. */
+export function getMistakes(subject = 'ads') {
+  const arr = readJSON(MISTAKES_KEY(subject), []);
+  return Array.isArray(arr) ? arr : [];
+}
+
+/** Добавить id вопросов с ошибкой (идемпотентно). */
+export function addMistakes(ids, subject = 'ads') {
+  const set = new Set(getMistakes(subject));
+  for (const id of ids) set.add(id);
+  writeJSON(MISTAKES_KEY(subject), [...set]);
+}
+
+/** Убрать id из журнала (вопрос освоен). */
+export function removeMistake(id, subject = 'ads') {
+  const next = getMistakes(subject).filter((x) => x !== id);
+  writeJSON(MISTAKES_KEY(subject), next);
+}
+
+/** Обновить журнал по результатам теста: верные — убрать, неверные — добавить. */
+export function updateMistakes(details, subject = 'ads') {
+  const set = new Set(getMistakes(subject));
+  for (const d of details) {
+    const full = d.status === 'full' || d.correct === true;
+    if (full) set.delete(d.question.id);
+    else set.add(d.question.id);
+  }
+  writeJSON(MISTAKES_KEY(subject), [...set]);
+}
+
+/* ---------- История результатов (для графика прогресса) ---------- */
+
+/** Записать результат теста: { date, pct (0..100), mode }. */
+export function recordResult(subject = 'ads', mode = 'full', pct01 = 0) {
+  const hist = getHistory(subject);
+  hist.push({ date: new Date().toISOString(), pct: Math.round(pct01 * 100), mode });
+  writeJSON(HISTORY_KEY(subject), hist.slice(-HISTORY_LIMIT));
+}
+
+/** История результатов (массив, старые → новые). */
+export function getHistory(subject = 'ads') {
+  const arr = readJSON(HISTORY_KEY(subject), []);
+  return Array.isArray(arr) ? arr : [];
 }
 
 /**

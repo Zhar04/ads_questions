@@ -509,6 +509,63 @@ a { color: var(--accent2); }
 
 .quiz-nav { display: flex; justify-content: space-between; gap: 12px; margin-top: 20px; }
 
+/* подсказка по горячим клавишам */
+.kbd-hint { margin-top: 12px; font-size: 12px; text-align: center; }
+kbd {
+  font-family: var(--font-body);
+  font-size: 11px;
+  border: 1px solid var(--border);
+  border-bottom-width: 2px;
+  border-radius: 5px;
+  padding: 1px 5px;
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* блок «повторить темы с ошибками» на экране результата */
+.review-topics { margin-top: 16px; }
+.topic-err-list { display: flex; flex-direction: column; gap: 6px; }
+.topic-err {
+  display: flex; align-items: center; justify-content: space-between; gap: 10px;
+  padding: 9px 12px; border: 1px solid var(--border); border-left: 3px solid var(--yellow);
+  border-radius: var(--radius); color: var(--text); text-decoration: none;
+}
+.topic-err:hover { border-color: var(--accent); }
+.topic-err .te-count { color: var(--yellow); font-size: 12px; white-space: nowrap; }
+
+/* мини-график истории результатов */
+.hist-chart {
+  display: flex; align-items: flex-end; gap: 5px;
+  height: 90px; margin-top: 10px;
+}
+.hist-bar {
+  flex: 1; min-width: 6px; border-radius: 4px 4px 0 0;
+  background: var(--muted); position: relative; display: flex; justify-content: center;
+  align-items: flex-start; transition: filter .15s;
+}
+.hist-bar span { font-size: 9px; color: var(--text); margin-top: -13px; opacity: .65; }
+.hist-bar.good { background: linear-gradient(180deg, var(--green), color-mix(in srgb, var(--green) 55%, transparent)); }
+.hist-bar.mid  { background: linear-gradient(180deg, var(--yellow), color-mix(in srgb, var(--yellow) 55%, transparent)); }
+.hist-bar.low  { background: linear-gradient(180deg, var(--red), color-mix(in srgb, var(--red) 55%, transparent)); }
+.hist-bar:hover { filter: brightness(1.15); }
+
+/* карточки-шпаргалки (cheatsheets.html) */
+.cheat-card {
+  border: 1px solid var(--border); border-radius: var(--radius);
+  background: var(--card); margin-bottom: 10px; overflow: hidden;
+}
+.cheat-card > summary {
+  cursor: pointer; list-style: none; padding: 14px 16px;
+  font-family: var(--font-head); font-size: 15px; font-weight: 600;
+  display: flex; align-items: center; gap: 10px;
+}
+.cheat-card > summary::-webkit-details-marker { display: none; }
+.cheat-card > summary::after { content: '▾'; margin-left: auto; color: var(--muted); transition: transform .15s; }
+.cheat-card[open] > summary::after { transform: rotate(180deg); }
+.cheat-card[open] > summary { border-bottom: 1px solid var(--border); }
+.cheat-card .cs-emoji { font-size: 18px; }
+.cheat-card .md { padding: 4px 16px 16px; }
+
 /* ---------- Result screen ---------- */
 .result-score {
   font-family: var(--font-head);

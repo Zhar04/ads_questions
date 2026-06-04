@@ -4263,14 +4263,14 @@
         }
       ],
       "correct_answers": [
-        "C"
+        "B"
       ],
       "answer_type": "single",
       "topic_id": 4,
       "topic": "Функции и рекурсивные функции",
       "difficulty": "В",
-      "verification": "verified",
-      "verification_note": "Передача по значению — функции доступна копия/сама переменная по контексту вопроса.",
+      "verification": "corrected",
+      "verification_note": "Исправлен ключ C->B. Вопрос про доступ к самой переменной-аргументу — это передача по ссылке (B), как и сказано в разборе. Прежний ключ C («по значению») противоречил формулировке.",
       "has_figure": false,
       "source_files": [
         "ads_questions_7_unique#Algorithms (39).png"

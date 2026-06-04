@@ -147,6 +147,31 @@ function splitRow(line) {
     .map((c) => c.trim());
 }
 
+/**
+ * Рендер мини-графика истории результатов (последние прохождения).
+ * @param {Array} history — [{date, pct, mode}]
+ * @param {{card?:Element, chart:Element, last?:Element}} els
+ */
+export function renderHistoryChart(history, els) {
+  const { card, chart, last } = els || {};
+  if (!chart) return;
+  if (!history || !history.length) {
+    if (card) card.style.display = 'none';
+    return;
+  }
+  if (card) card.style.display = '';
+  const recent = history.slice(-14);
+  if (last) last.textContent = recent[recent.length - 1].pct + '%';
+  const MODE_RU = { full: 'полный', blitz: 'блиц', topic: 'тема', block: 'блок', mistakes: 'ошибки' };
+  chart.innerHTML = recent
+    .map((h) => {
+      const cls = h.pct >= 85 ? 'good' : h.pct >= 60 ? 'mid' : 'low';
+      const title = `${h.pct}% · ${MODE_RU[h.mode] || h.mode}`;
+      return `<div class="hist-bar ${cls}" style="height:${Math.max(8, h.pct)}%" title="${esc(title)}"><span>${h.pct}</span></div>`;
+    })
+    .join('');
+}
+
 /** Показать сообщение об ошибке в контейнере. */
 export function showError(container, message) {
   container.innerHTML = `<div class="error-box">⚠️ ${esc(message)}</div>`;

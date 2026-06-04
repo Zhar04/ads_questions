@@ -1,0 +1,23 @@
+name: validate-banks
+
+on:
+  push:
+    paths:
+      - 'data/**'
+      - 'tools/**'
+      - '.github/workflows/validate.yml'
+  pull_request:
+    paths:
+      - 'data/**'
+      - 'tools/**'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Validate question banks / topics / cheatsheets
+        run: node tools/validate-banks.mjs

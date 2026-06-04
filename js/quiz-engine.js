@@ -46,6 +46,65 @@ export function stratifiedSample(questions, count) {
   return shuffle(picked).slice(0, count);
 }
 
+const OPT_LETTERS = 'ABCDEFGHIJ';
+
+/**
+ * Безопасно перемешивает варианты ответа и переназначает буквы A,B,…
+ * - Ключ (correct_answers) ремапится по ИСХОДНОЙ букве каждого варианта → биекция, всегда корректно.
+ * - Разбор (explanation) ремапится для ссылок на буквы (после «верно/вариант/ответ…», в «(X)» и «X»).
+ * - Защитный гейт: если после ремапа в разборе остаётся неучтённая одиночная латинская A–H
+ *   (например «язык C», «C++»), вопрос НЕ перемешивается (возвращается как есть) — чтобы разбор
+ *   никогда не противоречил вариантам.
+ * Возвращает НОВЫЙ объект вопроса (исходный не мутируется) либо исходный без изменений.
+ */
+export function shuffleQuestion(q) {
+  const opts = q.options;
+  if (!Array.isArray(opts) || opts.length < 2 || opts.length > OPT_LETTERS.length) return q;
+
+  const origCorrect = new Set(q.correct_answers || []);
+  const arr = shuffle(opts.map((o) => ({ ...o })));
+  const options = [];
+  const correct = [];
+  const map = {}; // исходная буква → новая буква
+  arr.forEach((o, i) => {
+    const nl = OPT_LETTERS[i];
+    map[o.letter] = nl;
+    if (origCorrect.has(o.letter)) correct.push(nl);
+    options.push({ letter: nl, text: o.text });
+  });
+
+  const remapped = remapExplanation(q.explanation, map);
+  if (remapped === null) return q; // небезопасно ремапить разбор — не перемешиваем
+
+  return { ...q, options, correct_answers: correct, explanation: remapped };
+}
+
+/**
+ * Ремапит ссылки на буквы вариантов в тексте разбора по карте map.
+ * Возвращает новый текст, либо null, если есть неучтённая одиночная латинская A–H (риск рассинхрона).
+ */
+export function remapExplanation(text, map) {
+  if (!text) return text;
+  const mp = (l) => map[l] || l;
+  let matched = 0;
+  let out = text;
+  // «(X)» и «X»
+  out = out.replace(/\(([A-H])\)/g, (m, l) => { matched++; return '(' + mp(l) + ')'; });
+  out = out.replace(/«([A-H])»/g, (m, l) => { matched++; return '«' + mp(l) + '»'; });
+  // триггер-слово + список букв: «верно A», «вариант D», «ответы A, E», «верно A и G»
+  out = out.replace(
+    /(верно|поэтому|вариант\w*|ответ\w*|правильн\w*|корректн\w*|букв\w*)([\s.:—-]*)((?:[A-H](?![+A-Za-zА-Яа-я])[\s,/и]*)+)/gi,
+    (m, trig, sep, list) => {
+      const nl = list.replace(/[A-H]/g, (x) => { matched++; return mp(x); });
+      return trig + sep + nl;
+    }
+  );
+  // защита: все ли одиночные латинские A–H (не часть C++/слова) учтены?
+  const standalone = (text.match(/\b[A-H]\b(?!\+)/g) || []).length;
+  if (standalone > matched) return null; // есть неучтённая ссылка — небезопасно
+  return out;
+}
+
 /** Случайные вопросы одной темы (для mode=topic). */
 export function topicSample(questions, topicId, count) {
   const pool = questions.filter(

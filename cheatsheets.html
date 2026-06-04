@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Шпаргалки · КТ</title>
+
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#7c3aed" />
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Unbounded:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <div class="topbar">
+    <a class="back" id="back" href="index.html" aria-label="Назад">←</a>
+    <div class="title">Шпаргалки</div>
+  </div>
+
+  <main class="container">
+    <header>
+      <span class="badge">Шпаргалки</span>
+      <h1 style="margin-top:10px" id="title">Памятки для повторения</h1>
+      <p class="subtitle">То, что нужно помнить наизусть. Открой нужную карточку перед тестом, чтобы освежить память.</p>
+    </header>
+    <div id="sheets">
+      <div class="loading"><div class="spinner"></div>Загрузка…</div>
+    </div>
+  </main>
+
+  <script type="module">
+    import { renderMarkdown, esc, qs, showError } from './js/app.js';
+    import { normalizeSubject, SUBJECTS } from './js/data-loader.js';
+
+    const subject = normalizeSubject(qs('subject', 'ads'));
+    document.getElementById('back').href = './' + SUBJECTS[subject].home;
+    document.getElementById('title').textContent = 'Шпаргалки · ' + SUBJECTS[subject].short;
+
+    async function run() {
+      const box = document.getElementById('sheets');
+      try {
+        const res = await fetch('./data/cheatsheets.json', { cache: 'no-cache' });
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        const data = await res.json();
+        const sheets = (data.sheets && data.sheets[subject]) || [];
+        if (!sheets.length) { showError(box, 'Шпаргалки для этого предмета пока не добавлены.'); return; }
+        box.innerHTML = '';
+        sheets.forEach((s, i) => {
+          const d = document.createElement('details');
+          d.className = 'cheat-card';
+          if (i === 0) d.open = true;
+          d.innerHTML = `<summary><span class="cs-emoji">${esc(s.emoji || '📌')}</span>${esc(s.title)}</summary>
+            <div class="md">${renderMarkdown(s.content_md)}</div>`;
+          box.appendChild(d);
+        });
+      } catch (e) {
+        showError(box, e.message || 'Не удалось загрузить шпаргалки');
+      }
+    }
+    run();
+  </script>
+</body>
+</html>
