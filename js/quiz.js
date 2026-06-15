@@ -400,7 +400,9 @@ function renderQuestion() {
   const correct = new Set(q.correct_answers || []);
   for (const opt of q.options) {
     const btn = el('button', { class: 'option', type: 'button' });
-    btn.innerHTML = `<span class="letter">${esc(opt.letter)}</span><span class="otext">${esc(opt.text)}</span>`;
+    // \n внутри варианта (например, в вопросах про вывод программы) показываем как перенос строки.
+    const otext = esc(opt.text).replace(/\\n/g, '<br>');
+    btn.innerHTML = `<span class="letter">${esc(opt.letter)}</span><span class="otext">${otext}</span>`;
     const isSel = selected.includes(opt.letter);
     if (isSel) btn.classList.add('selected');
 
