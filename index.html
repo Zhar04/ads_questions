@@ -56,6 +56,11 @@
         <div class="mc-title">Полный тест</div>
         <div class="mc-desc">30 вопросов · формат КТ · с таймером</div>
       </a>
+      <a class="menu-card" id="card-mega" href="quiz.html?mode=mega">
+        <span class="mc-icon">🏆</span>
+        <div class="mc-title">Мега-тест</div>
+        <div class="mc-desc">Весь банк вопросов подряд · разбор сразу · без таймера</div>
+      </a>
       <a class="menu-card" id="card-mistakes" href="quiz.html?mode=mistakes&count=20">
         <span class="mc-icon">🔁</span>
         <div class="mc-title">Работа над ошибками</div>
@@ -105,6 +110,7 @@
       );
       document.getElementById('card-blitz').href = `quiz.html?mode=blitz&count=15&lang=${lang}`;
       document.getElementById('card-full').href = `quiz.html?mode=full&count=30&lang=${lang}`;
+      document.getElementById('card-mega').href = `quiz.html?mode=mega&lang=${lang}`;
     }
     document.querySelectorAll('.seg-btn').forEach((b) =>
       b.addEventListener('click', () => applyLang(b.dataset.lang))

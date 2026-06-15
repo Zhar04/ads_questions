@@ -4243,7 +4243,7 @@
     },
     {
       "id": "DB-090",
-      "question": "Результат выполнения данной команды на SQL create table department (id int, salary int); insert into department values (102, 45000); insert into department values (103, 15000); insert into department values (104, 90000); insert into values (105, 10000); Select round (y)",
+      "question": "Результат выполнения данной команды на SQL create table department (id int, salary int); insert into department values (102, 45000); insert into department values (103, 15000); insert into department values (104, 90000); insert into department values (105, 10000); Select round (y)",
       "options": [
         {
           "letter": "A",
@@ -5358,8 +5358,7 @@
         }
       ],
       "correct_answers": [
-        "B",
-        "E"
+        "B"
       ],
       "answer_type": "multi",
       "language": "ru",

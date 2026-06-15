@@ -2,7 +2,7 @@
 //   cache-first для статики (HTML/CSS/JS/иконки),
 //   network-first для JSON-данных (с фолбэком на кеш офлайн).
 
-const VERSION = 'kt-ads-v8';
+const VERSION = 'kt-ads-v9';
 const STATIC_CACHE = `${VERSION}-static`;
 const DATA_CACHE = `${VERSION}-data`;
 

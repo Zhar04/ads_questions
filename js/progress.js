@@ -14,6 +14,7 @@ const FULL_BEST_KEY = (subject) => `${PREFIX(subject)}progress:fullTestBest`;
 const MISTAKES_KEY = (subject) => `${PREFIX(subject)}mistakes`;
 const HISTORY_KEY = (subject) => `${PREFIX(subject)}history`;
 const HISTORY_LIMIT = 60;
+const SEEN_KEY = (subject) => `${PREFIX(subject)}seen`;
 
 function readJSON(key, fallback) {
   try {
@@ -124,6 +125,26 @@ export function recordResult(subject = 'ads', mode = 'full', pct01 = 0) {
 export function getHistory(subject = 'ads') {
   const arr = readJSON(HISTORY_KEY(subject), []);
   return Array.isArray(arr) ? arr : [];
+}
+
+/* ---------- Недавно показанные вопросы (анти-повтор для рандомайзера) ---------- */
+
+/** Скользящее окно id вопросов, показанных в последних тестах (новые — в конце). */
+export function getSeen(subject = 'ads') {
+  const arr = readJSON(SEEN_KEY(subject), []);
+  return Array.isArray(arr) ? arr : [];
+}
+
+/**
+ * Добавить только что показанные id в окно «недавних» (с дедупом и лимитом).
+ * Лимит держим меньше размера банка, чтобы всегда оставались «свежие» вопросы.
+ */
+export function pushSeen(ids, subject = 'ads', limit = 80) {
+  if (!ids || !ids.length) return;
+  const fresh = new Set(ids);
+  const kept = getSeen(subject).filter((id) => !fresh.has(id)); // убрать прежние вхождения
+  const next = [...kept, ...ids]; // новые — в конец
+  writeJSON(SEEN_KEY(subject), next.slice(-Math.max(1, limit)));
 }
 
 /**

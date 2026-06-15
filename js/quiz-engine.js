@@ -13,24 +13,43 @@ export function shuffle(arr) {
   return a;
 }
 
+/** Приводит avoid (Set | массив | undefined) к множеству id для исключения. */
+function toSet(v) {
+  if (v instanceof Set) return v;
+  if (Array.isArray(v)) return new Set(v);
+  return new Set();
+}
+
 /**
  * Стратифицированный набор вопросов: равномерно по темам (round-robin).
  *  - группируем по topic_id;
- *  - перемешиваем внутри каждой темы;
+ *  - перемешиваем внутри каждой темы И порядок самих тем;
  *  - набираем по кругу, пока не наберём count;
  *  - итог ещё раз перемешиваем по порядку показа.
  * Вопросы с has_figure пропускаются в авто-наборе, КРОМЕ тех, у кого есть картинка (поле image).
+ *
+ * @param {Object} [opts]
+ * @param {Set|Array} [opts.avoid] — id недавно показанных вопросов: их стараемся не брать,
+ *   чтобы между прохождениями было меньше повторов. Если «свежих» не хватает на count —
+ *   откатываемся ко всему пулу (иначе тест не наберётся).
  */
-export function stratifiedSample(questions, count) {
+export function stratifiedSample(questions, count, opts = {}) {
+  const avoid = toSet(opts.avoid);
   const usable = questions.filter((q) => (!q.has_figure || q.image) && hasValidAnswer(q));
+  const fresh = avoid.size ? usable.filter((q) => !avoid.has(q.id)) : usable;
+  const pool = fresh.length >= count ? fresh : usable;
+  return roundRobinByTopic(pool, count);
+}
+
+/** Round-robin набор по темам (равномерное покрытие). Порядок тем тоже перемешан. */
+function roundRobinByTopic(pool, count) {
   const groups = new Map();
-  for (const q of usable) {
+  for (const q of pool) {
     const t = Number(q.topic_id);
     if (!groups.has(t)) groups.set(t, []);
     groups.get(t).push(q);
   }
-  const buckets = [...groups.values()].map((g) => shuffle(g));
-  // round-robin
+  const buckets = shuffle([...groups.values()].map((g) => shuffle(g)));
   const picked = [];
   let exhausted = false;
   while (picked.length < count && !exhausted) {
@@ -105,12 +124,20 @@ export function remapExplanation(text, map) {
   return out;
 }
 
-/** Случайные вопросы одной темы (для mode=topic). */
-export function topicSample(questions, topicId, count) {
-  const pool = questions.filter(
+/** Случайные вопросы одной темы (для mode=topic). opts.avoid — недавно показанные id. */
+export function topicSample(questions, topicId, count, opts = {}) {
+  const avoid = toSet(opts.avoid);
+  const all = questions.filter(
     (q) => Number(q.topic_id) === Number(topicId) && hasValidAnswer(q)
   );
+  const fresh = avoid.size ? all.filter((q) => !avoid.has(q.id)) : all;
+  const pool = fresh.length >= count ? fresh : all;
   return shuffle(pool).slice(0, count);
+}
+
+/** Весь банк пригодных вопросов в стабильном порядке (для mode=mega — «мега-тест»). */
+export function allUsable(questions) {
+  return questions.filter((q) => hasValidAnswer(q));
 }
 
 /** Фиксированный (не случайный) набор вопросов блока (mode=block). */

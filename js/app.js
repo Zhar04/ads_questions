@@ -162,7 +162,7 @@ export function renderHistoryChart(history, els) {
   if (card) card.style.display = '';
   const recent = history.slice(-14);
   if (last) last.textContent = recent[recent.length - 1].pct + '%';
-  const MODE_RU = { full: 'полный', blitz: 'блиц', topic: 'тема', block: 'блок', mistakes: 'ошибки' };
+  const MODE_RU = { full: 'полный', blitz: 'блиц', topic: 'тема', block: 'блок', mistakes: 'ошибки', mega: 'мега' };
   chart.innerHTML = recent
     .map((h) => {
       const cls = h.pct >= 85 ? 'good' : h.pct >= 60 ? 'mid' : 'low';

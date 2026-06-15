@@ -2,12 +2,13 @@
 // Поддержка двух предметов: ads (одиночный выбор) и db (множественный выбор, баллы 2/1/0).
 
 import { loadQuestions, normalizeLang, normalizeSubject, SUBJECTS } from './data-loader.js';
-import { recordTopicQuiz, recordFullTest, recordResult, updateMistakes, getMistakes } from './progress.js';
+import { recordTopicQuiz, recordFullTest, recordResult, updateMistakes, getMistakes, getSeen, pushSeen } from './progress.js';
 import { esc, qs, el, showError } from './app.js';
 import {
   stratifiedSample,
   topicSample,
   blockSet,
+  allUsable,
   shuffle,
   shuffleQuestion,
   scoreQuiz,
@@ -22,6 +23,7 @@ const MODE_TITLES = {
   topic: 'Квиз по теме',
   block: 'Тест по блоку',
   mistakes: 'Работа над ошибками',
+  mega: 'Мега-тест (весь банк)',
 };
 
 const state = {
@@ -67,11 +69,15 @@ export async function initQuiz(container, titlebar) {
 
   try {
     const all = await loadQuestions(subject, lang);
+    // Анти-повтор: реже показывать вопросы из недавних тестов (скользящее окно).
+    const seenLimit = Math.max(20, Math.floor(all.length * 0.45));
+    const avoid = new Set(getSeen(subject));
     let selected = [];
-    if (mode === 'full') selected = stratifiedSample(all, count || 30);
-    else if (mode === 'blitz') selected = stratifiedSample(all, count || 15);
-    else if (mode === 'topic') selected = topicSample(all, topicId, count || 15);
+    if (mode === 'full') selected = stratifiedSample(all, count || 30, { avoid });
+    else if (mode === 'blitz') selected = stratifiedSample(all, count || 15, { avoid });
+    else if (mode === 'topic') selected = topicSample(all, topicId, count || 15, { avoid });
     else if (mode === 'block') selected = blockSet(all, blockId, 10);
+    else if (mode === 'mega') selected = allUsable(all);
     else if (mode === 'mistakes') {
       const ids = new Set(getMistakes(subject));
       selected = shuffle(all.filter((q) => ids.has(q.id))).slice(0, count || 20);
@@ -86,8 +92,15 @@ export async function initQuiz(container, titlebar) {
       );
       return;
     }
-    // Перемешиваем варианты во всех режимах, КРОМЕ полного теста (реализм КТ).
-    state.questions = mode === 'full' ? selected : selected.map(shuffleQuestion);
+    // Запоминаем показанные вопросы (анти-повтор) — кроме мега/ошибок/блока,
+    // где состав фиксирован или намеренно повторяется.
+    if (mode === 'blitz' || mode === 'full' || mode === 'topic') {
+      pushSeen(selected.map((q) => q.id), subject, seenLimit);
+    }
+    // Варианты перемешиваем в обучающих режимах; в полном и мега-тесте — нет
+    // (реализм КТ; в мега удобно сверять ответы по исходным буквам банка).
+    const keepOptionOrder = mode === 'full' || mode === 'mega';
+    state.questions = keepOptionOrder ? selected : selected.map(shuffleQuestion);
     state.index = 0;
 
     installHotkeys();
@@ -225,7 +238,7 @@ function chooseOption(letter) {
     state.answers[q.id] = cur.includes(letter) ? cur.filter((l) => l !== letter) : [...cur, letter];
   } else {
     state.answers[q.id] = [letter];
-    if (state.mode === 'blitz' || state.mode === 'block') state.revealed[q.id] = true;
+    if (state.mode === 'blitz' || state.mode === 'block' || state.mode === 'mega') state.revealed[q.id] = true;
   }
   renderQuestion();
 }
