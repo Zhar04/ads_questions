@@ -1,0 +1,4 @@
+# Локальные находки не коммитим — только README и сам .gitignore.
+*
+!.gitignore
+!README.md

@@ -140,6 +140,57 @@ export function allUsable(questions) {
   return questions.filter((q) => hasValidAnswer(q));
 }
 
+/* ---------- Поиск по банку (нечёткий, по ключевым словам) ---------- */
+
+// Короткие служебные слова, которые не несут смысла для сравнения вопросов.
+const SEARCH_STOP = new Set(
+  ('в во и на не что это как для по со из от до за то же бы ли он она оно мы вы они или если когда чтобы ' +
+   'так уже вот при над под без про между быть есть нет да который которая которое все этот эта эти тот ' +
+   'та те его ее их свой себя где куда тут там еще также чем чём при том этом').split(' ')
+);
+
+/** Нормализует текст для поиска: нижний регистр, ё→е, степени →цифры/n, не-буквы → пробелы. */
+function normForSearch(s) {
+  return String(s || '')
+    .toLowerCase()
+    .replace(/ё/g, 'е')
+    .replace(/²/g, '2').replace(/³/g, '3').replace(/ⁿ/g, 'n')
+    .replace(/[^a-zа-я0-9]+/gi, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+/** Значимые токены запроса/вопроса (длина ≥ 3, без стоп-слов). */
+function searchTokens(s) {
+  return normForSearch(s).split(' ').filter((t) => t.length >= 3 && !SEARCH_STOP.has(t));
+}
+
+/**
+ * Ищет в банке вопросы, похожие на запрос (по совпадению ключевых слов + общей подстроке).
+ * Терминологию не приводим к синонимам, но из-за совпадения остальных слов похожие вопросы
+ * («О-синтаксис» vs «О-нотация», перефразировки) всё равно всплывают наверх.
+ * @returns {Array<{question, score:number(0..1), shared:number}>} — топ `limit`, по убыванию score.
+ */
+export function searchQuestions(questions, query, limit = 12) {
+  const qSet = new Set(searchTokens(query));
+  if (!qSet.size) return [];
+  const normQuery = normForSearch(query);
+  const out = [];
+  for (const q of questions) {
+    const hay = `${q.question || ''} ${(q.options || []).map((o) => o.text).join(' ')}`;
+    const hayTokens = new Set(searchTokens(hay));
+    let shared = 0;
+    for (const t of qSet) if (hayTokens.has(t)) shared++;
+    if (!shared) continue;
+    let score = shared / qSet.size; // доля слов запроса, найденных в вопросе
+    // бонус за длинную общую подстроку — защищает от случайных совпадений отдельных слов
+    if (normQuery.length >= 12 && normForSearch(hay).includes(normQuery)) score = Math.min(1, score + 0.3);
+    out.push({ question: q, score, shared });
+  }
+  out.sort((a, b) => b.score - a.score || b.shared - a.shared);
+  return out.slice(0, limit);
+}
+
 /** Фиксированный (не случайный) набор вопросов блока (mode=block). */
 export function blockSet(questions, blockId, max = 10) {
   return questions

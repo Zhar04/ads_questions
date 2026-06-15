@@ -9,6 +9,7 @@ import {
   topicSample,
   blockSet,
   allUsable,
+  searchQuestions,
   shuffle,
   shuffleQuestion,
   scoreQuiz,
@@ -106,6 +107,7 @@ export async function initQuiz(container, titlebar) {
     installHotkeys();
     if (mode === 'full') startTimer();
     renderQuestion();
+    if (mode === 'mega') installMegaSearch();
   } catch (e) {
     showError(root, e.message || 'Ошибка загрузки вопросов');
   }
@@ -275,6 +277,60 @@ function installHotkeys() {
     }
     if (e.key === 'ArrowRight') { e.preventDefault(); goNext(); return; }
     if (e.key === 'ArrowLeft') { e.preventDefault(); goPrev(); return; }
+  });
+}
+
+/* ---------- Поиск по банку (только мега-тест) ---------- */
+// Панель крепится к родителю #quiz, поэтому переживает перерисовку вопроса (renderQuestion чистит только root).
+function installMegaSearch() {
+  const host = root.parentElement;
+  if (!host || document.getElementById('mega-search')) return;
+  const panel = el('div', { class: 'mega-search card', id: 'mega-search' });
+  panel.innerHTML = `
+    <div class="ms-title">🔎 Поиск по банку <span class="muted">· ${state.questions.length} вопросов</span></div>
+    <p class="ms-hint muted">Вставь найденный вопрос или ключевые слова — покажу похожие из базы (по словам, даже если формулировка другая). Клик по результату — перейти к вопросу.</p>
+    <input class="ms-input" id="ms-input" type="search" placeholder="напр.: квадратичная сложность O(n²)" autocomplete="off" />
+    <div class="ms-results" id="ms-results"></div>`;
+  host.appendChild(panel);
+  const input = panel.querySelector('#ms-input');
+  const out = panel.querySelector('#ms-results');
+  let t = null;
+  input.addEventListener('input', () => {
+    clearTimeout(t);
+    t = setTimeout(() => renderSearchResults(input.value, out), 180);
+  });
+}
+
+function renderSearchResults(query, out) {
+  if (!query.trim()) { out.innerHTML = ''; return; }
+  const hits = searchQuestions(state.questions, query, 12);
+  if (!hits.length) {
+    out.innerHTML = '<div class="ms-empty muted">Похожих вопросов не найдено — вероятно, это новый вопрос.</div>';
+    return;
+  }
+  out.innerHTML = hits
+    .map((h) => {
+      const q = h.question;
+      const pct = Math.round(h.score * 100);
+      const cls = pct >= 70 ? 'high' : pct >= 40 ? 'mid' : 'low';
+      const correct = (q.correct_answers || []).join(', ') || '—';
+      const idx = state.questions.indexOf(q);
+      return `<button class="ms-hit" type="button" data-idx="${idx}">
+        <div class="ms-hit-head"><span class="ms-id">${esc(q.id)} · тема ${esc(String(q.topic_id ?? '—'))}</span><span class="ms-score ${cls}">${pct}%</span></div>
+        <div class="ms-q">${esc(q.question || '')}</div>
+        <div class="ms-meta muted">верный ответ: ${esc(correct)}</div>
+      </button>`;
+    })
+    .join('');
+  out.querySelectorAll('.ms-hit').forEach((b) => {
+    b.addEventListener('click', () => {
+      const i = Number(b.dataset.idx);
+      if (i >= 0 && i < state.questions.length) {
+        state.index = i;
+        renderQuestion();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    });
   });
 }
 
