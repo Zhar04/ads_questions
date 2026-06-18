@@ -400,8 +400,11 @@ function renderQuestion() {
   const correct = new Set(q.correct_answers || []);
   for (const opt of q.options) {
     const btn = el('button', { class: 'option', type: 'button' });
-    // \n внутри варианта (например, в вопросах про вывод программы) показываем как перенос строки.
-    const otext = esc(opt.text).replace(/\\n/g, '<br>');
+    // \n показываем как перенос строки ТОЛЬКО в «многострочных» вариантах (вывод программы:
+    // «*\n**\n***»), а одиночный «\n» как вариант-ответ (escape-последовательность) — текстом.
+    const esct = esc(opt.text);
+    const segs = esct.split(/\\n/);
+    const otext = segs.filter((s) => s.trim() !== '').length >= 2 ? segs.join('<br>') : esct;
     btn.innerHTML = `<span class="letter">${esc(opt.letter)}</span><span class="otext">${otext}</span>`;
     const isSel = selected.includes(opt.letter);
     if (isSel) btn.classList.add('selected');
