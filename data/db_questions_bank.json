@@ -4599,7 +4599,7 @@
       "options": [
         {
           "letter": "A",
-          "text": "if a->b and a->с, then а->bc"
+          "text": "if a->b and a->c, then a->bc"
         },
         {
           "letter": "B",
