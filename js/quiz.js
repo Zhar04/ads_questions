@@ -70,8 +70,9 @@ export async function initQuiz(container, titlebar) {
 
   try {
     const all = await loadQuestions(subject, lang);
-    // Анти-повтор: реже показывать вопросы из недавних тестов (скользящее окно).
-    const seenLimit = Math.max(20, Math.floor(all.length * 0.45));
+    // Анти-повтор: окно «недавних» держим большим (оставляем ~40 свежих),
+    // чтобы вопросы не повторялись в течение нескольких тестов подряд.
+    const seenLimit = Math.max(30, all.length - 40);
     const avoid = new Set(getSeen(subject));
     let selected = [];
     if (mode === 'full') selected = stratifiedSample(all, count || 30, { avoid });
