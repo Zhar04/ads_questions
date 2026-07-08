@@ -653,19 +653,20 @@
         }
       ],
       "correct_answers": [
+        "B",
         "F"
       ],
-      "answer_type": "single",
+      "answer_type": "multi",
       "language": "ru",
       "has_code": false,
       "topic": "",
-      "verification": "verified",
-      "verification_note": "",
+      "verification": "corrected",
+      "verification_note": "Ключ F→[B,F]: авто-commit в Oracle и при DDL, и при DCL.",
       "has_figure": false,
       "source_files": [
         "Тест_трехуровневая_архитектура#13"
       ],
-      "explanation": "DDL-операторы вызывают автоматическую фиксацию (auto-commit).",
+      "explanation": "Автоматическая фиксация (auto-commit) в Oracle происходит при выполнении оператора DDL (напр. CREATE/ALTER) и оператора DCL (GRANT/REVOKE), а также при нормальном завершении сеанса. Верно B и F.",
       "topic_id": 12
     },
     {
@@ -698,19 +699,21 @@
         }
       ],
       "correct_answers": [
+        "B",
+        "C",
         "D"
       ],
-      "answer_type": "single",
+      "answer_type": "multi",
       "language": "ru",
       "has_code": false,
       "topic": "",
-      "verification": "verified",
-      "verification_note": "",
+      "verification": "corrected",
+      "verification_note": "Ключ D→[B,C,D]: определение транзакции по курсу Oracle.",
       "has_figure": false,
       "source_files": [
         "Тест_трехуровневая_архитектура#14"
       ],
-      "explanation": "Транзакция — набор операторов DML, образующих одно логически целостное изменение данных.",
+      "explanation": "Транзакция базы данных состоит из одного из: набора операторов DML, образующих одно логически целостное изменение данных (D); одного оператора DDL (B); одного оператора DCL (C). Верно B, C, D.",
       "topic_id": 12
     },
     {
@@ -1762,19 +1765,20 @@
       ],
       "correct_answers": [
         "C",
-        "D"
+        "D",
+        "H"
       ],
       "answer_type": "multi",
       "language": "ru",
       "has_code": false,
       "topic": "",
-      "verification": "verified",
-      "verification_note": "",
+      "verification": "corrected",
+      "verification_note": "Ключ [C,D]→[C,D,H]: добавлено условие тривиальной ФЗ (H) — полное определение 3НФ по Заниоло/Дейту.",
       "has_figure": false,
       "source_files": [
         "Основная_подборка#DB16"
       ],
-      "explanation": "3НФ: для каждой ФЗ X в A либо X — суперключ, либо A входит в потенциальный ключ.",
+      "explanation": "Отношение в 3НФ, если для каждой функциональной зависимости X→A выполнено хотя бы одно из трёх: подмножество X — суперключ (C); атрибут A входит в некоторый потенциальный ключ (D); либо зависимость тривиальна, т.е. X включает A (H). Верно C, D, H.",
       "topic_id": 15
     },
     {
@@ -4065,7 +4069,7 @@
         }
       ],
       "correct_answers": [
-        "C",
+        "D",
         "E",
         "G"
       ],
@@ -4073,13 +4077,13 @@
       "language": "ru",
       "has_code": false,
       "topic": "",
-      "verification": "verified",
-      "verification_note": "",
+      "verification": "corrected",
+      "verification_note": "Ключ [C,E,G]→[D,E,G]: первичные ключи (D) вместо файловых структур (C) — чек-лист Коннолли/Бегг.",
       "has_figure": false,
       "source_files": [
         "БД_скриншоты#Screenshot_15"
       ],
-      "explanation": "С точки зрения определения данных оценивают предусмотренные файловые структуры (C), определение внешних ключей (E) и предусмотренные типы данных (G).",
+      "explanation": "С точки зрения «определения данных» СУБД оценивают по: расширенной поддержке первичных ключей (D), возможности определения внешних ключей (E) и предусмотренным типам данных (G). Верно D, E, G. Предусмотренные файловые структуры относятся к «физическому определению», а не к определению данных.",
       "topic_id": 3
     },
     {
