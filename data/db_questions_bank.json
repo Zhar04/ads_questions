@@ -5362,19 +5362,20 @@
         }
       ],
       "correct_answers": [
-        "B"
+        "B",
+        "E"
       ],
       "answer_type": "multi",
       "language": "ru",
       "has_code": true,
       "topic": "",
-      "verification": "verified",
-      "verification_note": "",
+      "verification": "corrected",
+      "verification_note": "Ключ B->[B,E]: «select *from data» (E) — валидный SQL (пробел между * и from необязателен), как и «select data from students» (B). Подтверждено двойником DB-053.",
       "has_figure": false,
       "source_files": [
         "Тест(png)#Тест (43).png"
       ],
-      "explanation": "Корректный синтаксис: select data from students и select *from data.",
+      "explanation": "Синтаксически верны два варианта: «select data from students» (выбор столбца data из таблицы students) и «select *from data» — пробел между * и from необязателен, SQL-парсер сам разделяет * и ключевое слово from. Верно B и E.",
       "topic_id": 9
     },
     {
