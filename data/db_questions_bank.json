@@ -3258,20 +3258,19 @@
         }
       ],
       "correct_answers": [
-        "B",
         "D"
       ],
-      "answer_type": "multi",
+      "answer_type": "single",
       "language": "ru",
       "has_code": true,
       "topic": "",
-      "verification": "verified",
-      "verification_note": "",
+      "verification": "corrected",
+      "verification_note": "Ключ [B,D]->[D] (решение владельца): вопрос проверяет вычисление x+y=50. NB: буквально запрос выводит и x,y (5,45).",
       "has_figure": false,
       "source_files": [
         "Database/#Database (103).png"
       ],
-      "explanation": "select x, y, x+y для строки (5, 45) даёт 5, 45, 50: вариант B (5, 45) и вариант D (50) вместе составляют результат.",
+      "explanation": "В таблице строка x=5, y=45. Выражение x+y = 5 + 45 = 50. Верно D.",
       "topic_id": 9
     },
     {
@@ -6887,20 +6886,19 @@
           "text": "архитектурное проектирование"
         }
       ],
-      "answer_type": "multi",
+      "answer_type": "single",
       "language": "ru",
       "has_code": false,
       "topic": "",
-      "verification": "verified",
-      "verification_note": "",
+      "verification": "corrected",
+      "verification_note": "Ключ [A,C]->[C]: логическое проектирование — зонтичный этап, включающий инфологическое и даталогическое моделирование (по формулировке стема).",
       "has_figure": false,
       "source_files": [
         "database.docx"
       ],
-      "explanation": "Этап включает инфологическое (концептуальное, A) и даталогическое (логическое, C) проектирование.",
+      "explanation": "Этап логического проектирования БД включает в себя инфологическое (концептуальное) и даталогическое моделирование данных. Верно C.",
       "topic_id": 14,
       "correct_answers": [
-        "A",
         "C"
       ]
     },
